@@ -1,6 +1,6 @@
 .ONESHELL:
 SHELL = /bin/bash
-.PHONY: help clean develop kernel jupyter
+.PHONY: help clean develop kernel jupyter install
 CONDA_ENV_DIR = $(shell conda info --base)/envs/<pkg-name>
 CONDA_ACTIVATE = source $$(conda info --base)/etc/profile.d/conda.sh ; conda activate ; conda activate
 EODAG_PATH = $$(python -m pip show eodag | grep Location: | sed 's/^Location: //')
@@ -40,3 +40,8 @@ kernel:
 
 jupyter: kernel develop
 	jupyter lab .
+
+install:
+	$(CONDA_ACTIVATE) tuw_education_notebooks
+	pip install --upgrade pip setuptools wheel
+	pip install -e ./
