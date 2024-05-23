@@ -4,7 +4,6 @@ import datetime
 from scipy.stats import norm
 import matplotlib.pyplot as plt
 
-RANGE = np.arange(-30, 0, 0.1)
 
 sig0_dc = xr.open_dataset('data/s1_parameters/S1_CSAR_IWGRDH/SIG0/V1M1R1/EQUI7_EU020M/E054N006T3/SIG0_20180228T043908__VV_D080_E054N006T3_EU020M_V1M1R1_S1AIWGRDH_TUWIEN.nc')
 hparam_dc = xr.open_dataset('data/tuw_s1_harpar/S1_CSAR_IWGRDH/SIG0-HPAR/V0M2R3/EQUI7_EU020M/E054N006T3/D080.nc')
@@ -13,7 +12,7 @@ sig0_dc['id'] = (('y', 'x'), np.arange(sig0_dc.SIG0.size).reshape(sig0_dc.SIG0.s
 hparam_dc['id'] = (('y', 'x'), np.arange(sig0_dc.SIG0.size).reshape(sig0_dc.SIG0.shape))
 plia_dc['id'] = (('y', 'x'), np.arange(sig0_dc.SIG0.size).reshape(sig0_dc.SIG0.shape))
 
-def calc_water_prior(id, x=RANGE):
+def calc_water_prior(id, x):
     point = plia_dc.where(plia_dc.id == id, drop=True)
     wbsc_mean = point.PLIA * -0.394181 + -4.142015
     wbsc_std = 2.754041
@@ -37,29 +36,30 @@ def expected_land_backscatter(data, dtime_str):
     hm_c3 = ((hm_c2 + S3 * np.sin(3 * wt)) + C3 * np.cos(3 * wt))
     return hm_c3
 
-def calc_land_prior(id, x=RANGE):
+def calc_land_prior(id, x):
     point = hparam_dc.where(hparam_dc.id == id, drop=True)
     lbsc_mean = expected_land_backscatter(point, '2018-02-01')
     lbsc_std = point.STD
     return norm.pdf(x, lbsc_mean.to_numpy(), lbsc_std.to_numpy()).flatten()
 
-def plot_priors(id, sig0_dc, water_prior, land_prior):
-    point = sig0_dc.where(sig0_dc.id == id, drop=True).SIG0.to_numpy()
-    y1_pdf, y2_pdf = water_prior, land_prior
-    fig, ax = plt.subplots(1, 1)
-    ax.plot(RANGE, y1_pdf, 'k-', lw=2)
-    ax.vlines(x=point, ymin=0, ymax=np.max((y1_pdf, y2_pdf)), lw=3)
-    ax.plot(RANGE, y2_pdf,'r-', lw=5, alpha=0.6)
-
-def calc_priors(id, x=RANGE, plot=False):
+def calc_priors(id, x, plot=False):
+    if isinstance(x, list):
+        x = np.arange(x[0], x[1], 0.1)
     water_prior, land_prior = calc_water_prior(id=id, x=x), calc_land_prior(id=id, x=x)
     if plot:
-        plot_priors(id, sig0_dc, water_prior, land_prior)
+        compare_distributions_with_sigma(id, water_prior, land_prior, x)
     return water_prior, land_prior
 
-def plot_posteriors(id, f_post, nf_post):
-    point = sig0_dc.where(sig0_dc.id == id, drop=True).SIG0.to_numpy()
+def compare_distributions_with_sigma(id, dist1, dist2, range):
+    sig0 = sig0_dc.where(sig0_dc.id == id, drop=True).SIG0.to_numpy()
     fig, ax = plt.subplots(1, 1)
-    ax.plot(RANGE, f_post, 'k-', lw=2)
-    ax.vlines(x=point, ymin=-0.1, ymax=1.1, lw=3)
-    ax.plot(RANGE, nf_post,'r-', lw=5, alpha=0.6)
+    ax.cla()
+    ax.plot(range, dist1, 'k-', lw=2)
+    ax.plot(range, dist2,'r-', lw=5, alpha=0.6)
+    ax.vlines(x=sig0, ymin=0, ymax=np.max((dist1, dist2)), lw=3)
+    plt.show()
+
+def plot_posteriors(id, dist1, dist2, x):
+    if isinstance(x, list):
+        x = np.arange(x[0], x[1], 0.1)
+    compare_distributions_with_sigma(id, dist1, dist2, x)

@@ -16,8 +16,6 @@ def view_bayes_flood(sig0_dc, calc_posteriors, bayesian_flood_decision):
 
     # initialize a map on top
     m = Maps(ax=122, layer="data")
-    m.add_feature.preset.ocean()
-    m.add_feature.preset.coastline()
 
     # initialize 2 matplotlib plot-axes below the map
     ax_upper = m.f.add_subplot(221)
@@ -42,7 +40,7 @@ def view_bayes_flood(sig0_dc, calc_posteriors, bayesian_flood_decision):
         
         # get the data
         value = sig0_dc.where(sig0_dc.id == ID, drop=True).SIG0.to_numpy()
-        y1_pdf, y2_pdf = calc_water_prior(ID), calc_land_prior(ID)
+        y1_pdf, y2_pdf = calc_water_prior(ID, RANGE), calc_land_prior(ID, RANGE)
         f_post, nf_post = calc_posteriors(y1_pdf, y2_pdf)
 
         # plot the lines and vline

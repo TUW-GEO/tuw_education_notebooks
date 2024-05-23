@@ -24,7 +24,7 @@ develop:
 	@echo "creating new base tuw_education_notebooks conda environment..."
 	conda create -y -c conda-forge -n tuw_education_notebooks python=3.10 pip mamba
 	$(CONDA_ACTIVATE) tuw_education_notebooks 
-	mamba install -y -c conda-forge nbgitpuller jupyterlab eodag ipykernel 
+	mamba install -y -c conda-forge nbgitpuller jupyterlab eodag ipykernel xarray matplotlib numpy eomaps ipywidgets scipy
 
 publish:
 	$(CONDA_ACTIVATE) tuw_education_notebooks
