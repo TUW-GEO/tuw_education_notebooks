@@ -39,8 +39,6 @@ kernel:
 	fi;
 	mamba install -y -c conda-forge ipykernel ipywidgets eodag
 	pip install ./
-	cp -f /tmp/eodag.yml ${HOME}/.config/eodag/eodag.yml
-	cp -f /tmp/providers.yml $(EODAG_PATH)/eodag/resources/providers.yml
 	python -m ipykernel install --user --name tuw_education_notebooks
 	@echo -e "conda jupyter kernel is ready."
 
