@@ -22,13 +22,13 @@ clean:
 
 develop:
 	@echo "creating new base tuw_education_notebooks conda environment..."
-	conda create -y -c conda-forge -n tuw_education_notebooks python=3.10 pip mamba jupyterlab ipympl nbgitpuller
+	conda create -y -c conda-forge -n tuw_education_notebooks python=3.10 pip mamba 
 	$(CONDA_ACTIVATE) tuw_education_notebooks 
-	mamba install -y -c conda-forge xarray matplotlib numpy eomaps ipywidgets scipy
+	mamba install -y -c conda-forge jupyterlab ipykernel ipympl ipywidgets nbgitpuller xarray netcdf4 matplotlib numpy eomaps scipy
 
 publish:
 	$(CONDA_ACTIVATE) tuw_education_notebooks
-	mamba env export  --from-history | grep -ve "^prefix:" -ve "jupyterlab" -ve "ipympl" -ve "nbgitpuller" > environment.yml
+	mamba env export --from-history | grep -ve "^prefix:" -ve "jupyterlab" -ve "ipympl" -ve "nbgitpuller" > environment.yml
 
 kernel:
 	if { conda env list | grep 'tuw_education_notebooks'; } >/dev/null 2>&1; then
@@ -37,7 +37,7 @@ kernel:
 		conda env create -n tuw_education_notebooks --file environment.yml
 		$(CONDA_ACTIVATE) tuw_education_notebooks
 	fi;
-	mamba install -y -c conda-forge ipykernel eodag
+	mamba install -y -c conda-forge ipykernel ipywidgets eodag
 	pip install ./
 	cp -f /tmp/eodag.yml ${HOME}/.config/eodag/eodag.yml
 	cp -f /tmp/providers.yml $(EODAG_PATH)/eodag/resources/providers.yml
@@ -47,7 +47,7 @@ kernel:
 jupyter: kernel
 	jupyter lab .
 
-install: develop
+install:
 	$(CONDA_ACTIVATE) tuw_education_notebooks
 	pip install --upgrade pip setuptools wheel
 	pip install -e ./
