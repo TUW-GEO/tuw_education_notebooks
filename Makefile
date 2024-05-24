@@ -16,6 +16,8 @@ help:
 	@echo " make ipykernel based on conda lock file"
 	@echo "make jupyter"
 	@echo " launch JupyterLab server"
+	@echo "make data"
+	@echo " get example data"
 
 clean:
 	rm --force --recursive .ipynb_checkpoints/
