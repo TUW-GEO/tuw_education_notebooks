@@ -1,7 +1,7 @@
 from eomaps import Maps
 import numpy as np
 
-from tuw_education_notebooks.calc_priors import calc_water_prior, calc_land_prior
+from tuw_education_notebooks.calc_bayes_flood import calc_water_likelihood, calc_land_likelihood
 
 RANGE = np.arange(-30, 0, 0.1)
 
@@ -40,7 +40,7 @@ def view_bayes_flood(sig0_dc, calc_posteriors, bayesian_flood_decision):
         
         # get the data
         value = sig0_dc.where(sig0_dc.id == ID, drop=True).SIG0.to_numpy()
-        y1_pdf, y2_pdf = calc_water_prior(ID, RANGE), calc_land_prior(ID, RANGE)
+        y1_pdf, y2_pdf = calc_water_likelihood(ID, RANGE), calc_land_likelihood(ID, RANGE)
         f_post, nf_post = calc_posteriors(y1_pdf, y2_pdf)
 
         # plot the lines and vline

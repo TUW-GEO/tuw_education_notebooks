@@ -1,0 +1,19 @@
+name: base
+channels:
+  - defaults
+dependencies:
+  - mamba
+  - pip
+  - python=3.10
+  - eodag
+  - ipykernel
+  - xarray
+  - matplotlib
+  - numpy
+  - eomaps
+  - ipywidgets
+  - scipy
+  - ipympl
+  - ca-certificates
+  - certifi
+  - openssl

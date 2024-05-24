@@ -12,7 +12,7 @@ sig0_dc['id'] = (('y', 'x'), np.arange(sig0_dc.SIG0.size).reshape(sig0_dc.SIG0.s
 hparam_dc['id'] = (('y', 'x'), np.arange(sig0_dc.SIG0.size).reshape(sig0_dc.SIG0.shape))
 plia_dc['id'] = (('y', 'x'), np.arange(sig0_dc.SIG0.size).reshape(sig0_dc.SIG0.shape))
 
-def calc_water_prior(id, x):
+def calc_water_likelihood(id, x):
     point = plia_dc.where(plia_dc.id == id, drop=True)
     wbsc_mean = point.PLIA * -0.394181 + -4.142015
     wbsc_std = 2.754041
@@ -36,16 +36,16 @@ def expected_land_backscatter(data, dtime_str):
     hm_c3 = ((hm_c2 + S3 * np.sin(3 * wt)) + C3 * np.cos(3 * wt))
     return hm_c3
 
-def calc_land_prior(id, x):
+def calc_land_likelihood(id, x):
     point = hparam_dc.where(hparam_dc.id == id, drop=True)
     lbsc_mean = expected_land_backscatter(point, '2018-02-01')
     lbsc_std = point.STD
     return norm.pdf(x, lbsc_mean.to_numpy(), lbsc_std.to_numpy()).flatten()
 
-def calc_priors(id, x, plot=False):
+def calc_likelihoods(id, x, plot=False):
     if isinstance(x, list):
         x = np.arange(x[0], x[1], 0.1)
-    water_prior, land_prior = calc_water_prior(id=id, x=x), calc_land_prior(id=id, x=x)
+    water_prior, land_prior = calc_water_likelihood(id=id, x=x), calc_land_likelihood(id=id, x=x)
     if plot:
         compare_distributions_with_sigma(id, water_prior, land_prior, x)
     return water_prior, land_prior
