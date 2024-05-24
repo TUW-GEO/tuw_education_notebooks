@@ -1,5 +1,7 @@
 #!\bin\bash
 
-apt-get update -y && apt-get install -y build-essential
-make kernel
-make data
+conda create -y -c conda-forge -n tuw_education_notebooks python=3.10 pip mamba
+conda activate tuw_education_notebooks
+pip install --upgrade pip setuptools wheel
+pip install ./
+python -m ipykernel install --user --name tuw_education_notebooks
