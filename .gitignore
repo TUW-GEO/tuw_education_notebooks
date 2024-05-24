@@ -53,5 +53,3 @@ venv
 
 # make file markers
 .install*
-
-data/

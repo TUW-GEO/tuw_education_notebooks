@@ -45,10 +45,10 @@ def calc_land_likelihood(id, x):
 def calc_likelihoods(id, x, plot=False):
     if isinstance(x, list):
         x = np.arange(x[0], x[1], 0.1)
-    water_prior, land_prior = calc_water_likelihood(id=id, x=x), calc_land_likelihood(id=id, x=x)
+    water_likelihood, land_likelihood = calc_water_likelihood(id=id, x=x), calc_land_likelihood(id=id, x=x)
     if plot:
-        compare_distributions_with_sigma(id, water_prior, land_prior, x)
-    return water_prior, land_prior
+        compare_distributions_with_sigma(id, water_likelihood, land_likelihood, x)
+    return water_likelihood, land_likelihood
 
 def compare_distributions_with_sigma(id, dist1, dist2, range):
     sig0 = sig0_dc.where(sig0_dc.id == id, drop=True).SIG0.to_numpy()
