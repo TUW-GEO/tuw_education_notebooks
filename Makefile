@@ -28,7 +28,7 @@ develop:
 
 publish:
 	$(CONDA_ACTIVATE) tuw_education_notebooks
-	mamba env export --from-history | grep -ve "^prefix:" -ve "jupyterlab" -ve "ipympl" -ve "nbgitpuller" > environment.yml
+	mamba env export --from-history | grep -ve "^prefix:" -ve "jupyterlab" -ve "nbgitpuller" > environment.yml
 
 kernel:
 	if { conda env list | grep 'tuw_education_notebooks'; } >/dev/null 2>&1; then
