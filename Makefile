@@ -1,6 +1,6 @@
 .ONESHELL:
 SHELL = /bin/bash
-.PHONY: help clean develop kernel jupyter install
+.PHONY: help clean environment kernel jupyter install data
 CONDA_ENV_DIR = $(shell conda info --base)/envs/tuw_education_notebooks
 CONDA_ACTIVATE = source $$(conda info --base)/etc/profile.d/conda.sh ; conda activate ; conda activate
 EODAG_PATH = $$(python -m pip show eodag | grep Location: | sed 's/^Location: //')
@@ -21,9 +21,9 @@ clean:
 	rm --force --recursive .ipynb_checkpoints/
 
 $(CONDA_ENV_DIR):
-	@echo "creating new base tuw_education_notebooks conda environment..."
 	if ! { conda env list | grep 'tuw_education_notebooks'; } >/dev/null 2>&1; then
-		conda create -y -c conda-forge -n tuw_education_notebooks python=3.10 pip mamba jupyterlab
+		@echo "creating new base tuw_education_notebooks conda environment..."
+		conda create -y -c conda-forge -n tuw_education_notebooks python=3.10 pip mamba
 	fi;
 	$(CONDA_ACTIVATE) tuw_education_notebooks
 
@@ -42,10 +42,15 @@ kernel: environment
 	@echo -e "conda jupyter kernel is ready."
 
 jupyter: kernel
-$(CONDA_ACTIVATE) tuw_education_notebooks
+	$(CONDA_ACTIVATE) tuw_education_notebooks
+	mamba install -c conda-forge jupyterlab
 	jupyter lab .
 
 install:
 	$(CONDA_ACTIVATE) tuw_education_notebooks
 	pip install --upgrade pip setuptools wheel
 	pip install -e ./
+
+data:
+	wget -q -P ./data  https://cloud.geo.tuwien.ac.at/s/HxHCM4mqD3qRoEw/download/cd_ssm.zip
+	cd data && unzip -n cd_ssm.zip && rm cd_ssm.zip
