@@ -20,11 +20,11 @@ def view_bayes_flood(sig0_dc, calc_posteriors, bayesian_flood_decision):
     # initialize 2 matplotlib plot-axes below the map
     ax_upper = m.f.add_subplot(221)
     ax_upper.set_ylabel("likelihood")
-    ax_upper.set_xlabel("sigma")
+    ax_upper.set_xlabel("$\sigma^0 (dB)$")
 
     ax_lower = m.f.add_subplot(223)
     ax_lower.set_ylabel("probability")
-    ax_lower.set_xlabel("sigma")
+    ax_lower.set_xlabel("$\sigma^0 (dB)$")
 
     # add map
     m2 = m.new_layer(layer="map")
@@ -44,13 +44,15 @@ def view_bayes_flood(sig0_dc, calc_posteriors, bayesian_flood_decision):
         f_post, nf_post = calc_posteriors(y1_pdf, y2_pdf)
 
         # plot the lines and vline
-        (water,) = ax_upper.plot(RANGE, y1_pdf, 'k-', lw=2)
-        (land,) = ax_upper.plot(RANGE, y2_pdf,'r-', lw=5, alpha=0.6)
-        value_left = ax_upper.vlines(x=value, ymin=0, ymax=np.max((y1_pdf, y2_pdf)), lw=3)
+        (water,) = ax_upper.plot(RANGE, y1_pdf, 'k-', lw=2, label="water")
+        (land,) = ax_upper.plot(RANGE, y2_pdf,'r-', lw=5, alpha=0.6, label="land")
+        value_left = ax_upper.vlines(x=value, ymin=0, ymax=np.max((y1_pdf, y2_pdf)), lw=3, label="observed")
+        ax_upper.legend(loc="upper left")
 
-        (f,) = ax_lower.plot(RANGE, f_post, 'k-', lw=2)
-        (nf,) = ax_lower.plot(RANGE, nf_post,'r-', lw=5, alpha=0.6)
-        value_right = ax_lower.vlines(x=value, ymin=-0.1, ymax=1.1, lw=3)
+        (f,) = ax_lower.plot(RANGE, f_post, 'k-', lw=2, label="flood")
+        (nf,) = ax_lower.plot(RANGE, nf_post,'r-', lw=5, alpha=0.6, label="non-flood")
+        value_right = ax_lower.vlines(x=value, ymin=-0.1, ymax=1.1, lw=3, label="observed")
+        ax_lower.legend(loc="upper left")
 
         # re-compute axis limits based on the new artists
         ax_upper.relim()
