@@ -54,5 +54,5 @@ install:
 	pip install -e ./
 
 data:
-	wget -q -P ./data  https://cloud.geo.tuwien.ac.at/s/HxHCM4mqD3qRoEw/download/cd_ssm.zip
-	cd data && unzip -n cd_ssm.zip && rm cd_ssm.zip
+	wget -q -P ./data https://cloud.geo.tuwien.ac.at/s/MW9QKdLWeYNKJJG/download/SSM-CD-SIG40-R-DVEG_2018.zarr.zip
+	cd data && unzip -n SSM-CD-SIG40-R-DVEG_2018.zarr.zip && rm SSM-CD-SIG40-R-DVEG_2018.zarr.zip
