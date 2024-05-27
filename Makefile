@@ -3,7 +3,7 @@ SHELL = /bin/bash
 .PHONY: help clean environment kernel jupyter install data
 CONDA_ENV_DIR = $(shell conda info --base)/envs/tuw_education_notebooks
 CONDA_ACTIVATE = source $$(conda info --base)/etc/profile.d/conda.sh ; conda activate ; conda activate
-EODAG_PATH = $$(python -m pip show eodag | grep Location: | sed 's/^Location: //')
+
 
 help:
 	@echo "make clean"

@@ -42,27 +42,8 @@ def calc_land_likelihood(id, x):
     lbsc_std = point.STD
     return norm.pdf(x, lbsc_mean.to_numpy(), lbsc_std.to_numpy()).flatten()
 
-def calc_likelihoods(id, x, plot=False):
+def calc_likelihoods(id, x):
     if isinstance(x, list):
         x = np.arange(x[0], x[1], 0.1)
     water_likelihood, land_likelihood = calc_water_likelihood(id=id, x=x), calc_land_likelihood(id=id, x=x)
-    if plot:
-        compare_distributions_with_sigma(id, water_likelihood, land_likelihood, x)
     return water_likelihood, land_likelihood
-
-def compare_distributions_with_sigma(id, dist1, dist2, range, ylabel="likelihood", label1="land", label2="water"):
-    sig0 = sig0_dc.where(sig0_dc.id == id, drop=True).SIG0.to_numpy()
-    fig, ax = plt.subplots(1, 1)
-    ax.cla()
-    ax.plot(range, dist1, 'k-', lw=2, label=label1)
-    ax.plot(range, dist2,'r-', lw=5, alpha=0.6, label=label2)
-    ax.vlines(x=sig0, ymin=0, ymax=np.max((dist1, dist2)), lw=3, label="observed")
-    plt.ylabel(ylabel)
-    plt.xlabel("$\sigma^0 (dB)$")
-    plt.legend(loc="upper left")
-    plt.show()
-
-def plot_posteriors(id, dist1, dist2, x):
-    if isinstance(x, list):
-        x = np.arange(x[0], x[1], 0.1)
-    compare_distributions_with_sigma(id, dist1, dist2, x, "probability", "non-flood", "flood")

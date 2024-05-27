@@ -5,14 +5,7 @@ from tuw_education_notebooks.calc_bayes_flood import calc_water_likelihood, calc
 
 RANGE = np.arange(-30, 0, 0.1)
 
-
-def view_bayes_flood(sig0_dc, calc_posteriors, bayesian_flood_decision):
-    
-    flood_classification =  bayesian_flood_decision(sig0_dc.id, sig0_dc.SIG0)
-
-    sig0_dc["decision"] = (('y', 'x'), flood_classification.reshape(sig0_dc.SIG0.shape))
-    sig0_dc["decision"] = sig0_dc.decision.where(sig0_dc.SIG0.notnull())
-    sig0_dc["decision"] = sig0_dc.decision.where(sig0_dc.decision==0)
+def view_bayes_flood(sig0_dc, calc_posteriors=None, bayesian_flood_decision=None):
 
     # initialize a map on top
     m = Maps(ax=122, layer="data")
@@ -26,14 +19,21 @@ def view_bayes_flood(sig0_dc, calc_posteriors, bayesian_flood_decision):
     ax_lower.set_ylabel("probability")
     ax_lower.set_xlabel("$\sigma^0 (dB)$")
 
-    # add map
-    m2 = m.new_layer(layer="map")
-    m2.add_wms.OpenStreetMap.add_layer.default()
-
     # -------- assign data to the map and plot it
-    m.set_data(data=sig0_dc, x="x", y="y", parameter="decision", crs=sig0_dc.spatial_ref.crs_wkt)
-    m.plot_map()
-    m.show_layer("map", ("data", 0.5))
+    if bayesian_flood_decision is not None:
+        # add map
+        m2 = m.new_layer(layer="map")
+        m2.add_wms.OpenStreetMap.add_layer.default()
+        flood_classification =  bayesian_flood_decision(sig0_dc.id, sig0_dc.SIG0)
+        sig0_dc["decision"] = (('y', 'x'), flood_classification.reshape(sig0_dc.SIG0.shape))
+        sig0_dc["decision"] = sig0_dc.decision.where(sig0_dc.SIG0.notnull())
+        sig0_dc["decision"] = sig0_dc.decision.where(sig0_dc.decision==0)
+        m.set_data(data=sig0_dc, x="x", y="y", parameter="decision", crs=sig0_dc.spatial_ref.crs_wkt)
+        m.plot_map()
+        m.show_layer("map", ("data", 0.5))
+    else:
+        m.set_data(data=sig0_dc, x="x", y="y", parameter="SIG0", crs=sig0_dc.spatial_ref.crs_wkt)
+        m.plot_map()
 
     # -------- define a custom callback function to update the plots
     def update_plots(ID, **kwargs):
@@ -41,7 +41,6 @@ def view_bayes_flood(sig0_dc, calc_posteriors, bayesian_flood_decision):
         # get the data
         value = sig0_dc.where(sig0_dc.id == ID, drop=True).SIG0.to_numpy()
         y1_pdf, y2_pdf = calc_water_likelihood(ID, RANGE), calc_land_likelihood(ID, RANGE)
-        f_post, nf_post = calc_posteriors(y1_pdf, y2_pdf)
 
         # plot the lines and vline
         (water,) = ax_upper.plot(RANGE, y1_pdf, 'k-', lw=2, label="water")
@@ -49,19 +48,23 @@ def view_bayes_flood(sig0_dc, calc_posteriors, bayesian_flood_decision):
         value_left = ax_upper.vlines(x=value, ymin=0, ymax=np.max((y1_pdf, y2_pdf)), lw=3, label="observed")
         ax_upper.legend(loc="upper left")
 
-        (f,) = ax_lower.plot(RANGE, f_post, 'k-', lw=2, label="flood")
-        (nf,) = ax_lower.plot(RANGE, nf_post,'r-', lw=5, alpha=0.6, label="non-flood")
-        value_right = ax_lower.vlines(x=value, ymin=-0.1, ymax=1.1, lw=3, label="observed")
-        ax_lower.legend(loc="upper left")
+        # add all artists as "temporary pick artists" so that they
+        # are removed when the next datapoint is selected
+        for a in [water, land, value_left]:
+            m.cb.pick.add_temporary_artist(a)
+
+        if calc_posteriors is not None:
+            f_post, nf_post = calc_posteriors(y1_pdf, y2_pdf)
+            (f,) = ax_lower.plot(RANGE, f_post, 'k-', lw=2, label="flood")
+            (nf,) = ax_lower.plot(RANGE, nf_post,'r-', lw=5, alpha=0.6, label="non-flood")
+            value_right = ax_lower.vlines(x=value, ymin=-0.1, ymax=1.1, lw=3, label="observed")
+            ax_lower.legend(loc="upper left")
+            for a in [f, nf, value_right]:
+                m.cb.pick.add_temporary_artist(a)
 
         # re-compute axis limits based on the new artists
         ax_upper.relim()
         ax_upper.autoscale()
-
-        # add all artists as "temporary pick artists" so that they
-        # are removed when the next datapoint is selected
-        for a in [water, land, value_right, nf, f, value_left]:
-            m.cb.pick.add_temporary_artist(a)
 
     m.cb.pick.attach(update_plots)
     m.cb.pick.attach.mark(permanent=False, buffer=1, fc="none", ec="r")
