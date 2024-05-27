@@ -1,11 +1,7 @@
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/MartinSchobben/tuw_education_notebooks/main)
 
-TODO: Add you lecture description. 
+These are some showcases of educational Jupyter notebooks that include the main research lines of the [Research Unit Remote Sensing](https://www.tuwien.at/en/mg/geo/rs) at the TU Wien.
 
-# Generate Jupyter Kernel from `environment.yml`
+# Launch Binder
 
-To re-create the environment as a Jupyter kernel for execution of the notebooks, do the following:
-
-```
-make kernel
-```
+Click on the binder icon to launch an instance of the Jupyter notebooks.
