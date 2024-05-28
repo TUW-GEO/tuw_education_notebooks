@@ -53,5 +53,7 @@ venv
 
 # make file markers
 .install*
-data/cd_ssm.zip
-**/*.tif
+
+# data
+data/SSM-CD-SIG40-R-DVEG_2018.zarr.zip
+data/SSM-CD-SIG40-R-DVEG_2018.zarr
