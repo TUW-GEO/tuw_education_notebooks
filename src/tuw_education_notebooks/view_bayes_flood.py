@@ -8,7 +8,7 @@ RANGE = np.arange(-30, 0, 0.1)
 def view_bayes_flood(sig0_dc, calc_posteriors=None, bayesian_flood_decision=None):
 
     # initialize a map on top
-    m = Maps(ax=122, layer="data")
+    m = Maps(ax=122, layer="data", crs=Maps.CRS.Equi7_EU)
 
     # initialize 2 matplotlib plot-axes below the map
     ax_upper = m.f.add_subplot(221)
@@ -28,11 +28,11 @@ def view_bayes_flood(sig0_dc, calc_posteriors=None, bayesian_flood_decision=None
         sig0_dc["decision"] = (('y', 'x'), flood_classification.reshape(sig0_dc.SIG0.shape))
         sig0_dc["decision"] = sig0_dc.decision.where(sig0_dc.SIG0.notnull())
         sig0_dc["decision"] = sig0_dc.decision.where(sig0_dc.decision==0)
-        m.set_data(data=sig0_dc, x="x", y="y", parameter="decision", crs=sig0_dc.spatial_ref.crs_wkt)
+        m.set_data(data=sig0_dc, x="x", y="y", parameter="decision", crs=Maps.CRS.Equi7_EU)
         m.plot_map()
         m.show_layer("map", ("data", 0.5))
     else:
-        m.set_data(data=sig0_dc, x="x", y="y", parameter="SIG0", crs=sig0_dc.spatial_ref.crs_wkt)
+        m.set_data(data=sig0_dc, x="x", y="y", parameter="SIG0", crs=Maps.CRS.Equi7_EU)
         m.plot_map()
 
     # -------- define a custom callback function to update the plots
