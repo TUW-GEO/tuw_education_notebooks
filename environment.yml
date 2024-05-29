@@ -1,21 +1,10 @@
 name: base
 channels:
   - defaults
-  - conda-forge
 dependencies:
-  - python=3.10
-  - pip
   - mamba
-  - ipykernel
-  - ipympl
-  - ipywidgets
-  - xarray
-  - netcdf4
-  - matplotlib
-  - numpy
-  - eomaps
-  - scipy
+  - pip
+  - python=3.10
   - ca-certificates
   - certifi
   - openssl
-  - eodag
