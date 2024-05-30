@@ -31,7 +31,7 @@ def view_monthly_ssm(monthly_datacube, cmap):
         j.add_title(dt)
         j.set_data(monthly_datacube.isel(time=STEPS[i]), x="x", y="y", parameter="band_data", crs=Maps.CRS.Equi7_EU)
         j.plot_map(cmap=cmap, zorder=3)
-        j.add_colorbar(label="surface soil moisture (1)", orientation="vertical")
+        j.add_colorbar(label="surface soil moisture (%)", orientation="vertical")
 
     m.apply_layout(
         {
