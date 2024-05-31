@@ -25,7 +25,7 @@ def view_monthly_ssm(monthly_datacube, cmap):
     STEPS = [*range(0, 12, 3)]
     for i, j in enumerate([m, m2, m3, m4]): 
         j.add_feature.preset.coastline()
-        j.add_feature.preset.ocean()
+        j.add_feature.preset.ocean(fc="lightgray")
         j.add_feature.preset.countries()
         dt = np.datetime_as_string(monthly_datacube.isel(time=STEPS[i]).time.to_numpy(), unit='D')
         j.add_title(dt)

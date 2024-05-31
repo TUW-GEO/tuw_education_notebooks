@@ -31,9 +31,29 @@ def view_bayes_flood(sig0_dc, calc_posteriors=None, bayesian_flood_decision=None
         m.set_data(data=sig0_dc, x="x", y="y", parameter="decision", crs=Maps.CRS.Equi7_EU)
         m.plot_map()
         m.show_layer("map", ("data", 0.5))
+        m.apply_layout(
+            {
+                "figsize": [9, 4.8],
+                "0_map": [0.5, 0.1, 1, 0.8],
+                "1_": [0.1, 0.1, 0.35, 0.3],
+                "2_": [0.1, 0.6, 0.35, 0.3],
+            }
+        )
+
     else:
         m.set_data(data=sig0_dc, x="x", y="y", parameter="SIG0", crs=Maps.CRS.Equi7_EU)
         m.plot_map()
+        m.add_colorbar(label="$\sigma^0$ (dB)", orientation="vertical")
+        m.apply_layout(
+            {
+                "figsize": [9, 4.8],
+                "0_map": [0.5, 0.1, 1, 0.8],
+                "1_": [0.1, 0.1, 0.35, 0.3],
+                "2_": [0.1, 0.6, 0.35, 0.3],
+                '3_cb': [0.82, 0.02, 0.1, 0.99], 
+                '3_cb_histogram_size': 0.6,
+            }
+        )
 
     # -------- define a custom callback function to update the plots
     def update_plots(ID, **kwargs):
@@ -70,12 +90,4 @@ def view_bayes_flood(sig0_dc, calc_posteriors=None, bayesian_flood_decision=None
     m.cb.pick.attach.mark(permanent=False, buffer=1, fc="none", ec="r")
     m.cb.pick.attach.mark(permanent=False, buffer=2, fc="none", ec="r", ls=":")
 
-    m.apply_layout(
-        {
-            "figsize": [9, 4.8],
-            "0_map": [0.5, 0.1, 1, 0.8],
-            "1_": [0.1, 0.1, 0.35, 0.3],
-            "2_": [0.1, 0.6, 0.35, 0.3],
-        }
-    )
     m.show()
