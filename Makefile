@@ -40,7 +40,7 @@ kernel: environment
 	$(CONDA_ACTIVATE) tuw_education_notebooks
 	pip install --upgrade pip setuptools wheel
 	pip install ./
-	python -m ipykernel install --user --name tuw_education_notebooks
+	python -m ipykernel install --user --name tuw_education_notebooks --display-name tuw_education_notebook
 	@echo -e "conda jupyter kernel is ready."
 
 jupyter: kernel
@@ -52,6 +52,10 @@ install:
 	$(CONDA_ACTIVATE) tuw_education_notebooks
 	pip install --upgrade pip setuptools wheel
 	pip install -e ./
+
+book:
+	Rscript -e "if (!requireNamespace('babelquarto', quietly = TRUE)) install.packages('babelquarto', repos = c('https://ropensci.r-universe.dev', 'https://cloud.r-project.org'))"
+	Rscript -e "babelquarto::render_book('.')" 
 
 data:
 	wget -q -P ./data https://cloud.geo.tuwien.ac.at/s/MW9QKdLWeYNKJJG/download/SSM-CD-SIG40-R-DVEG_2018.zarr.zip

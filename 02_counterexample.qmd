@@ -1,0 +1,119 @@
+---
+title: 'How to color your Map: The Good, the Bad and the Ugly'
+subtitle: An example using TU Wien Surface Soil Moisture developed for GHG-Kit
+jupyter: 
+  kernelspec:
+    name: "tuw_education_notebooks"
+    language: "python"
+    display_name: "tuw_education_notebooks"
+keep-ipynb: true
+execute: 
+  cache: true
+---
+
+[![](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/MartinSchobben/tuw_education_notebooks/15bcbc542b9c50306617af6f796bb6c8fd4fcf0d?urlpath=lab%2Ftree%2F02_counterexample.ipynb)
+
+![Image from [wikipedia](https://upload.wikimedia.org/wikipedia/en/4/45/Good_the_bad_and_the_ugly_poster.jpg)](https://upload.wikimedia.org/wikipedia/en/4/45/Good_the_bad_and_the_ugly_poster.jpg)
+
+```{python}
+import xarray as xr
+
+from pathlib import Path
+from tuw_education_notebooks.view_monthly_ssm import view_monthly_ssm, load_cmap
+
+RESOURCES = Path("data")
+```
+
+## Science and Art
+
+Data visualization depends on art to convey stories from data through the combination of geometric objects and color with science. In the ideal case the information should be easily extractable from the visualization, but at the same time the scientific elements should be to the point accurate. The latter is important as false graphical representations can lead to wrong perception amd interpretation, which, in turn, leads to wrongful decision making. These mistakes can be made intentionally, and thus be fraudulent, but are more often innocent mistakes with potentially far reaching consequences. When plotting data on maps we have to consider even more aspects, like the geographic projection, grid types and mapping of variables as a third dimension to a suitable color space.
+
+## TU Wien Surface Soil Moisture developed for GHG-Kit
+
+For the examples in this notebook we will use soil moisture developed for GHG-Kit. To retrieve surface soil moisture data we exploit the general linear relationship between Sentinel-1 microwave backscattering and soil moisture. The change detection method developed at TU Wien can be summarised in the most simple terms by calculating the driest and wettest condition within a time period and then relating the observed backscatter to retrieve the relative soil moisture or “wetness” in percent as shown in @fig-change.
+
+![Change detection method for retrieving surface soil moisture.](assets/images/ssm_retrieval_change_detection.png){#fig-change}
+
+For the examples we will show a subset of data over Austria. In Austria, two prominent challenges for soil moisture occur, these include:
+
+- Pronounced geometric effects from varying viewing angles due to the variable topography in and around the Alps.
+- Strong vegetation cover over dense forests.
+
+In the Soil Moisture Product developed for GHG-Kit we address these challenges, using **radio metric terrain-corrected backscatter** data to “flatten” the terrain and static spatial filtering of **dense vegetation** at high resolution (See Supplement).
+
+In the following lines we load a subset of the soil moisture dataset with `xarray`, which is stored as an Zarr archive.
+
+```{python}
+SSM_dc = xr.open_zarr(RESOURCES / "SSM-CD-SIG40-R-DVEG_2018.zarr/")
+SSM_dc
+```
+
+We resample this dataset along the time dimension thereby aggregating surface soil moisture as mean values over months.
+
+```{python}
+SSM_dc_monthly = SSM_dc.resample(time="ME").mean()
+SSM_dc_monthly
+```
+
+## How (not) to color your Map
+
+Now we are ready to plot the monthly soil moisture data on a map. To plot one variable like soil moisture on the x (longitude) and y (latitude) dimensions requires finding a good representation in a 3D colorspace. This is also referred to as pseudocoloring: a method for revealing aspects of the data over a continuous plane. For effective pseudocoloring we need to find the correct colormap.  We can ask our selves the following questions:
+
+- What do we know about the data. Is there e.g. a critical value to which compare the data?
+- Is there a intuitive color scheme that nicely translates to the variable including the distribution of the data.
+
+We can choose from the following types of colormaps:
+
+- Sequential: steps in the variable space are equal to steps in color space (uniform colormaps).
+- Diverging: if we have a critical middle value to which we want to compare the data.
+- Qualitative: if we have unordered categorical data.
+
+## The Bad
+
+In the following maps we can see what can go wrong when don't take these aspects into consideration.
+
+```{python}
+#| label: fig-seismic
+#| fig-cap: "Monthly aggregated surface soil moisture (%) for January, April, July and October of 2018 retrieved with the TU Wien algorithm developed for the GHG-Kit project. Maps created with EOmaps [@quast_getting_2024]."
+view_monthly_ssm(SSM_dc_monthly, "seismic")
+```
+
+What went wrong in the above maps? The first mistake is that we took a diverging colormap, although the data does not have a critical middle value. The sharp contrast between the blue an red further make it appear as if the data is binary, but in reality we have uniformly spaced values from a sample distribution that approximates a normal distribution (as can be seen form the histograms). On top of that, we have picked a colormap which includes white. There is also information in what we don't see on these map: e.g. missing data points. But by choosing to include white we give the false impression of missing data where we actually have a soil moisture saturation of 50%.
+
+## The Ugly
+
+Let's fix the first problem. We do this by choosing the sequential "viridis" colormap. In this colormap the color is a linear function of the variable with a very wide perceptual range (e.g. it is very colorful). Viridis is, furthermore, colorblindness friendly and prints well in grayscale whilst preserving perceptual uniformity and breadth of the range.
+
+```{python}
+#| label: fig-viridis
+#| fig-cap: "Monthly aggregated surface soil moisture (%) for January, April, July and October of 2018 retrieved with the TU Wien algorithm developed for the GHG-Kit project. Maps created with EOmaps [@quast_getting_2024]."
+view_monthly_ssm(SSM_dc_monthly, "viridis")
+```
+
+This colormap fixes the previous issues. We see much more nuance in the variance of soil moisture. Foremost we also see that we have actual missing data points. There is a whole area in the Alps that is not well covered. This is actually a well known effect of the measurement technique. We cannot address all geometric effects with radiometric terrain correction in microwave remote sensing. In very steep regions like the Alps, we still have to mask the data due to shadowing and layover effects. Shadowing occurs when the terrain is so steep that it blocks the view of subsequent points, preventing any measurements and obstructing scene reconstruction (See Supplement for more information). 
+
+## The Good
+
+This last step is more subjective and relates to the psychology of colors: the multiple meanings and feelings that people associated with a color. Here we use a linear color gradient developed by TU Wien from brown for dry soils to blue for wet soils.
+
+```{python}
+#| label: fig-custom
+#| fig-cap: "Monthly aggregated surface soil moisture (%) for January, April, July and October of 2018 retrieved with the TU Wien algorithm developed for the GHG-Kit project. Maps created with EOmaps [@quast_getting_2024]."
+SSM_CMAP = load_cmap(RESOURCES / "colour-tables/ssm-continuous.ct")
+view_monthly_ssm(SSM_dc_monthly, SSM_CMAP)
+```
+
+In this last rendition of the maps we have a nice linear relation between color and soil moisture, where the brown color evokes images of dried-out soils and the blues of water saturated conditions.
+
+---
+
+## Supplement
+
+### Radiometric Terrain Correction
+Microwave backscatter has a strong dependency on the viewing angle, meaning that the backscatter measured varies a lot depending on the angle we are a looking at the ground. The incident angle under which the ground is viewed from a Sentinel-1 sensor, depends on its orbit. To correct for this, @bauer-marschallinger_toward_2019 developed a method to normalise to a common incident angle of 40 degrees. However, this method assumes relatively flat topography and can fail in steep and varied terrain. Therefore, we use a high-resolution digital elevation model (DEM) to correct the backscatter at high resolution before up-sampling to 500 meters and normalizing to the common incident angle.
+
+### Dense Vegetation Filtering
+Dense vegetation can obstruct the signal from the soil, or it might be so weak that it’s indistinguishable from noise. To amplify the signal over densely vegetated areas @massart_mitigating_2024 developed a spatial filtering method to mask dense vegetation at high resolution before up-sampling to 500 m. By doing this the 500 m pixel contains a stronger signal from the soil, facilitating easier soil moisture retrieval.
+
+### Shadowing and Layover
+Layover occurs because microwave radar measures the distance between the sensor and a point on the ground. In very steep and high terrain, the terrain is “closer” to the sensor, shortening the measured distance and causing the point to appear before others in the raster.

@@ -57,3 +57,16 @@ venv
 # data
 data/SSM-CD-SIG40-R-DVEG_2018.zarr.zip
 data/SSM-CD-SIG40-R-DVEG_2018.zarr
+
+/.quarto/
+_book/
+_freeze/
+01_notebook_as_an_app_files/
+02_counterexample_files/
+01_notebook_as_an_app.de_files/
+02_counterexample.de_files/
+*.html
+
+.jupyter_cache/
+
+.Rproj.user

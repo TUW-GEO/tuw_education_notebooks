@@ -1,0 +1,32 @@
+project:
+  type: book
+
+book:
+  site-url: /home/mschobbe/Documents/projects/tuw_education_notebooks/_book/
+  title: "Teaching and Learning EO with Jupyter"
+  date: "6/3/2024"
+  chapters:
+    - index.qmd
+    - 01_notebook_as_an_app.qmd
+    - 02_counterexample.qmd
+    - references.qmd
+
+bibliography: references.bib
+
+format:
+  html:
+    theme: cosmo
+
+execute:
+  freeze: auto
+
+babelquarto:
+  languagecodes:
+  - name: de
+    text: "Version in de"
+  - name: en
+    text: "Version in en"
+  mainlanguage: 'en'
+  languages: ['de']
+title-de: "Lehren und Lernen von EO mit Jupyter"
+lang: en
