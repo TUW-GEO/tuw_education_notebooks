@@ -1,3 +1,5 @@
 # Preface {.unnumbered}
 
 This is a demonstration of the EODC/TU Wien JupyterHub with edcuational notebooks describing some common research patterns. The examples used represent some of the main research lines of the Remote Sensing Unit at the Department of Geodesy and Geoinformation at the TU Wien.
+
+![](assets/images/frontmatter-jupyhub.png){width=70%}

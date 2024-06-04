@@ -71,3 +71,4 @@ site_libs/
 .jupyter_cache/
 
 .Rproj.user
+assets/images/frontmatter-jupyhub.svg

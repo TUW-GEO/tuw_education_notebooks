@@ -1,3 +1,5 @@
 # Vorwort {.unnumbered}
 
 Dies ist eine Demonstration des EODC/TU Wien JupyterHub mit Edcuational Notebooks, die einige gängige Forschungsmuster beschreiben. Die verwendeten Beispiele repräsentieren einige der Hauptforschungslinien der Abteilung für Fernerkundung am Department für Geodäsie und Geoinformation der TU Wien.
+
+![](assets/images/frontmatter-jupyhub.png){width=70%}
