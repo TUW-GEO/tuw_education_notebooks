@@ -7,6 +7,7 @@ jupyter:
     language: "python"
     display_name: "tuw_education_notebooks"
 keep-ipynb: true
+code-fold: true
 ---
 
 [![](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/MartinSchobben/tuw_education_notebooks/15bcbc542b9c50306617af6f796bb6c8fd4fcf0d?urlpath=lab%2Ftree%2F01_notebook_as_an_app.ipynb)
@@ -33,15 +34,23 @@ In the following lines we create a map with EOmaps [@quast_getting_2024] of the 
 ```{python}
 #| label: fig-area
 #| fig-cap: "Area targeted for $\\sigma^0$ backscattering is the Greek region of Thessaly, which experienced a major flood in February of 2018."
-
-m = Maps(ax=121, figsize=(12, 9), crs=Maps.CRS.Equi7_EU)
+m = Maps(ax=121, crs=Maps.CRS.Equi7_EU)
 m.set_data(data=sig0_dc, x="x", y="y", parameter="SIG0", crs=Maps.CRS.Equi7_EU)
 m.plot_map()
-m.add_colorbar(label="$\sigma^0$ (dB)", pos=(0.1, 0.02, 0.8, 0.1))
+m.add_colorbar(label="$\sigma^0$ (dB)", orientation="vertical")
 m.add_scalebar(n=5)
 m2 = m.new_map(ax=122, crs=Maps.CRS.Equi7_EU)
 m2.set_extent(m.get_extent())
 m2.add_wms.OpenStreetMap.add_layer.default()
+m.apply_layout(
+    {
+        'figsize': [7.5, 5.25],
+        '0_map': [0.05, 0.18, 0.35, 0.64],
+        '1_cb': [0.8125, 0.1, 0.1, 0.8],
+        '1_cb_histogram_size': 0.8,
+        '2_map': [0.4375, 0.18, 0.35, 0.64]
+        }
+    )
 m.show()
 ```
 
@@ -84,7 +93,7 @@ view_bayes_flood(sig0_dc)
 
 Having calculated the likelihoods, we can now move on to calculate the probability of (non-)flooding given a pixel's $\sigma^0$. These so-called "posteriors" need on more piece of information as can be seen in the equation above. We need the probability whether a pixel is flooded $P(F)$ or non-flooded $P(NF)$. We can of course not estimate this information precisely, so our best estimate is that the chance of flooding versus non-flooding of a pixel is 50-50: a coin flip. This subjective prior believe is a fundament of Bayesian statistics and we use the likelihood to updated our believe in this particular hypothesis. We now can also calculate the probability of backscattering $P(\sigma^0)$, as the weighted average of the water and land likelihoods. The latter ensures that our updated evidence (or posteriors) ranges between 0 to 1.
 
-The following code block show how we calculate the priors.
+The following code block shows how we calculate the priors.
 
 ```{python}
 def calc_posteriors(water_likelihood, land_likelihood):

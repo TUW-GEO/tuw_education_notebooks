@@ -7,6 +7,7 @@ jupyter:
     language: "python"
     display_name: "tuw_education_notebooks"
 keep-ipynb: true
+code-fold: true
 lang: de
 ---
 
@@ -34,14 +35,23 @@ In den folgenden Zeilen erstellen wir mit EOmaps [@quast_getting_2024] eine Kart
 ```{python}
 #| label: fig-area
 #| fig-cap: "Zielgebiet der $\\sigma^0$-Rückstreuung ist die griechische Region Thessalien, die im Februar 2018 von einer großen Überschwemmung betroffen war."
-m = Maps(ax=121, figsize=(12, 9), crs=Maps.CRS.Equi7_EU)
+m = Maps(ax=121, crs=Maps.CRS.Equi7_EU)
 m.set_data(data=sig0_dc, x="x", y="y", parameter="SIG0", crs=Maps.CRS.Equi7_EU)
 m.plot_map()
-m.add_colorbar(label="$\sigma^0$ (dB)", pos=(0.1, 0.02, 0.8, 0.1))
+m.add_colorbar(label="$\sigma^0$ (dB)", orientation="vertical")
 m.add_scalebar(n=5)
 m2 = m.new_map(ax=122, crs=Maps.CRS.Equi7_EU)
 m2.set_extent(m.get_extent())
 m2.add_wms.OpenStreetMap.add_layer.default()
+m.apply_layout(
+    {
+        'figsize': [7.5, 5.25],
+        '0_map': [0.05, 0.18, 0.35, 0.64],
+        '1_cb': [0.8125, 0.1, 0.1, 0.8],
+        '1_cb_histogram_size': 0.8,
+        '2_map': [0.4375, 0.18, 0.35, 0.64]
+        }
+    )
 m.show()
 ```
 

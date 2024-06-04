@@ -9,6 +9,7 @@ jupyter:
 keep-ipynb: true
 execute: 
   cache: true
+code-fold: true
 ---
 
 [![](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/MartinSchobben/tuw_education_notebooks/15bcbc542b9c50306617af6f796bb6c8fd4fcf0d?urlpath=lab%2Ftree%2F02_counterexample.ipynb)

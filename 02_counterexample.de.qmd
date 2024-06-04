@@ -9,6 +9,7 @@ jupyter:
 keep-ipynb: true
 execute: 
   cache: true
+code-fold: true
 lang: de
 ---
 
