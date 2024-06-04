@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>file:///home/mschobbe/Documents/projects/tuw_education_notebooks/_book/01_notebook_as_an_app.html</loc>
-    <lastmod>2024-06-04T09:31:47.062Z</lastmod>
+    <loc>https://tuw-geo.github.io/tuw_education_notebooks/index.html</loc>
+    <lastmod>2024-06-04T09:40:30.730Z</lastmod>
   </url>
   <url>
-    <loc>file:///home/mschobbe/Documents/projects/tuw_education_notebooks/_book/02_counterexample.html</loc>
-    <lastmod>2024-06-04T08:17:12.500Z</lastmod>
+    <loc>https://tuw-geo.github.io/tuw_education_notebooks/01_notebook_as_an_app.html</loc>
+    <lastmod>2024-06-04T09:49:37.262Z</lastmod>
   </url>
   <url>
-    <loc>file:///home/mschobbe/Documents/projects/tuw_education_notebooks/_book/references.html</loc>
-    <lastmod>2024-06-04T07:35:00.849Z</lastmod>
+    <loc>https://tuw-geo.github.io/tuw_education_notebooks/02_counterexample.html</loc>
+    <lastmod>2024-06-04T09:49:41.054Z</lastmod>
   </url>
   <url>
-    <loc>https://TUW-GEO.github.io/tuw_education_notebooks/02_counterexample.html</loc>
-    <lastmod>2024-06-04T08:17:12.500Z</lastmod>
+    <loc>https://tuw-geo.github.io/tuw_education_notebooks/references.html</loc>
+    <lastmod>2024-06-04T09:40:30.730Z</lastmod>
   </url>
 </urlset>
