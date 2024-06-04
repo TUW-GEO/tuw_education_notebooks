@@ -6,7 +6,7 @@ These are some showcases of educational Jupyter notebooks that include the main 
 
 ## Static webpage
 
-Follow the [](https://tuw-geo.github.io/tuw_education_notebooks/) for a static webpage of the notebooks content.
+Follow the [link](https://tuw-geo.github.io/tuw_education_notebooks/) for a static webpage of the notebooks content.
 
 ## Launch Binder
 
