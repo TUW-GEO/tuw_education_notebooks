@@ -16,7 +16,6 @@ def load_cmap(file: Path) -> LinearSegmentedColormap:
 
 def view_monthly_ssm(monthly_datacube, cmap):
 
-    monthly_datacube = monthly_datacube.coarsen(x=10, y=10).mean()
     m = Maps(ax=221,  crs=Maps.CRS.Equi7_EU)
     m2 = m.new_map(ax=222, crs=Maps.CRS.Equi7_EU)
     m3 = m.new_map(ax=223, crs=Maps.CRS.Equi7_EU)
@@ -30,6 +29,7 @@ def view_monthly_ssm(monthly_datacube, cmap):
         dt = np.datetime_as_string(monthly_datacube.isel(time=STEPS[i]).time.to_numpy(), unit='D')
         j.add_title(dt)
         j.set_data(monthly_datacube.isel(time=STEPS[i]), x="x", y="y", parameter="band_data", crs=Maps.CRS.Equi7_EU)
+        j.set_shape.shade_raster()
         j.plot_map(cmap=cmap, zorder=3)
         j.add_colorbar(label="surface soil moisture (%)", orientation="vertical")
 
