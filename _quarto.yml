@@ -2,7 +2,7 @@ project:
   type: book
 
 book:
-  site-url: /home/mschobbe/Documents/projects/tuw_education_notebooks/_book/
+  site-url: https://TUW-GEO.github.io/tuw_education_notebooks/
   title: "Teaching and Learning EO with Jupyter"
   date: "6/3/2024"
   chapters:

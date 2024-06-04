@@ -11,6 +11,7 @@ code-fold: true
 lang: de
 ---
 
+
 [![](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/MartinSchobben/tuw_education_notebooks/15bcbc542b9c50306617af6f796bb6c8fd4fcf0d?urlpath=lab%2Ftree%2F01_notebook_as_an_app.ipynb)
 
 ![Bild vom [wikipedia](https://upload.wikimedia.org/wikipedia/commons/d/d4/Thomas_Bayes.gif)](https://upload.wikimedia.org/wikipedia/commons/d/d4/Thomas_Bayes.gif)
@@ -87,6 +88,7 @@ Die Vorwärtswahrscheinlichkeit von $\sigma^0$ bei Überschwemmung ($P(\sigma^0|
 Diese so genannten Wahrscheinlichkeiten $P(\sigma^0|F)$ und $P(\sigma^0|NF)$ lassen sich also aus den Rückstreuungsinformationen der Vergangenheit berechnen. Ohne auf die Einzelheiten der Berechnung dieser Wahrscheinlichkeiten einzugehen, kann man durch einem **Klick** auf ein Pixel der Karte die Wahrscheinlichkeiten dafür darstellen, dass $\sigma^0$ von Land oder Wasser bestimmt wird.
 
 ```{python}
+#| label: fig-lik
 #| fig-cap: Wahrscheinlichkeiten dafür, dass $\\sigma^0$ mit Land oder Wasser assoziiert ist, für 1 Pixel im griechischen Gebiet von Thessalien. Die Wahrscheinlichkeiten werden über einen Bereich von $\\sigma^0$ berechnet. Der beobachtete $\\sigma^0$ des Pixels ist durch eine vertikale Linie dargestellt. Klicken Sie auf die Karte, um diese Abbildung für ein anderes Pixel im Untersuchungsgebiet neu zu berechnen und zu aktualisieren. Die Karte wurde mit EOmaps [@quast_getting_2024] erstellt.
 view_bayes_flood(sig0_dc)
 ```
