@@ -1,12 +1,11 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="de" xml:lang="de">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.4.554">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-<meta name="dcterms.date" content="2024-06-03">
-<title>Teaching and Learning EO with Jupyter</title>
+<title>Lehren und Lernen von EO mit Jupyter</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,7 +20,7 @@ ul.task-list li input[type="checkbox"] {
 }
 </style>
 <script src="site_libs/quarto-nav/quarto-nav.js"></script><script src="site_libs/quarto-nav/headroom.min.js"></script><script src="site_libs/clipboard/clipboard.min.js"></script><script src="site_libs/quarto-search/autocomplete.umd.js"></script><script src="site_libs/quarto-search/fuse.min.js"></script><script src="site_libs/quarto-search/quarto-search.js"></script><meta name="quarto:offset" content="./">
-<link href="./01_notebook_as_an_app.html" rel="next">
+<link href="./01_notebook_as_an_app.de.html" rel="next">
 <script src="site_libs/quarto-html/quarto.js"></script><script src="site_libs/quarto-html/popper.min.js"></script><script src="site_libs/quarto-html/tippy.umd.min.js"></script><script src="site_libs/quarto-html/anchor.min.js"></script><link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script><link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
@@ -40,17 +39,17 @@ ul.task-list li input[type="checkbox"] {
   ],
   "show-item-context": false,
   "language": {
-    "search-no-results-text": "No results",
-    "search-matching-documents-text": "matching documents",
-    "search-copy-link-title": "Copy link to search",
-    "search-hide-matches-text": "Hide additional matches",
-    "search-more-match-text": "more match in this document",
-    "search-more-matches-text": "more matches in this document",
-    "search-clear-button-title": "Clear",
+    "search-no-results-text": "Keine Treffer",
+    "search-matching-documents-text": "Treffer",
+    "search-copy-link-title": "Link in die Suche kopieren",
+    "search-hide-matches-text": "Zusätzliche Treffer verbergen",
+    "search-more-match-text": "weitere Treffer in diesem Dokument",
+    "search-more-matches-text": "weitere Treffer in diesem Dokument",
+    "search-clear-button-title": "Zurücksetzen",
     "search-text-placeholder": "",
-    "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit",
-    "search-label": "Search"
+    "search-detached-cancel-button-title": "Abbrechen",
+    "search-submit-button-title": "Abschicken",
+    "search-label": "Suchen"
   }
 }</script>
 </head>
@@ -58,10 +57,10 @@ ul.task-list li input[type="checkbox"] {
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top"><nav class="quarto-secondary-nav"><div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Seitenleiste umschalten" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Preface</a></li></ol></nav><a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.de.html">Vorwort</a></li></ol></nav><a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Seitenleiste umschalten" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
@@ -71,41 +70,41 @@ ul.task-list li input[type="checkbox"] {
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto"><div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="./">Teaching and Learning EO with Jupyter</a> 
+      <a href="./">Lehren und Lernen von EO mit Jupyter</a> 
     </div>
       </div>
 <div class="dropdown" id="languages-links-parent">
-<button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" id="languages-button"><i class="bi bi-globe2"></i></button><ul class="dropdown-menu" id="languages-links"><a class="dropdown-item" href="https://tuw-geo.github.io/tuw_education_notebooks/de/index.de.html" id="language-link-de">Version in de</a></ul>
+<button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" id="languages-button"><i class="bi bi-globe2"></i></button><ul class="dropdown-menu" id="languages-links"><a class="dropdown-item" href="https://tuw-geo.github.io/tuw_education_notebooks/index.html" id="language-link-en">Version in en</a></ul>
 </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
         <div class="sidebar-search">
-        <div id="quarto-search" class="" title="Search"></div>
+        <div id="quarto-search" class="" title="Suchen"></div>
         </div>
         </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Preface</span></a>
+  <a href="./index.de.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Vorwort</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./01_notebook_as_an_app.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>  <span class="chapter-title">Reverend Bayes updates our Believe in Flood Detection</span></span></a>
+  <a href="./01_notebook_as_an_app.de.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>  <span class="chapter-title">Reverend Bayes aktualisiert unser Glauben an Flood Detection</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./02_counterexample.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>  <span class="chapter-title">How to color your Map: The Good, the Bad and the Ugly</span></span></a>
+  <a href="./02_counterexample.de.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>  <span class="chapter-title">Wie man seine Karte einfärbt: Das Gute, das Schlechte und das Hässliche</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./references.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">References</span></a>
+  <a href="./references.de.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Referenzen</span></a>
   </div>
 </li>
     </ul>
@@ -113,15 +112,15 @@ ul.task-list li input[type="checkbox"] {
 </nav><div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">Table of contents</h2>
+        <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">Inhaltsverzeichnis</h2>
    
   <ul>
-<li><a href="#preface" id="toc-preface" class="nav-link active" data-scroll-target="#preface">Preface</a></li>
+<li><a href="#vorwort" id="toc-vorwort" class="nav-link active" data-scroll-target="#vorwort">Vorwort</a></li>
   </ul></nav>
 </div>
 <!-- main -->
 <main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
-<h1 class="title">Teaching and Learning EO with Jupyter</h1>
+<h1 class="title">Lehren und Lernen von EO mit Jupyter</h1>
 </div>
 
 
@@ -130,9 +129,9 @@ ul.task-list li input[type="checkbox"] {
 
     
     <div>
-    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-heading">Veröffentlichungsdatum</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">June 3, 2024</p>
+      <p class="date">3. Juni 2024</p>
     </div>
   </div>
   
@@ -141,8 +140,8 @@ ul.task-list li input[type="checkbox"] {
   
 
 
-</header><section id="preface" class="level1 unnumbered"><h1 class="unnumbered">Preface</h1>
-<p>This is a demonstration of the EODC/TU Wien JupyterHub with edcuational notebooks describing some common research patterns. The examples used represent some of the main research lines of the Remote Sensing Unit at the Department of Geodesy and Geoinformation at the TU Wien.</p>
+</header><section id="vorwort" class="level1 unnumbered"><h1 class="unnumbered">Vorwort</h1>
+<p>Dies ist eine Demonstration des EODC/TU Wien JupyterHub mit Edcuational Notebooks, die einige gängige Forschungsmuster beschreiben. Die verwendeten Beispiele repräsentieren einige der Hauptforschungslinien der Abteilung für Fernerkundung am Department für Geodäsie und Geoinformation der TU Wien.</p>
 <p><img src="assets/images/frontmatter-jupyhub.png" class="img-fluid" style="width:70.0%"></p>
 
 
@@ -200,12 +199,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // flash "checked"
     button.classList.add('code-copy-button-checked');
     var currentTitle = button.getAttribute("title");
-    button.setAttribute("title", "Copied!");
+    button.setAttribute("title", "Kopiert");
     let tooltip;
     if (window.bootstrap) {
       button.setAttribute("data-bs-toggle", "tooltip");
       button.setAttribute("data-bs-placement", "left");
-      button.setAttribute("data-bs-title", "Copied!");
+      button.setAttribute("data-bs-title", "Kopiert");
       tooltip = new bootstrap.Tooltip(button, 
         { trigger: "manual", 
           customClass: "code-copy-button-tooltip",
@@ -557,8 +556,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script><nav class="page-navigation"><div class="nav-page nav-page-previous">
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./01_notebook_as_an_app.html" class="pagination-link" aria-label="Reverend Bayes updates our Believe in Flood Detection">
-        <span class="nav-page-text"><span class="chapter-number">1</span>  <span class="chapter-title">Reverend Bayes updates our Believe in Flood Detection</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./01_notebook_as_an_app.de.html" class="pagination-link" aria-label="Reverend Bayes aktualisiert unser Glauben an Flood Detection">
+        <span class="nav-page-text"><span class="chapter-number">1</span>  <span class="chapter-title">Reverend Bayes aktualisiert unser Glauben an Flood Detection</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

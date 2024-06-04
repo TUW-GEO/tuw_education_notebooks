@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="de" xml:lang="de">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.4.554">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-<title>Teaching and Learning EO with Jupyter - 2  How to color your Map: The Good, the Bad and the Ugly</title>
+<title>Lehren und Lernen von EO mit Jupyter - 2  Wie man seine Karte einfärbt: Das Gute, das Schlechte und das Hässliche</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -74,8 +74,8 @@ div.csl-indent {
   margin-left: 2em;
 }</style>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="site_libs/quarto-nav/quarto-nav.js"></script><script src="site_libs/quarto-nav/headroom.min.js"></script><script src="site_libs/clipboard/clipboard.min.js"></script><script src="site_libs/quarto-search/autocomplete.umd.js"></script><script src="site_libs/quarto-search/fuse.min.js"></script><script src="site_libs/quarto-search/quarto-search.js"></script><meta name="quarto:offset" content="./">
-<link href="./references.html" rel="next">
-<link href="./01_notebook_as_an_app.html" rel="prev">
+<link href="./references.de.html" rel="next">
+<link href="./01_notebook_as_an_app.de.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script><script src="site_libs/quarto-html/popper.min.js"></script><script src="site_libs/quarto-html/tippy.umd.min.js"></script><script src="site_libs/quarto-html/anchor.min.js"></script><link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script><link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
@@ -94,17 +94,17 @@ div.csl-indent {
   ],
   "show-item-context": false,
   "language": {
-    "search-no-results-text": "No results",
-    "search-matching-documents-text": "matching documents",
-    "search-copy-link-title": "Copy link to search",
-    "search-hide-matches-text": "Hide additional matches",
-    "search-more-match-text": "more match in this document",
-    "search-more-matches-text": "more matches in this document",
-    "search-clear-button-title": "Clear",
+    "search-no-results-text": "Keine Treffer",
+    "search-matching-documents-text": "Treffer",
+    "search-copy-link-title": "Link in die Suche kopieren",
+    "search-hide-matches-text": "Zusätzliche Treffer verbergen",
+    "search-more-match-text": "weitere Treffer in diesem Dokument",
+    "search-more-matches-text": "weitere Treffer in diesem Dokument",
+    "search-clear-button-title": "Zurücksetzen",
     "search-text-placeholder": "",
-    "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit",
-    "search-label": "Search"
+    "search-detached-cancel-button-title": "Abbrechen",
+    "search-submit-button-title": "Abschicken",
+    "search-label": "Suchen"
   }
 }</script><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script><script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 </head>
@@ -112,10 +112,10 @@ div.csl-indent {
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top"><nav class="quarto-secondary-nav"><div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Seitenleiste umschalten" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./02_counterexample.html"><span class="chapter-number">2</span>  <span class="chapter-title">How to color your Map: The Good, the Bad and the Ugly</span></a></li></ol></nav><a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./02_counterexample.de.html"><span class="chapter-number">2</span>  <span class="chapter-title">Wie man seine Karte einfärbt: Das Gute, das Schlechte und das Hässliche</span></a></li></ol></nav><a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Seitenleiste umschalten" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
@@ -125,41 +125,41 @@ div.csl-indent {
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto"><div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="./">Teaching and Learning EO with Jupyter</a> 
+      <a href="./">Lehren und Lernen von EO mit Jupyter</a> 
     </div>
       </div>
 <div class="dropdown" id="languages-links-parent">
-<button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" id="languages-button"><i class="bi bi-globe2"></i></button><ul class="dropdown-menu" id="languages-links"><a class="dropdown-item" href="https://tuw-geo.github.io/tuw_education_notebooks/de/02_counterexample.de.html" id="language-link-de">Version in de</a></ul>
+<button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" id="languages-button"><i class="bi bi-globe2"></i></button><ul class="dropdown-menu" id="languages-links"><a class="dropdown-item" href="https://tuw-geo.github.io/tuw_education_notebooks/02_counterexample.html" id="language-link-en">Version in en</a></ul>
 </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
         <div class="sidebar-search">
-        <div id="quarto-search" class="" title="Search"></div>
+        <div id="quarto-search" class="" title="Suchen"></div>
         </div>
         </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Preface</span></a>
+  <a href="./index.de.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Vorwort</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./01_notebook_as_an_app.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>  <span class="chapter-title">Reverend Bayes updates our Believe in Flood Detection</span></span></a>
+  <a href="./01_notebook_as_an_app.de.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>  <span class="chapter-title">Reverend Bayes aktualisiert unser Glauben an Flood Detection</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./02_counterexample.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">2</span>  <span class="chapter-title">How to color your Map: The Good, the Bad and the Ugly</span></span></a>
+  <a href="./02_counterexample.de.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">2</span>  <span class="chapter-title">Wie man seine Karte einfärbt: Das Gute, das Schlechte und das Hässliche</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./references.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">References</span></a>
+  <a href="./references.de.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Referenzen</span></a>
   </div>
 </li>
     </ul>
@@ -167,21 +167,21 @@ div.csl-indent {
 </nav><div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">Table of contents</h2>
+        <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">Inhaltsverzeichnis</h2>
    
   <ul>
-<li><a href="#science-and-art" id="toc-science-and-art" class="nav-link active" data-scroll-target="#science-and-art"><span class="header-section-number">2.1</span> Science and Art</a></li>
-  <li><a href="#tu-wien-surface-soil-moisture-developed-for-ghg-kit" id="toc-tu-wien-surface-soil-moisture-developed-for-ghg-kit" class="nav-link" data-scroll-target="#tu-wien-surface-soil-moisture-developed-for-ghg-kit"><span class="header-section-number">2.2</span> TU Wien Surface Soil Moisture developed for GHG-Kit</a></li>
-  <li><a href="#how-not-to-color-your-map" id="toc-how-not-to-color-your-map" class="nav-link" data-scroll-target="#how-not-to-color-your-map"><span class="header-section-number">2.3</span> How (not) to color your Map</a></li>
-  <li><a href="#the-bad" id="toc-the-bad" class="nav-link" data-scroll-target="#the-bad"><span class="header-section-number">2.4</span> The Bad</a></li>
-  <li><a href="#the-ugly" id="toc-the-ugly" class="nav-link" data-scroll-target="#the-ugly"><span class="header-section-number">2.5</span> The Ugly</a></li>
-  <li><a href="#the-good" id="toc-the-good" class="nav-link" data-scroll-target="#the-good"><span class="header-section-number">2.6</span> The Good</a></li>
+<li><a href="#wissenschaft-und-kunst" id="toc-wissenschaft-und-kunst" class="nav-link active" data-scroll-target="#wissenschaft-und-kunst"><span class="header-section-number">2.1</span> Wissenschaft und Kunst</a></li>
+  <li><a href="#tu-wien-oberfl%C3%A4chen-bodenfeuchte-entwickelt-f%C3%BCr-ghg-kit" id="toc-tu-wien-oberflächen-bodenfeuchte-entwickelt-für-ghg-kit" class="nav-link" data-scroll-target="#tu-wien-oberflächen-bodenfeuchte-entwickelt-für-ghg-kit"><span class="header-section-number">2.2</span> TU Wien Oberflächen-Bodenfeuchte entwickelt für GHG-Kit</a></li>
+  <li><a href="#wie-man-seine-karte-nicht-einf%C3%A4rbt" id="toc-wie-man-seine-karte-nicht-einfärbt" class="nav-link" data-scroll-target="#wie-man-seine-karte-nicht-einfärbt"><span class="header-section-number">2.3</span> Wie man seine Karte (nicht) einfärbt</a></li>
+  <li><a href="#das-schlechte" id="toc-das-schlechte" class="nav-link" data-scroll-target="#das-schlechte"><span class="header-section-number">2.4</span> Das Schlechte</a></li>
+  <li><a href="#das-h%C3%A4ssliche" id="toc-das-hässliche" class="nav-link" data-scroll-target="#das-hässliche"><span class="header-section-number">2.5</span> Das Hässliche</a></li>
+  <li><a href="#das-gute" id="toc-das-gute" class="nav-link" data-scroll-target="#das-gute"><span class="header-section-number">2.6</span> Das Gute</a></li>
   <li>
-<a href="#supplement" id="toc-supplement" class="nav-link" data-scroll-target="#supplement"><span class="header-section-number">2.7</span> Supplement</a>
+<a href="#anhang" id="toc-anhang" class="nav-link" data-scroll-target="#anhang"><span class="header-section-number">2.7</span> Anhang</a>
   <ul class="collapse">
-<li><a href="#radiometric-terrain-correction" id="toc-radiometric-terrain-correction" class="nav-link" data-scroll-target="#radiometric-terrain-correction"><span class="header-section-number">2.7.1</span> Radiometric Terrain Correction</a></li>
-  <li><a href="#dense-vegetation-filtering" id="toc-dense-vegetation-filtering" class="nav-link" data-scroll-target="#dense-vegetation-filtering"><span class="header-section-number">2.7.2</span> Dense Vegetation Filtering</a></li>
-  <li><a href="#shadowing-and-layover" id="toc-shadowing-and-layover" class="nav-link" data-scroll-target="#shadowing-and-layover"><span class="header-section-number">2.7.3</span> Shadowing and Layover</a></li>
+<li><a href="#radiometrische-gel%C3%A4ndekorrektur" id="toc-radiometrische-geländekorrektur" class="nav-link" data-scroll-target="#radiometrische-geländekorrektur"><span class="header-section-number">2.7.1</span> Radiometrische Geländekorrektur</a></li>
+  <li><a href="#filterung-von-dichter-vegetation" id="toc-filterung-von-dichter-vegetation" class="nav-link" data-scroll-target="#filterung-von-dichter-vegetation"><span class="header-section-number">2.7.2</span> Filterung von dichter Vegetation</a></li>
+  <li><a href="#abschattung-und-%C3%BCberlagerung" id="toc-abschattung-und-überlagerung" class="nav-link" data-scroll-target="#abschattung-und-überlagerung"><span class="header-section-number">2.7.3</span> Abschattung und Überlagerung</a></li>
   </ul>
 </li>
   </ul></nav>
@@ -189,9 +189,9 @@ div.csl-indent {
 <!-- main -->
 <main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
 <h1 class="title">
-<span class="chapter-number">2</span>  <span class="chapter-title">How to color your Map: The Good, the Bad and the Ugly</span>
+<span class="chapter-number">2</span>  <span class="chapter-title">Wie man seine Karte einfärbt: Das Gute, das Schlechte und das Hässliche</span>
 </h1>
-<p class="subtitle lead">An example using TU Wien Surface Soil Moisture developed for GHG-Kit</p>
+<p class="subtitle lead">Ein Beispiel unter Verwendung der TU Wien Bodenfeuchte, entwickelt für GHG-Kit</p>
 </div>
 
 
@@ -205,44 +205,44 @@ div.csl-indent {
   
 
 
-</header><p><a href="https://mybinder.org/v2/gh/tuw-geo/tuw_education_notebooks/15bcbc542b9c50306617af6f796bb6c8fd4fcf0d?urlpath=lab%2Ftree%2F02_counterexample.ipynb"><img src="https://img.shields.io/badge/launch-jupyter-blue.png" class="img-fluid"></a></p>
+</header><p><a href="https://mybinder.org/v2/gh/tuw-geo/tuw_education_notebooks/15bcbc542b9c50306617af6f796bb6c8fd4fcf0d?urlpath=lab%2Ftree%2F02_counterexample.de.ipynb"><img src="https://img.shields.io/badge/launch-jupyter-blue.png" class="img-fluid"></a></p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure"><p><img src="https://upload.wikimedia.org/wikipedia/en/4/45/Good_the_bad_and_the_ugly_poster.jpg" class="img-fluid figure-img"></p>
-<figcaption>Image from <a href="https://upload.wikimedia.org/wikipedia/en/4/45/Good_the_bad_and_the_ugly_poster.jpg">wikipedia</a></figcaption></figure>
+<figcaption>Bild vom <a href="https://upload.wikimedia.org/wikipedia/en/4/45/Good_the_bad_and_the_ugly_poster.jpg">wikipedia</a></figcaption></figure>
 </div>
-<div id="2eda68a9" class="cell" data-execution_count="2">
+<div id="62b0d839" class="cell" data-execution_count="1">
 <details class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> xarray <span class="im">as</span> xr</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pathlib <span class="im">import</span> Path</span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> tuw_education_notebooks.view_monthly_ssm <span class="im">import</span> view_monthly_ssm, load_cmap</span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>RESOURCES <span class="op">=</span> Path(<span class="st">"data"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>RESOURCES <span class="op">=</span> Path(<span class="st">"data"</span>)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
-<section id="science-and-art" class="level2" data-number="2.1"><h2 data-number="2.1" class="anchored" data-anchor-id="science-and-art">
-<span class="header-section-number">2.1</span> Science and Art</h2>
-<p>Data visualization depends on art to convey stories from data through the combination of geometric objects and color with science. In the ideal case the information should be easily extractable from the visualization, but at the same time the scientific elements should be to the point accurate. The latter is important as false graphical representations can lead to wrong perception and interpretation, which, in turn, leads to wrongful decision making. These mistakes can be made intentionally, and thus be fraudulent, but are more often innocent mistakes with potentially far reaching consequences. When plotting data on maps we have to consider even more aspects, like the geographic projection, grid types and mapping of variables as a third dimension to a suitable color space.</p>
-</section><section id="tu-wien-surface-soil-moisture-developed-for-ghg-kit" class="level2" data-number="2.2"><h2 data-number="2.2" class="anchored" data-anchor-id="tu-wien-surface-soil-moisture-developed-for-ghg-kit">
-<span class="header-section-number">2.2</span> TU Wien Surface Soil Moisture developed for GHG-Kit</h2>
-<p>For the examples in this notebook we will use soil moisture developed for GHG-Kit. To retrieve surface soil moisture data we exploit the general linear relationship between Sentinel-1 microwave backscattering and soil moisture. The change detection method developed at TU Wien can be summarised in the most simple terms by calculating the driest and wettest condition within a time period and then relating the observed backscatter to retrieve the relative soil moisture or “wetness” in percent as shown in <a href="#fig-change" class="quarto-xref">Figure <span>2.1</span></a>.</p>
+<section id="wissenschaft-und-kunst" class="level2" data-number="2.1"><h2 data-number="2.1" class="anchored" data-anchor-id="wissenschaft-und-kunst">
+<span class="header-section-number">2.1</span> Wissenschaft und Kunst</h2>
+<p>Die Datenvisualisierung stützt sich auf die Kunst, um durch die Kombination von geometrischen Objekten und Farben mit wissenschaftlichen Elementen Geschichten aus Daten zu vermitteln. Im Idealfall sollten die Informationen leicht aus der Visualisierung extrahierbar sein, aber gleichzeitig sollten die wissenschaftlichen Elemente auf den Punkt genau sein. Letzteres ist wichtig, da falsche grafische Darstellungen zu einer falschen Wahrnehmung und Interpretation führen können, was wiederum zu falschen Entscheidungen führt. Diese Fehler können absichtlich gemacht werden und somit betrügerisch sein, aber häufiger sind es unschuldige Fehler mit potenziell weitreichenden Folgen. Bei der Darstellung von Daten auf Karten müssen wir noch weitere Aspekte berücksichtigen, wie z. B. die geografische Projektion, Gittertypen und die Abbildung von Variablen als dritte Dimension in einem geeigneten Farbraum.</p>
+</section><section id="tu-wien-oberflächen-bodenfeuchte-entwickelt-für-ghg-kit" class="level2" data-number="2.2"><h2 data-number="2.2" class="anchored" data-anchor-id="tu-wien-oberflächen-bodenfeuchte-entwickelt-für-ghg-kit">
+<span class="header-section-number">2.2</span> TU Wien Oberflächen-Bodenfeuchte entwickelt für GHG-Kit</h2>
+<p>Für die Beispiele in diesem Notizbuch werden wir die für GHG-Kit entwickelte Bodenfeuchte verwenden. Um Daten über die Bodenfeuchte zu erhalten, nutzen wir die allgemeine lineare Beziehung zwischen der Sentinel-1-Mikrowellenrückstreuung und der Bodenfeuchte. Die an der TU Wien entwickelte Methode zur Erkennung von Veränderungen lässt sich in einfachen Worten so zusammenfassen, dass der trockenste und der feuchteste Zustand innerhalb eines Zeitraums berechnet wird und dann die beobachtete Rückstreuung in Beziehung gesetzt wird, um die relative Bodenfeuchte oder „Nässe“ in Prozent zu ermitteln, wie in <a href="#fig-change" class="quarto-xref">Abbildung <span>2.1</span></a> dargestellt.</p>
 <div id="fig-change" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-change-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="assets/images/ssm_retrieval_change_detection.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-change-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure 2.1: Change detection method for retrieving surface soil moisture.
+Abbildung 2.1: Methode zur Erkennung von Veränderungen bei der Bestimmung der Bodenfeuchtigkeit.
 </figcaption></figure>
 </div>
-<p>For the examples we will show a subset of data over Austria. In Austria, two prominent challenges for soil moisture occur, these include:</p>
+<p>Für die Beispiele werden wir eine Teilmenge von Daten über Österreich zeigen. In Österreich gibt es zwei große Herausforderungen für die Bodenfeuchte, nämlich:</p>
 <ul>
-<li>Pronounced geometric effects from varying viewing angles due to the variable topography in and around the Alps.</li>
-<li>Strong vegetation cover over dense forests.</li>
+<li>Ausgeprägte geometrische Effekte durch unterschiedliche Blickwinkel aufgrund der variablen Topographie in und um die Alpen.</li>
+<li>Starke Vegetationsbedeckung über dichten Wäldern.</li>
 </ul>
-<p>In the Soil Moisture Product developed for GHG-Kit we address these challenges, using <strong>radio metric terrain-corrected backscatter</strong> data to “flatten” the terrain and static spatial filtering of <strong>dense vegetation</strong> at high resolution (See Supplement).</p>
-<p>In the following lines we load a subset of the soil moisture dataset with <code>xarray</code>, which is stored as a Zarr archive.</p>
-<div id="a3caede9" class="cell" data-execution_count="3">
+<p>Im Bodenfeuchteprodukt, das für GHG-Kit entwickelt wurde, gehen wir diese Herausforderungen an, indem wir <strong>radiometrische geländekorrigierte Rückstreudaten</strong> verwenden, um das Gelände zu „glätten“, und statische räumliche Filterung von <strong>dichter Vegetation</strong> bei hoher Auflösung (siehe Anhang).</p>
+<p>In den folgenden Zeilen laden wir eine Teilmenge des Bodenfeuchtedatensatzes mit „xarray“, der als Zarr-Archiv gespeichert ist.</p>
+<div id="51f3d54f" class="cell" data-execution_count="2">
 <details class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>SSM_dc <span class="op">=</span> xr.open_zarr(RESOURCES <span class="op">/</span> <span class="st">"SSM-CD-SIG40-R-DVEG_2018.zarr/"</span>)</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>SSM_dc</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>SSM_dc</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details><div class="cell-output cell-output-display" data-execution_count="2">
 <div>
 <div>
@@ -608,7 +608,7 @@ Data variables:
 <div class="xr-header"><div class="xr-obj-type">xarray.Dataset</div></div>
 <ul class="xr-sections">
 <li class="xr-section-item">
-<input id="section-f53a2cf7-bbea-46c4-b474-87746d504ebb" class="xr-section-summary-in" type="checkbox" disabled><label for="section-f53a2cf7-bbea-46c4-b474-87746d504ebb" class="xr-section-summary" title="Expand/collapse section">Dimensions:</label><div class="xr-section-inline-details"><ul class="xr-dim-list">
+<input id="section-5df46f6b-6676-452d-b847-9adab0e89196" class="xr-section-summary-in" type="checkbox" disabled><label for="section-5df46f6b-6676-452d-b847-9adab0e89196" class="xr-section-summary" title="Expand/collapse section">Dimensions:</label><div class="xr-section-inline-details"><ul class="xr-dim-list">
 <li>
 <span class="xr-has-index">time</span>: 723</li>
 <li>
@@ -619,14 +619,14 @@ Data variables:
 <div class="xr-section-details"></div>
 </li>
 <li class="xr-section-item">
-<input id="section-6b80583e-4a3b-4a9e-96cc-6821b0dc76b8" class="xr-section-summary-in" type="checkbox" checked><label for="section-6b80583e-4a3b-4a9e-96cc-6821b0dc76b8" class="xr-section-summary">Coordinates: <span>(3)</span></label><div class="xr-section-inline-details"></div>
+<input id="section-44bd3cc5-b48f-4243-995c-b9fee82e01ab" class="xr-section-summary-in" type="checkbox" checked><label for="section-44bd3cc5-b48f-4243-995c-b9fee82e01ab" class="xr-section-summary">Coordinates: <span>(3)</span></label><div class="xr-section-inline-details"></div>
 <div class="xr-section-details"><ul class="xr-var-list">
 <li class="xr-var-item">
 <div class="xr-var-name"><span class="xr-has-index">time</span></div>
 <div class="xr-var-dims">(time)</div>
 <div class="xr-var-dtype">datetime64[ns]</div>
 <div class="xr-var-preview xr-preview">2018-01-01T05:08:47 ... 2018-12-...</div>
-<input id="attrs-18c4311c-52d1-4911-ad81-6cad74cf3a00" class="xr-var-attrs-in" type="checkbox" disabled><label for="attrs-18c4311c-52d1-4911-ad81-6cad74cf3a00" title="Show/Hide attributes"><svg class="icon xr-icon-file-text2"><use href="#icon-file-text2"></use></svg></label><input id="data-b43798d7-c279-4d52-a5c3-d4f3954c9548" class="xr-var-data-in" type="checkbox"><label for="data-b43798d7-c279-4d52-a5c3-d4f3954c9548" title="Show/Hide data repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-var-attrs"><dl class="xr-attrs"></dl></div>
+<input id="attrs-0fdf8f0b-a624-4ac3-9664-e9b36876d5bd" class="xr-var-attrs-in" type="checkbox" disabled><label for="attrs-0fdf8f0b-a624-4ac3-9664-e9b36876d5bd" title="Show/Hide attributes"><svg class="icon xr-icon-file-text2"><use href="#icon-file-text2"></use></svg></label><input id="data-c77ad9a8-442c-4777-b771-c7beaceffb68" class="xr-var-data-in" type="checkbox"><label for="data-c77ad9a8-442c-4777-b771-c7beaceffb68" title="Show/Hide data repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-var-attrs"><dl class="xr-attrs"></dl></div>
 <div class="xr-var-data"><pre>array(['2018-01-01T05:08:47.000000000', '2018-01-01T17:07:13.000000000',
        '2018-01-02T05:01:40.000000000', ..., '2018-12-30T16:42:07.000000000',
        '2018-12-31T05:26:15.000000000', '2018-12-31T16:34:48.000000000'],
@@ -637,7 +637,7 @@ Data variables:
 <div class="xr-var-dims">(x)</div>
 <div class="xr-var-dtype">float64</div>
 <div class="xr-var-preview xr-preview">4.8e+06 4.801e+06 ... 5.4e+06</div>
-<input id="attrs-20771d68-c1f8-4a42-998c-19fc1229815e" class="xr-var-attrs-in" type="checkbox" disabled><label for="attrs-20771d68-c1f8-4a42-998c-19fc1229815e" title="Show/Hide attributes"><svg class="icon xr-icon-file-text2"><use href="#icon-file-text2"></use></svg></label><input id="data-a1c9a141-fec2-4adf-bc9d-3bf61a7e3138" class="xr-var-data-in" type="checkbox"><label for="data-a1c9a141-fec2-4adf-bc9d-3bf61a7e3138" title="Show/Hide data repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-var-attrs"><dl class="xr-attrs"></dl></div>
+<input id="attrs-4cbc55b5-40b9-403b-b489-3652f7b53f31" class="xr-var-attrs-in" type="checkbox" disabled><label for="attrs-4cbc55b5-40b9-403b-b489-3652f7b53f31" title="Show/Hide attributes"><svg class="icon xr-icon-file-text2"><use href="#icon-file-text2"></use></svg></label><input id="data-c284d582-b114-4510-97c8-8b7af9085a28" class="xr-var-data-in" type="checkbox"><label for="data-c284d582-b114-4510-97c8-8b7af9085a28" title="Show/Hide data repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-var-attrs"><dl class="xr-attrs"></dl></div>
 <div class="xr-var-data"><pre>array([4800250., 4800750., 4801250., ..., 5398750., 5399250., 5399750.])</pre></div>
 </li>
 <li class="xr-var-item">
@@ -645,20 +645,20 @@ Data variables:
 <div class="xr-var-dims">(y)</div>
 <div class="xr-var-dtype">float64</div>
 <div class="xr-var-preview xr-preview">1.8e+06 1.799e+06 ... 1.2e+06</div>
-<input id="attrs-6c11e4bc-4385-4206-a17c-6c410add994e" class="xr-var-attrs-in" type="checkbox" disabled><label for="attrs-6c11e4bc-4385-4206-a17c-6c410add994e" title="Show/Hide attributes"><svg class="icon xr-icon-file-text2"><use href="#icon-file-text2"></use></svg></label><input id="data-8d0ed039-4ee3-4b23-a700-4485a0a7f6aa" class="xr-var-data-in" type="checkbox"><label for="data-8d0ed039-4ee3-4b23-a700-4485a0a7f6aa" title="Show/Hide data repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-var-attrs"><dl class="xr-attrs"></dl></div>
+<input id="attrs-325bb030-b3c9-48ef-8542-ca549842b75d" class="xr-var-attrs-in" type="checkbox" disabled><label for="attrs-325bb030-b3c9-48ef-8542-ca549842b75d" title="Show/Hide attributes"><svg class="icon xr-icon-file-text2"><use href="#icon-file-text2"></use></svg></label><input id="data-665cf70f-9fe6-4138-8c9a-4ad616fd2c57" class="xr-var-data-in" type="checkbox"><label for="data-665cf70f-9fe6-4138-8c9a-4ad616fd2c57" title="Show/Hide data repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-var-attrs"><dl class="xr-attrs"></dl></div>
 <div class="xr-var-data"><pre>array([1799750., 1799250., 1798750., ..., 1201250., 1200750., 1200250.])</pre></div>
 </li>
 </ul></div>
 </li>
 <li class="xr-section-item">
-<input id="section-488fbd42-a737-4abd-b611-02ac619d9aa1" class="xr-section-summary-in" type="checkbox" checked><label for="section-488fbd42-a737-4abd-b611-02ac619d9aa1" class="xr-section-summary">Data variables: <span>(2)</span></label><div class="xr-section-inline-details"></div>
+<input id="section-e3a9704a-29d2-48e9-a627-eefd42314407" class="xr-section-summary-in" type="checkbox" checked><label for="section-e3a9704a-29d2-48e9-a627-eefd42314407" class="xr-section-summary">Data variables: <span>(2)</span></label><div class="xr-section-inline-details"></div>
 <div class="xr-section-details"><ul class="xr-var-list">
 <li class="xr-var-item">
 <div class="xr-var-name"><span>band_data</span></div>
 <div class="xr-var-dims">(time, y, x)</div>
 <div class="xr-var-dtype">float64</div>
 <div class="xr-var-preview xr-preview">dask.array&lt;chunksize=(100, 100, 100), meta=np.ndarray&gt;</div>
-<input id="attrs-2a2ce16d-2b3b-4b0b-bdc4-8a5aff855ae4" class="xr-var-attrs-in" type="checkbox"><label for="attrs-2a2ce16d-2b3b-4b0b-bdc4-8a5aff855ae4" title="Show/Hide attributes"><svg class="icon xr-icon-file-text2"><use href="#icon-file-text2"></use></svg></label><input id="data-3047c190-8edc-4dac-96f7-2ef3d29a245c" class="xr-var-data-in" type="checkbox"><label for="data-3047c190-8edc-4dac-96f7-2ef3d29a245c" title="Show/Hide data repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-var-attrs"><dl class="xr-attrs">
+<input id="attrs-e0e1689e-73a4-4527-a180-d92367571b79" class="xr-var-attrs-in" type="checkbox"><label for="attrs-e0e1689e-73a4-4527-a180-d92367571b79" title="Show/Hide attributes"><svg class="icon xr-icon-file-text2"><use href="#icon-file-text2"></use></svg></label><input id="data-713a4ef9-a263-4dd5-a0f6-ad7b1f23a57f" class="xr-var-data-in" type="checkbox"><label for="data-713a4ef9-a263-4dd5-a0f6-ad7b1f23a57f" title="Show/Hide data repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-var-attrs"><dl class="xr-attrs">
 <dt><span>AREA_OR_POINT :</span></dt>
 <dd>Area</dd>
 <dt><span>LinearSegmentedColormap :</span></dt>
@@ -748,7 +748,7 @@ Data variables:
 <div class="xr-var-dims">()</div>
 <div class="xr-var-dtype">int64</div>
 <div class="xr-var-preview xr-preview">...</div>
-<input id="attrs-d3e2465d-d41c-4996-b60a-1983bb545e9d" class="xr-var-attrs-in" type="checkbox"><label for="attrs-d3e2465d-d41c-4996-b60a-1983bb545e9d" title="Show/Hide attributes"><svg class="icon xr-icon-file-text2"><use href="#icon-file-text2"></use></svg></label><input id="data-8f4a67ca-d84e-41d2-95f4-f3aec6a01acc" class="xr-var-data-in" type="checkbox"><label for="data-8f4a67ca-d84e-41d2-95f4-f3aec6a01acc" title="Show/Hide data repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-var-attrs"><dl class="xr-attrs">
+<input id="attrs-1e0d8b23-f3cb-4f5a-bf3e-0d7009f06285" class="xr-var-attrs-in" type="checkbox"><label for="attrs-1e0d8b23-f3cb-4f5a-bf3e-0d7009f06285" title="Show/Hide attributes"><svg class="icon xr-icon-file-text2"><use href="#icon-file-text2"></use></svg></label><input id="data-de2c01cd-6a7b-40e5-9f63-f5fe37eca4fd" class="xr-var-data-in" type="checkbox"><label for="data-de2c01cd-6a7b-40e5-9f63-f5fe37eca4fd" title="Show/Hide data repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-var-attrs"><dl class="xr-attrs">
 <dt><span>GeoTransform :</span></dt>
 <dd>4800000.0 500.0 0.0 1800000.0 0.0 -500.0</dd>
 <dt><span>crs_wkt :</span></dt>
@@ -789,13 +789,13 @@ Data variables:
 </ul></div>
 </li>
 <li class="xr-section-item">
-<input id="section-83d9449c-0729-4aae-92d3-2faa2873c827" class="xr-section-summary-in" type="checkbox"><label for="section-83d9449c-0729-4aae-92d3-2faa2873c827" class="xr-section-summary">Indexes: <span>(3)</span></label><div class="xr-section-inline-details"></div>
+<input id="section-fe9a894f-4429-420f-9759-a789e2d62c3d" class="xr-section-summary-in" type="checkbox"><label for="section-fe9a894f-4429-420f-9759-a789e2d62c3d" class="xr-section-summary">Indexes: <span>(3)</span></label><div class="xr-section-inline-details"></div>
 <div class="xr-section-details"><ul class="xr-var-list">
 <li class="xr-var-item">
 <div class="xr-index-name"><div>time</div></div>
 <div class="xr-index-preview">PandasIndex</div>
 <div></div>
-<input id="index-c3ff2c97-7078-4562-b143-33722dcf82a6" class="xr-index-data-in" type="checkbox"><label for="index-c3ff2c97-7078-4562-b143-33722dcf82a6" title="Show/Hide index repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-index-data"><pre>PandasIndex(DatetimeIndex(['2018-01-01 05:08:47', '2018-01-01 17:07:13',
+<input id="index-69bbc207-86e2-4d6e-8b2f-42b9c2599c3e" class="xr-index-data-in" type="checkbox"><label for="index-69bbc207-86e2-4d6e-8b2f-42b9c2599c3e" title="Show/Hide index repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-index-data"><pre>PandasIndex(DatetimeIndex(['2018-01-01 05:08:47', '2018-01-01 17:07:13',
                '2018-01-02 05:01:40', '2018-01-02 16:57:47',
                '2018-01-03 04:52:25', '2018-01-03 16:51:11',
                '2018-01-04 05:33:43', '2018-01-04 16:42:25',
@@ -812,7 +812,7 @@ Data variables:
 <div class="xr-index-name"><div>x</div></div>
 <div class="xr-index-preview">PandasIndex</div>
 <div></div>
-<input id="index-a3199eca-80da-4f20-af7e-3e8b27e87778" class="xr-index-data-in" type="checkbox"><label for="index-a3199eca-80da-4f20-af7e-3e8b27e87778" title="Show/Hide index repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-index-data"><pre>PandasIndex(Index([4800250.0, 4800750.0, 4801250.0, 4801750.0, 4802250.0, 4802750.0,
+<input id="index-608336bb-3b37-40a3-997a-c32ee70f81d8" class="xr-index-data-in" type="checkbox"><label for="index-608336bb-3b37-40a3-997a-c32ee70f81d8" title="Show/Hide index repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-index-data"><pre>PandasIndex(Index([4800250.0, 4800750.0, 4801250.0, 4801750.0, 4802250.0, 4802750.0,
        4803250.0, 4803750.0, 4804250.0, 4804750.0,
        ...
        5395250.0, 5395750.0, 5396250.0, 5396750.0, 5397250.0, 5397750.0,
@@ -823,7 +823,7 @@ Data variables:
 <div class="xr-index-name"><div>y</div></div>
 <div class="xr-index-preview">PandasIndex</div>
 <div></div>
-<input id="index-ca1d1bf1-b7fe-4152-8db4-aa2d9776b497" class="xr-index-data-in" type="checkbox"><label for="index-ca1d1bf1-b7fe-4152-8db4-aa2d9776b497" title="Show/Hide index repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-index-data"><pre>PandasIndex(Index([1799750.0, 1799250.0, 1798750.0, 1798250.0, 1797750.0, 1797250.0,
+<input id="index-0bda04c8-487f-4f72-8a9e-6b2355e8418a" class="xr-index-data-in" type="checkbox"><label for="index-0bda04c8-487f-4f72-8a9e-6b2355e8418a" title="Show/Hide index repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-index-data"><pre>PandasIndex(Index([1799750.0, 1799250.0, 1798750.0, 1798250.0, 1797750.0, 1797250.0,
        1796750.0, 1796250.0, 1795750.0, 1795250.0,
        ...
        1204750.0, 1204250.0, 1203750.0, 1203250.0, 1202750.0, 1202250.0,
@@ -833,7 +833,7 @@ Data variables:
 </ul></div>
 </li>
 <li class="xr-section-item">
-<input id="section-1f463eb2-bf10-431d-a6b8-00931ef33c21" class="xr-section-summary-in" type="checkbox" disabled><label for="section-1f463eb2-bf10-431d-a6b8-00931ef33c21" class="xr-section-summary" title="Expand/collapse section">Attributes: <span>(0)</span></label><div class="xr-section-inline-details"></div>
+<input id="section-42117ca3-e409-4372-be96-bac9c05d4d1f" class="xr-section-summary-in" type="checkbox" disabled><label for="section-42117ca3-e409-4372-be96-bac9c05d4d1f" class="xr-section-summary" title="Expand/collapse section">Attributes: <span>(0)</span></label><div class="xr-section-inline-details"></div>
 <div class="xr-section-details"><dl class="xr-attrs"></dl></div>
 </li>
 </ul>
@@ -843,9 +843,9 @@ Data variables:
 </div>
 </div>
 <p>We resample this dataset along the time dimension thereby aggregating surface soil moisture as mean values over months.</p>
-<div id="6605b29a" class="cell" data-execution_count="4">
+<div id="d70f28fe" class="cell" data-execution_count="3">
 <details class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>SSM_dc_monthly <span class="op">=</span> SSM_dc.resample(time<span class="op">=</span><span class="st">"ME"</span>).mean()</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>SSM_dc_monthly</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>SSM_dc_monthly</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details><div class="cell-output cell-output-display" data-execution_count="3">
 <div>
 <div>
@@ -1211,7 +1211,7 @@ Data variables:
 <div class="xr-header"><div class="xr-obj-type">xarray.Dataset</div></div>
 <ul class="xr-sections">
 <li class="xr-section-item">
-<input id="section-b23ac777-b933-4beb-b319-42195ec360a7" class="xr-section-summary-in" type="checkbox" disabled><label for="section-b23ac777-b933-4beb-b319-42195ec360a7" class="xr-section-summary" title="Expand/collapse section">Dimensions:</label><div class="xr-section-inline-details"><ul class="xr-dim-list">
+<input id="section-36e15868-803b-41e9-8511-61fbddf98151" class="xr-section-summary-in" type="checkbox" disabled><label for="section-36e15868-803b-41e9-8511-61fbddf98151" class="xr-section-summary" title="Expand/collapse section">Dimensions:</label><div class="xr-section-inline-details"><ul class="xr-dim-list">
 <li>
 <span class="xr-has-index">time</span>: 12</li>
 <li>
@@ -1222,14 +1222,14 @@ Data variables:
 <div class="xr-section-details"></div>
 </li>
 <li class="xr-section-item">
-<input id="section-7273a839-fae0-41f0-99de-45346fa04cac" class="xr-section-summary-in" type="checkbox" checked><label for="section-7273a839-fae0-41f0-99de-45346fa04cac" class="xr-section-summary">Coordinates: <span>(3)</span></label><div class="xr-section-inline-details"></div>
+<input id="section-70bd988f-2e7c-4d5f-8b51-e558daef041b" class="xr-section-summary-in" type="checkbox" checked><label for="section-70bd988f-2e7c-4d5f-8b51-e558daef041b" class="xr-section-summary">Coordinates: <span>(3)</span></label><div class="xr-section-inline-details"></div>
 <div class="xr-section-details"><ul class="xr-var-list">
 <li class="xr-var-item">
 <div class="xr-var-name"><span class="xr-has-index">x</span></div>
 <div class="xr-var-dims">(x)</div>
 <div class="xr-var-dtype">float64</div>
 <div class="xr-var-preview xr-preview">4.8e+06 4.801e+06 ... 5.4e+06</div>
-<input id="attrs-3f824854-28d1-43a8-89d1-07aa2cc0798c" class="xr-var-attrs-in" type="checkbox" disabled><label for="attrs-3f824854-28d1-43a8-89d1-07aa2cc0798c" title="Show/Hide attributes"><svg class="icon xr-icon-file-text2"><use href="#icon-file-text2"></use></svg></label><input id="data-816dbfc0-fbd3-499e-adb6-e8144d234d30" class="xr-var-data-in" type="checkbox"><label for="data-816dbfc0-fbd3-499e-adb6-e8144d234d30" title="Show/Hide data repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-var-attrs"><dl class="xr-attrs"></dl></div>
+<input id="attrs-8efd33fe-0a86-4474-a038-b0385886263c" class="xr-var-attrs-in" type="checkbox" disabled><label for="attrs-8efd33fe-0a86-4474-a038-b0385886263c" title="Show/Hide attributes"><svg class="icon xr-icon-file-text2"><use href="#icon-file-text2"></use></svg></label><input id="data-a2c6070f-0de3-4182-b0f9-7a832edd3c12" class="xr-var-data-in" type="checkbox"><label for="data-a2c6070f-0de3-4182-b0f9-7a832edd3c12" title="Show/Hide data repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-var-attrs"><dl class="xr-attrs"></dl></div>
 <div class="xr-var-data"><pre>array([4800250., 4800750., 4801250., ..., 5398750., 5399250., 5399750.])</pre></div>
 </li>
 <li class="xr-var-item">
@@ -1237,7 +1237,7 @@ Data variables:
 <div class="xr-var-dims">(y)</div>
 <div class="xr-var-dtype">float64</div>
 <div class="xr-var-preview xr-preview">1.8e+06 1.799e+06 ... 1.2e+06</div>
-<input id="attrs-2cf6f893-18b1-4e00-bc81-6651bf0d58cb" class="xr-var-attrs-in" type="checkbox" disabled><label for="attrs-2cf6f893-18b1-4e00-bc81-6651bf0d58cb" title="Show/Hide attributes"><svg class="icon xr-icon-file-text2"><use href="#icon-file-text2"></use></svg></label><input id="data-1f2e6580-15f6-41ee-b5b5-6a2691673355" class="xr-var-data-in" type="checkbox"><label for="data-1f2e6580-15f6-41ee-b5b5-6a2691673355" title="Show/Hide data repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-var-attrs"><dl class="xr-attrs"></dl></div>
+<input id="attrs-34a1448d-3c9c-4fe9-8639-f2a9a4936017" class="xr-var-attrs-in" type="checkbox" disabled><label for="attrs-34a1448d-3c9c-4fe9-8639-f2a9a4936017" title="Show/Hide attributes"><svg class="icon xr-icon-file-text2"><use href="#icon-file-text2"></use></svg></label><input id="data-7c0c6187-dfdb-4a80-89d1-105054d4e32c" class="xr-var-data-in" type="checkbox"><label for="data-7c0c6187-dfdb-4a80-89d1-105054d4e32c" title="Show/Hide data repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-var-attrs"><dl class="xr-attrs"></dl></div>
 <div class="xr-var-data"><pre>array([1799750., 1799250., 1798750., ..., 1201250., 1200750., 1200250.])</pre></div>
 </li>
 <li class="xr-var-item">
@@ -1245,7 +1245,7 @@ Data variables:
 <div class="xr-var-dims">(time)</div>
 <div class="xr-var-dtype">datetime64[ns]</div>
 <div class="xr-var-preview xr-preview">2018-01-31 ... 2018-12-31</div>
-<input id="attrs-78659ff1-3e29-4e19-b114-8edcf8b77229" class="xr-var-attrs-in" type="checkbox" disabled><label for="attrs-78659ff1-3e29-4e19-b114-8edcf8b77229" title="Show/Hide attributes"><svg class="icon xr-icon-file-text2"><use href="#icon-file-text2"></use></svg></label><input id="data-415095a2-9e43-48e0-9f02-49710b5cddea" class="xr-var-data-in" type="checkbox"><label for="data-415095a2-9e43-48e0-9f02-49710b5cddea" title="Show/Hide data repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-var-attrs"><dl class="xr-attrs"></dl></div>
+<input id="attrs-54d1c329-0cdd-4506-b04d-132cb621dc31" class="xr-var-attrs-in" type="checkbox" disabled><label for="attrs-54d1c329-0cdd-4506-b04d-132cb621dc31" title="Show/Hide attributes"><svg class="icon xr-icon-file-text2"><use href="#icon-file-text2"></use></svg></label><input id="data-e52bd555-8105-4f32-af27-3b24876e538c" class="xr-var-data-in" type="checkbox"><label for="data-e52bd555-8105-4f32-af27-3b24876e538c" title="Show/Hide data repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-var-attrs"><dl class="xr-attrs"></dl></div>
 <div class="xr-var-data"><pre>array(['2018-01-31T00:00:00.000000000', '2018-02-28T00:00:00.000000000',
        '2018-03-31T00:00:00.000000000', '2018-04-30T00:00:00.000000000',
        '2018-05-31T00:00:00.000000000', '2018-06-30T00:00:00.000000000',
@@ -1257,14 +1257,14 @@ Data variables:
 </ul></div>
 </li>
 <li class="xr-section-item">
-<input id="section-ba840250-db5f-4aa1-97b8-59b484f4b068" class="xr-section-summary-in" type="checkbox" checked><label for="section-ba840250-db5f-4aa1-97b8-59b484f4b068" class="xr-section-summary">Data variables: <span>(2)</span></label><div class="xr-section-inline-details"></div>
+<input id="section-42403986-8c9e-4990-871a-8e9f0100f5b8" class="xr-section-summary-in" type="checkbox" checked><label for="section-42403986-8c9e-4990-871a-8e9f0100f5b8" class="xr-section-summary">Data variables: <span>(2)</span></label><div class="xr-section-inline-details"></div>
 <div class="xr-section-details"><ul class="xr-var-list">
 <li class="xr-var-item">
 <div class="xr-var-name"><span>band_data</span></div>
 <div class="xr-var-dims">(time, y, x)</div>
 <div class="xr-var-dtype">float64</div>
 <div class="xr-var-preview xr-preview">dask.array&lt;chunksize=(3, 100, 100), meta=np.ndarray&gt;</div>
-<input id="attrs-486bf122-f3d9-4a88-b711-60575b0681d1" class="xr-var-attrs-in" type="checkbox"><label for="attrs-486bf122-f3d9-4a88-b711-60575b0681d1" title="Show/Hide attributes"><svg class="icon xr-icon-file-text2"><use href="#icon-file-text2"></use></svg></label><input id="data-840abb0c-6969-409d-821c-cb016ffb25b9" class="xr-var-data-in" type="checkbox"><label for="data-840abb0c-6969-409d-821c-cb016ffb25b9" title="Show/Hide data repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-var-attrs"><dl class="xr-attrs">
+<input id="attrs-f4d5973d-2b1e-420a-964a-a40e70c6462b" class="xr-var-attrs-in" type="checkbox"><label for="attrs-f4d5973d-2b1e-420a-964a-a40e70c6462b" title="Show/Hide attributes"><svg class="icon xr-icon-file-text2"><use href="#icon-file-text2"></use></svg></label><input id="data-73b0ae3b-e1bf-4a6a-9a68-22af4c79c887" class="xr-var-data-in" type="checkbox"><label for="data-73b0ae3b-e1bf-4a6a-9a68-22af4c79c887" title="Show/Hide data repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-var-attrs"><dl class="xr-attrs">
 <dt><span>AREA_OR_POINT :</span></dt>
 <dd>Area</dd>
 <dt><span>LinearSegmentedColormap :</span></dt>
@@ -1354,7 +1354,7 @@ Data variables:
 <div class="xr-var-dims">(time)</div>
 <div class="xr-var-dtype">int64</div>
 <div class="xr-var-preview xr-preview">0 0 0 0 0 0 0 0 0 0 0 0</div>
-<input id="attrs-32968fae-16e8-491d-a02e-a42687ca120d" class="xr-var-attrs-in" type="checkbox"><label for="attrs-32968fae-16e8-491d-a02e-a42687ca120d" title="Show/Hide attributes"><svg class="icon xr-icon-file-text2"><use href="#icon-file-text2"></use></svg></label><input id="data-fb28f926-5b2d-4315-ae42-44b0c0efbc2e" class="xr-var-data-in" type="checkbox"><label for="data-fb28f926-5b2d-4315-ae42-44b0c0efbc2e" title="Show/Hide data repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-var-attrs"><dl class="xr-attrs">
+<input id="attrs-297b39e0-28d3-4bca-9650-8847e1bb4a9f" class="xr-var-attrs-in" type="checkbox"><label for="attrs-297b39e0-28d3-4bca-9650-8847e1bb4a9f" title="Show/Hide attributes"><svg class="icon xr-icon-file-text2"><use href="#icon-file-text2"></use></svg></label><input id="data-dff0847a-d4b1-4421-81b7-9d60504935dd" class="xr-var-data-in" type="checkbox"><label for="data-dff0847a-d4b1-4421-81b7-9d60504935dd" title="Show/Hide data repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-var-attrs"><dl class="xr-attrs">
 <dt><span>GeoTransform :</span></dt>
 <dd>4800000.0 500.0 0.0 1800000.0 0.0 -500.0</dd>
 <dt><span>crs_wkt :</span></dt>
@@ -1395,13 +1395,13 @@ Data variables:
 </ul></div>
 </li>
 <li class="xr-section-item">
-<input id="section-93f0bc11-3369-426b-94f5-2c96fbf3fada" class="xr-section-summary-in" type="checkbox"><label for="section-93f0bc11-3369-426b-94f5-2c96fbf3fada" class="xr-section-summary">Indexes: <span>(3)</span></label><div class="xr-section-inline-details"></div>
+<input id="section-e7058c64-da6c-46cb-aac5-beb1ffc3fd10" class="xr-section-summary-in" type="checkbox"><label for="section-e7058c64-da6c-46cb-aac5-beb1ffc3fd10" class="xr-section-summary">Indexes: <span>(3)</span></label><div class="xr-section-inline-details"></div>
 <div class="xr-section-details"><ul class="xr-var-list">
 <li class="xr-var-item">
 <div class="xr-index-name"><div>x</div></div>
 <div class="xr-index-preview">PandasIndex</div>
 <div></div>
-<input id="index-a5acf5c5-8528-4336-9af5-363f9c00417d" class="xr-index-data-in" type="checkbox"><label for="index-a5acf5c5-8528-4336-9af5-363f9c00417d" title="Show/Hide index repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-index-data"><pre>PandasIndex(Index([4800250.0, 4800750.0, 4801250.0, 4801750.0, 4802250.0, 4802750.0,
+<input id="index-81549fe8-866c-4e72-a606-92481c249d08" class="xr-index-data-in" type="checkbox"><label for="index-81549fe8-866c-4e72-a606-92481c249d08" title="Show/Hide index repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-index-data"><pre>PandasIndex(Index([4800250.0, 4800750.0, 4801250.0, 4801750.0, 4802250.0, 4802750.0,
        4803250.0, 4803750.0, 4804250.0, 4804750.0,
        ...
        5395250.0, 5395750.0, 5396250.0, 5396750.0, 5397250.0, 5397750.0,
@@ -1412,7 +1412,7 @@ Data variables:
 <div class="xr-index-name"><div>y</div></div>
 <div class="xr-index-preview">PandasIndex</div>
 <div></div>
-<input id="index-bbcccd6a-12df-41ff-9514-5684e02e864f" class="xr-index-data-in" type="checkbox"><label for="index-bbcccd6a-12df-41ff-9514-5684e02e864f" title="Show/Hide index repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-index-data"><pre>PandasIndex(Index([1799750.0, 1799250.0, 1798750.0, 1798250.0, 1797750.0, 1797250.0,
+<input id="index-645090c8-833a-401a-a82a-cdec9928caa3" class="xr-index-data-in" type="checkbox"><label for="index-645090c8-833a-401a-a82a-cdec9928caa3" title="Show/Hide index repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-index-data"><pre>PandasIndex(Index([1799750.0, 1799250.0, 1798750.0, 1798250.0, 1797750.0, 1797250.0,
        1796750.0, 1796250.0, 1795750.0, 1795250.0,
        ...
        1204750.0, 1204250.0, 1203750.0, 1203250.0, 1202750.0, 1202250.0,
@@ -1423,7 +1423,7 @@ Data variables:
 <div class="xr-index-name"><div>time</div></div>
 <div class="xr-index-preview">PandasIndex</div>
 <div></div>
-<input id="index-a119c8c5-7770-4300-ba8d-2589e3ba03d5" class="xr-index-data-in" type="checkbox"><label for="index-a119c8c5-7770-4300-ba8d-2589e3ba03d5" title="Show/Hide index repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-index-data"><pre>PandasIndex(DatetimeIndex(['2018-01-31', '2018-02-28', '2018-03-31', '2018-04-30',
+<input id="index-585c7cc0-b7f0-413f-9e04-b5471c17bb02" class="xr-index-data-in" type="checkbox"><label for="index-585c7cc0-b7f0-413f-9e04-b5471c17bb02" title="Show/Hide index repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-index-data"><pre>PandasIndex(DatetimeIndex(['2018-01-31', '2018-02-28', '2018-03-31', '2018-04-30',
                '2018-05-31', '2018-06-30', '2018-07-31', '2018-08-31',
                '2018-09-30', '2018-10-31', '2018-11-30', '2018-12-31'],
               dtype='datetime64[ns]', name='time', freq='ME'))</pre></div>
@@ -1431,7 +1431,7 @@ Data variables:
 </ul></div>
 </li>
 <li class="xr-section-item">
-<input id="section-2fb85de4-393c-4d92-a77b-ba429a1eb3d6" class="xr-section-summary-in" type="checkbox" disabled><label for="section-2fb85de4-393c-4d92-a77b-ba429a1eb3d6" class="xr-section-summary" title="Expand/collapse section">Attributes: <span>(0)</span></label><div class="xr-section-inline-details"></div>
+<input id="section-14dc7f07-dedb-4efa-a046-fefc854bfb5d" class="xr-section-summary-in" type="checkbox" disabled><label for="section-14dc7f07-dedb-4efa-a046-fefc854bfb5d" class="xr-section-summary" title="Expand/collapse section">Attributes: <span>(0)</span></label><div class="xr-section-inline-details"></div>
 <div class="xr-section-details"><dl class="xr-attrs"></dl></div>
 </li>
 </ul>
@@ -1440,92 +1440,92 @@ Data variables:
 </div>
 </div>
 </div>
-</section><section id="how-not-to-color-your-map" class="level2" data-number="2.3"><h2 data-number="2.3" class="anchored" data-anchor-id="how-not-to-color-your-map">
-<span class="header-section-number">2.3</span> How (not) to color your Map</h2>
-<p>Now we are ready to plot the monthly soil moisture data on a map. To plot one variable like soil moisture on the x (longitude) and y (latitude) dimensions requires finding a good representation in a 3D colorspace. This is also referred to as pseudocoloring: a method for revealing aspects of the data over a continuous plane. For effective pseudocoloring we need to find the correct colormap. We can ask ourselves the following questions:</p>
+</section><section id="wie-man-seine-karte-nicht-einfärbt" class="level2" data-number="2.3"><h2 data-number="2.3" class="anchored" data-anchor-id="wie-man-seine-karte-nicht-einfärbt">
+<span class="header-section-number">2.3</span> Wie man seine Karte (nicht) einfärbt</h2>
+<p>Jetzt können wir die Bodenfeuchtigkeitsdaten auf einer Karte darstellen. Um eine Variable wie die Bodenfeuchte in den Dimensionen x (Längengrad) und y (Breitengrad) darzustellen, muss eine gute Darstellung in einem 3D-Farbraum gefunden werden. Dies wird auch als Pseudofärbung bezeichnet: eine Methode zur Darstellung von Aspekten der Daten in einer kontinuierlichen Ebene. Für eine effektive Pseudofärbung müssen wir die richtige Farbkarte finden. Wir können uns die folgenden Fragen stellen:</p>
 <ul>
-<li>What do we know about the data? Is there e.g. a critical value to which compare the data?</li>
-<li>Is there an intuitive color scheme that nicely translates to the variable including the distribution of the data.</li>
+<li>Was wissen wir über die Daten. Gibt es z. B. einen kritischen Wert, mit dem die Daten verglichen werden können?</li>
+<li>Gibt es ein intuitives Farbschema, das die Variable einschließlich der Verteilung der Daten gut wiedergibt?</li>
 </ul>
-<p>We can choose from the following types of colormaps:</p>
+<p>Wir können zwischen den folgenden Arten von Farbkarten wählen:</p>
 <ul>
-<li>Sequential: steps in the variable space are equal to steps in color space (uniform colormaps).</li>
-<li>Diverging: if we have a critical middle value to which we want to compare the data.</li>
-<li>Qualitative: if we have unordered categorical data.</li>
-</ul></section><section id="the-bad" class="level2" data-number="2.4"><h2 data-number="2.4" class="anchored" data-anchor-id="the-bad">
-<span class="header-section-number">2.4</span> The Bad</h2>
-<p>In the following maps we can see what can go wrong when we don’t take these aspects into consideration.</p>
-<div id="cell-fig-seismic" class="cell" data-execution_count="5">
-<details class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>view_monthly_ssm(SSM_dc_monthly, <span class="st">"seismic"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<li>Sequentiell: Die Schritte im Variablenraum entsprechen den Schritten im Farbraum (einheitliche Farbkarten).</li>
+<li>Divergierend: wenn wir einen kritischen Mittelwert haben, mit dem wir die Daten vergleichen wollen.</li>
+<li>Qualitativ: wenn es sich um ungeordnete kategoriale Daten handelt.</li>
+</ul></section><section id="das-schlechte" class="level2" data-number="2.4"><h2 data-number="2.4" class="anchored" data-anchor-id="das-schlechte">
+<span class="header-section-number">2.4</span> Das Schlechte</h2>
+<p>In den folgenden Karten sehen wir, was schief gehen kann, wenn diese Aspekte nicht berücksichtigt werden.</p>
+<div id="cell-fig-seismic" class="cell" data-execution_count="4">
+<details class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>view_monthly_ssm(SSM_dc_monthly, <span class="st">"seismic"</span>)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details><div class="cell-output cell-output-display">
 <div id="fig-seismic" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-seismic-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="02_counterexample_files/figure-html/fig-seismic-output-1.png" class="img-fluid figure-img">
+<img src="02_counterexample.de_files/figure-html/fig-seismic-output-1.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-seismic-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure 2.2: Monthly aggregated surface soil moisture (%) for January, April, July and October of 2018 retrieved with the TU Wien algorithm developed for the GHG-Kit project. Maps created with EOmaps <span class="citation" data-cites="quast_getting_2024">(<a href="references.html#ref-quast_getting_2024" role="doc-biblioref">Quast 2024</a>)</span>.
+Abbildung 2.2: Monatliche aggregierte Bodenfeuchte (%) für Januar, April, Juli und Oktober 2018, abgerufen mit dem für das GHG-Kit Projekt entwickelten Algorithmus der TU Wien. Karten erstellt mit EOmaps <span class="citation" data-cites="quast_getting_2024">(<a href="references.de.html#ref-quast_getting_2024" role="doc-biblioref">Quast 2024</a>)</span>.
 </figcaption></figure>
 </div>
 </div>
 </div>
-<p>What went wrong in the above maps? The first mistake is that we took a diverging colormap, although the data does not have a critical middle value. The sharp contrast between the blue and red further make it appear as if the data is binary, but in reality we have uniformly spaced values from a sample distribution that approximates a normal distribution (as can be seen from the histograms). On top of that, we have picked a colormap which includes white. There is also information in what we don’t see on these maps: e.g. missing data points. But by choosing to include white we give the false impression of missing data where we actually have a soil moisture saturation of 50%.</p>
-</section><section id="the-ugly" class="level2" data-number="2.5"><h2 data-number="2.5" class="anchored" data-anchor-id="the-ugly">
-<span class="header-section-number">2.5</span> The Ugly</h2>
-<p>Let’s fix the first problem. We do this by choosing the sequential “viridis” colormap. In this colormap the color is a linear function of the variable with a very wide perceptual range (e.g. it is very colorful). Viridis is, furthermore, colorblindness friendly and prints well in grayscale whilst preserving perceptual uniformity and breadth of the range.</p>
-<div id="cell-fig-viridis" class="cell" data-execution_count="6">
-<details class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>view_monthly_ssm(SSM_dc_monthly, <span class="st">"viridis"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Was ist bei den obigen Karten falsch gelaufen? Der erste Fehler ist, dass wir eine divergierende Farbkarte genommen haben, obwohl die Daten keinen kritischen Mittelwert haben. Der scharfe Kontrast zwischen Blau und Rot lässt es außerdem so aussehen, als ob die Daten binär wären, aber in Wirklichkeit haben wir gleichmäßig verteilte Werte aus einer Stichprobenverteilung, die sich einer Normalverteilung annähert (wie aus den Histogrammen ersichtlich ist). Darüber hinaus haben wir eine Farbkarte gewählt, die Weiß enthält. Es gibt auch Informationen in dem, was wir auf dieser Karte nicht sehen: z. B. fehlende Datenpunkte. Durch die Wahl der Farbe Weiß wird jedoch der falsche Eindruck erweckt, dass Daten fehlen, obwohl die Bodenfeuchtigkeit in Wirklichkeit bei 50 % liegt.</p>
+</section><section id="das-hässliche" class="level2" data-number="2.5"><h2 data-number="2.5" class="anchored" data-anchor-id="das-hässliche">
+<span class="header-section-number">2.5</span> Das Hässliche</h2>
+<p>Lassen wir das erste Problem beheben. Dazu wählen wir die sequenzielle „viridis“-Farbkarte. Bei dieser Farbkarte ist die Farbe eine lineare Funktion der Variablen mit einem sehr breiten Wahrnehmungsbereich (d. h. sie ist sehr bunt). Viridis ist außerdem farbenblindheitsfreundlich und druckt gut in Graustufen, wobei die Einheitlichkeit der Wahrnehmung und die Breite des Spektrums erhalten bleiben.</p>
+<div id="cell-fig-viridis" class="cell" data-execution_count="5">
+<details class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>view_monthly_ssm(SSM_dc_monthly, <span class="st">"viridis"</span>)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details><div class="cell-output cell-output-display">
 <div id="fig-viridis" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-viridis-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="02_counterexample_files/figure-html/fig-viridis-output-1.png" class="img-fluid figure-img">
+<img src="02_counterexample.de_files/figure-html/fig-viridis-output-1.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-viridis-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure 2.3: Monthly aggregated surface soil moisture (%) for January, April, July and October of 2018 retrieved with the TU Wien algorithm developed for the GHG-Kit project. Maps created with EOmaps <span class="citation" data-cites="quast_getting_2024">(<a href="references.html#ref-quast_getting_2024" role="doc-biblioref">Quast 2024</a>)</span>.
+Abbildung 2.3: Monatliche aggregierte Bodenfeuchte (%) für Januar, April, Juli und Oktober 2018, abgerufen mit dem für das GHG-Kit Projekt entwickelten Algorithmus der TU Wien. Karten erstellt mit EOmaps <span class="citation" data-cites="quast_getting_2024">(<a href="references.de.html#ref-quast_getting_2024" role="doc-biblioref">Quast 2024</a>)</span>.
 </figcaption></figure>
 </div>
 </div>
 </div>
-<p>This colormap fixes the previous issues. We see much more nuance in the variance of soil moisture. Foremost we also see that we have actual missing data points. There is a whole area in the Alps that is not well covered. This is actually a well known effect of the measurement technique. We cannot address all geometric effects with radiometric terrain correction in microwave remote sensing. In very steep regions like the Alps, we still have to mask the data due to shadowing and layover effects. Shadowing occurs when the terrain is so steep that it blocks the view of subsequent points, preventing any measurements and obstructing scene reconstruction (See Supplement for more information).</p>
-</section><section id="the-good" class="level2" data-number="2.6"><h2 data-number="2.6" class="anchored" data-anchor-id="the-good">
-<span class="header-section-number">2.6</span> The Good</h2>
-<p>This last step is more subjective and relates to the psychology of colors: the multiple meanings and feelings that people associate with a color. Here we use a linear color gradient developed by TU Wien from brown for dry soils to blue for wet soils.</p>
-<div id="cell-fig-custom" class="cell" data-execution_count="7">
+<p>Diese Farbkarte behebt die vorherigen Probleme. Wir sehen viel mehr Nuancen in der Varianz der Bodenfeuchtigkeit. In erster Linie sehen wir auch, dass wir tatsächlich fehlende Datenpunkte haben. Es gibt ein ganzes Gebiet in den Alpen, das nicht gut abgedeckt ist. Das ist eigentlich ein bekannter Effekt der Messtechnik. Wir können nicht alle geometrischen Effekte mit der radiometrischen Geländekorrektur in der Mikrowellen-Fernerkundung ausgleichen. In sehr steilen Regionen wie den Alpen müssen wir die Daten aufgrund von Abschattungen und Überlagerungseffekten maskieren. Abschattungen treten auf, wenn das Gelände so steil ist, dass es die Sicht auf nachfolgende Punkte versperrt, so dass keine Messungen möglich sind und die Rekonstruktion der Szene behindert wird (weitere Informationen siehe Anhang).</p>
+</section><section id="das-gute" class="level2" data-number="2.6"><h2 data-number="2.6" class="anchored" data-anchor-id="das-gute">
+<span class="header-section-number">2.6</span> Das Gute</h2>
+<p>Dieser letzte Schritt ist eher subjektiv und bezieht sich auf die Psychologie der Farben: die vielfältigen Bedeutungen und Gefühle, die Menschen mit einer Farbe verbinden. Hier verwenden wir einen von der TU Wien entwickelten linearen Farbverlauf von braun für trockene Böden bis blau für nasse Böden.</p>
+<div id="cell-fig-custom" class="cell" data-execution_count="6">
 <details class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>SSM_CMAP <span class="op">=</span> load_cmap(RESOURCES <span class="op">/</span> <span class="st">"colour-tables/ssm-continuous.ct"</span>)</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>view_monthly_ssm(SSM_dc_monthly, SSM_CMAP)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>view_monthly_ssm(SSM_dc_monthly, SSM_CMAP)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details><div class="cell-output cell-output-display">
 <div id="fig-custom" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-custom-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="02_counterexample_files/figure-html/fig-custom-output-1.png" class="img-fluid figure-img">
+<img src="02_counterexample.de_files/figure-html/fig-custom-output-1.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-custom-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure 2.4: Monthly aggregated surface soil moisture (%) for January, April, July and October of 2018 retrieved with the TU Wien algorithm developed for the GHG-Kit project. Maps created with EOmaps <span class="citation" data-cites="quast_getting_2024">(<a href="references.html#ref-quast_getting_2024" role="doc-biblioref">Quast 2024</a>)</span>.
+Abbildung 2.4: Monatliche aggregierte Bodenfeuchte (%) für Januar, April, Juli und Oktober 2018, abgerufen mit dem für das GHG-Kit Projekt entwickelten Algorithmus der TU Wien. Karten erstellt mit EOmaps <span class="citation" data-cites="quast_getting_2024">(<a href="references.de.html#ref-quast_getting_2024" role="doc-biblioref">Quast 2024</a>)</span>.
 </figcaption></figure>
 </div>
 </div>
 </div>
-<p>In this last rendition of the maps we have a nice linear relation between color and soil moisture, where the brown color evokes images of dried-out soils and the blues of water saturated conditions.</p>
-<hr></section><section id="supplement" class="level2" data-number="2.7"><h2 data-number="2.7" class="anchored" data-anchor-id="supplement">
-<span class="header-section-number">2.7</span> Supplement</h2>
-<section id="radiometric-terrain-correction" class="level3" data-number="2.7.1"><h3 data-number="2.7.1" class="anchored" data-anchor-id="radiometric-terrain-correction">
-<span class="header-section-number">2.7.1</span> Radiometric Terrain Correction</h3>
-<p>Microwave backscatter has a strong dependency on the viewing angle, meaning that the backscatter measured varies a lot depending on the angle we are looking at the ground. The incident angle under which the ground is viewed from a Sentinel-1 sensor, depends on its orbit. To correct for this, <span class="citation" data-cites="bauer-marschallinger_toward_2019">Bauer-Marschallinger et al. (<a href="references.html#ref-bauer-marschallinger_toward_2019" role="doc-biblioref">2019</a>)</span> developed a method to normalise to a common incident angle of 40 degrees. However, this method assumes relatively flat topography and can fail in steep and varied terrain. Therefore, we use a high-resolution digital elevation model (DEM) to correct the backscatter at high resolution before up-sampling to 500 meters and normalizing to the common incident angle.</p>
-</section><section id="dense-vegetation-filtering" class="level3" data-number="2.7.2"><h3 data-number="2.7.2" class="anchored" data-anchor-id="dense-vegetation-filtering">
-<span class="header-section-number">2.7.2</span> Dense Vegetation Filtering</h3>
-<p>Dense vegetation can obstruct the signal from the soil, or it might be so weak that it’s indistinguishable from noise. To amplify the signal over densely vegetated areas <span class="citation" data-cites="massart_mitigating_2024">Massart et al. (<a href="references.html#ref-massart_mitigating_2024" role="doc-biblioref">2024</a>)</span> developed a spatial filtering method to mask dense vegetation at high resolution before up-sampling to 500 m. By doing this the 500 m pixel contains a stronger signal from the soil, facilitating easier soil moisture retrieval.</p>
-</section><section id="shadowing-and-layover" class="level3" data-number="2.7.3"><h3 data-number="2.7.3" class="anchored" data-anchor-id="shadowing-and-layover">
-<span class="header-section-number">2.7.3</span> Shadowing and Layover</h3>
-<p>Layover occurs because microwave radar measures the distance between the sensor and a point on the ground. In very steep and high terrain, the terrain is “closer” to the sensor, shortening the measured distance and causing the point to appear before others in the raster.</p>
+<p>In dieser letzten Wiedergabe der Karten zeigt sich eine schöne lineare Beziehung zwischen Farbe und Bodenfeuchtigkeit, wobei die braune Farbe an ausgetrocknete Böden und die blaue Farbe an wassergesättigte Bedingungen erinnert.</p>
+<hr></section><section id="anhang" class="level2" data-number="2.7"><h2 data-number="2.7" class="anchored" data-anchor-id="anhang">
+<span class="header-section-number">2.7</span> Anhang</h2>
+<section id="radiometrische-geländekorrektur" class="level3" data-number="2.7.1"><h3 data-number="2.7.1" class="anchored" data-anchor-id="radiometrische-geländekorrektur">
+<span class="header-section-number">2.7.1</span> Radiometrische Geländekorrektur</h3>
+<p>Die Mikrowellen-Rückstreuung ist stark vom Betrachtungswinkel abhängig, d.h. die gemessene Rückstreuung variiert stark, je nachdem aus welchem Winkel wir auf den Boden blicken. Der Einfallswinkel, unter dem der Boden von einem Sentinel-1-Sensor aus gesehen wird, hängt von seiner Umlaufbahn ab. Um dies zu korrigieren, entwickelte <span class="citation" data-cites="bauer-marschallinger_toward_2019">Bauer-Marschallinger u. a. (<a href="references.de.html#ref-bauer-marschallinger_toward_2019" role="doc-biblioref">2019</a>)</span> eine Methode zur Normalisierung auf einen gemeinsamen Einfallswinkel von 40 Grad. Diese Methode geht jedoch von einer relativ flachen Topografie aus und kann in steilem und abwechslungsreichem Gelände versagen. Daher verwenden wir ein hochauflösendes digitales Höhenmodell (DEM), um die Rückstreuung in hoher Auflösung zu korrigieren, bevor wir auf 500 Meter hochtakten und auf den gemeinsamen Einfallswinkel normalisieren.</p>
+</section><section id="filterung-von-dichter-vegetation" class="level3" data-number="2.7.2"><h3 data-number="2.7.2" class="anchored" data-anchor-id="filterung-von-dichter-vegetation">
+<span class="header-section-number">2.7.2</span> Filterung von dichter Vegetation</h3>
+<p>Dichte Vegetation kann das Signal des Bodens behindern, oder es kann so schwach sein, dass es nicht von Rauschen zu unterscheiden ist. Um das Signal über dicht bewachsenen Gebieten zu verstärken, hat <span class="citation" data-cites="massart_mitigating_2024">Massart u. a. (<a href="references.de.html#ref-massart_mitigating_2024" role="doc-biblioref">2024</a>)</span> eine räumliche Filtermethode entwickelt, mit der dichte Vegetation bei hoher Auflösung maskiert wird, bevor das Upsampling auf 500 m erfolgt.</p>
+</section><section id="abschattung-und-überlagerung" class="level3" data-number="2.7.3"><h3 data-number="2.7.3" class="anchored" data-anchor-id="abschattung-und-überlagerung">
+<span class="header-section-number">2.7.3</span> Abschattung und Überlagerung</h3>
+<p>Layover tritt auf, weil das Mikrowellenradar die Entfernung zwischen dem Sensor und einem Punkt auf dem Boden misst. In sehr steilem und hohem Gelände ist das Gelände „näher“ am Sensor, wodurch sich die gemessene Entfernung verkürzt und der Punkt vor anderen im Raster erscheint.</p>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
 <div id="ref-bauer-marschallinger_toward_2019" class="csl-entry" role="listitem">
-Bauer-Marschallinger, Bernhard, Vahid Freeman, Senmao Cao, Christoph Paulik, Stefan Schaufler, Tobias Stachl, Sara Modanesi, et al. 2019. <span>“Toward <span>Global</span> <span>Soil</span> <span>Moisture</span> <span>Monitoring</span> <span>With</span> <span>Sentinel</span>-1: <span>Harnessing</span> <span>Assets</span> and <span>Overcoming</span> <span>Obstacles</span>.”</span> <em>IEEE Transactions on Geoscience and Remote Sensing</em> 57 (1): 520–39. <a href="https://doi.org/10.1109/TGRS.2018.2858004">https://doi.org/10.1109/TGRS.2018.2858004</a>.
+Bauer-Marschallinger, Bernhard, Vahid Freeman, Senmao Cao, Christoph Paulik, Stefan Schaufler, Tobias Stachl, Sara Modanesi, u. a. 2019. <span>„Toward <span>Global</span> <span>Soil</span> <span>Moisture</span> <span>Monitoring</span> <span>With</span> <span>Sentinel</span>-1: <span>Harnessing</span> <span>Assets</span> and <span>Overcoming</span> <span>Obstacles</span>“</span>. <em>IEEE Transactions on Geoscience and Remote Sensing</em> 57 (1): 520–39. <a href="https://doi.org/10.1109/TGRS.2018.2858004">https://doi.org/10.1109/TGRS.2018.2858004</a>.
 </div>
 <div id="ref-massart_mitigating_2024" class="csl-entry" role="listitem">
-Massart, Samuel, Mariette Vreugdenhil, Bernhard Bauer-Marschallinger, Claudio Navacchi, Bernhard Raml, and Wolfgang Wagner. 2024. <span>“Mitigating the Impact of Dense Vegetation on the <span>Sentinel</span>-1 Surface Soil Moisture Retrievals over <span>Europe</span>.”</span> <em>European Journal of Remote Sensing</em> 57 (1): 2300985. <a href="https://doi.org/10.1080/22797254.2023.2300985">https://doi.org/10.1080/22797254.2023.2300985</a>.
+Massart, Samuel, Mariette Vreugdenhil, Bernhard Bauer-Marschallinger, Claudio Navacchi, Bernhard Raml, und Wolfgang Wagner. 2024. <span>„Mitigating the impact of dense vegetation on the <span>Sentinel</span>-1 surface soil moisture retrievals over <span>Europe</span>“</span>. <em>European Journal of Remote Sensing</em> 57 (1): 2300985. <a href="https://doi.org/10.1080/22797254.2023.2300985">https://doi.org/10.1080/22797254.2023.2300985</a>.
 </div>
 <div id="ref-quast_getting_2024" class="csl-entry" role="listitem">
-Quast, Raphael. 2024. <span>“Getting <span>Started</span> — <span>EOmaps</span> Documentation.”</span> <a href="https://eomaps.readthedocs.io/en/latest/">https://eomaps.readthedocs.io/en/latest/</a>.
+Quast, Raphael. 2024. <span>„Getting <span>Started</span> — <span>EOmaps</span> documentation“</span>. <a href="https://eomaps.readthedocs.io/en/latest/">https://eomaps.readthedocs.io/en/latest/</a>.
 </div>
 </div>
 </section></section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
@@ -1582,12 +1582,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // flash "checked"
     button.classList.add('code-copy-button-checked');
     var currentTitle = button.getAttribute("title");
-    button.setAttribute("title", "Copied!");
+    button.setAttribute("title", "Kopiert");
     let tooltip;
     if (window.bootstrap) {
       button.setAttribute("data-bs-toggle", "tooltip");
       button.setAttribute("data-bs-placement", "left");
-      button.setAttribute("data-bs-title", "Copied!");
+      button.setAttribute("data-bs-title", "Kopiert");
       tooltip = new bootstrap.Tooltip(button, 
         { trigger: "manual", 
           customClass: "code-copy-button-tooltip",
@@ -1937,13 +1937,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script><nav class="page-navigation"><div class="nav-page nav-page-previous">
-      <a href="./01_notebook_as_an_app.html" class="pagination-link" aria-label="Reverend Bayes updates our Believe in Flood Detection">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>  <span class="chapter-title">Reverend Bayes updates our Believe in Flood Detection</span></span>
+      <a href="./01_notebook_as_an_app.de.html" class="pagination-link" aria-label="Reverend Bayes aktualisiert unser Glauben an Flood Detection">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>  <span class="chapter-title">Reverend Bayes aktualisiert unser Glauben an Flood Detection</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./references.html" class="pagination-link" aria-label="References">
-        <span class="nav-page-text">References</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./references.de.html" class="pagination-link" aria-label="Referenzen">
+        <span class="nav-page-text">Referenzen</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
