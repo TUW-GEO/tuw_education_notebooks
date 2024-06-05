@@ -43,7 +43,7 @@ def view_bayes_flood(sig0_dc, calc_posteriors=None, bayesian_flood_decision=None
     else:
         m.set_data(data=sig0_dc, x="x", y="y", parameter="SIG0", crs=Maps.CRS.Equi7_EU)
         m.plot_map()
-        m.add_colorbar(label="$\sigma^0$ (dB)", orientation="vertical")
+        m.add_colorbar(label="$\sigma^0$ (dB)", orientation="vertical", hist_bins=30)
         m.apply_layout(
             {
                 "figsize": [7.5, 5.25],

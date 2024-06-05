@@ -46,14 +46,14 @@ Im Bodenfeuchteprodukt, das für GHG-Kit entwickelt wurde, gehen wir diese Herau
 In den folgenden Zeilen laden wir eine Teilmenge des Bodenfeuchtedatensatzes mit „xarray“, der als Zarr-Archiv gespeichert ist.
 
 ```{python}
-SSM_dc = xr.open_zarr(RESOURCES / "SSM-CD-SIG40-R-DVEG_2018.zarr/")
+SSM_dc = xr.open_zarr(RESOURCES / "SSM-CD-SIG40-R-DVEG_2018.zarr/").load()
 SSM_dc
 ```
 
 We resample this dataset along the time dimension thereby aggregating surface soil moisture as mean values over months.
 
 ```{python}
-SSM_dc_monthly = SSM_dc.resample(time="ME").mean()
+SSM_dc_monthly = SSM_dc.resample(time="ME").mean().compute()
 SSM_dc_monthly
 ```
 

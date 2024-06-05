@@ -7,8 +7,6 @@ jupyter:
     language: "python"
     display_name: "tuw_education_notebooks"
 keep-ipynb: true
-execute: 
-  cache: true
 code-fold: true
 ---
 
@@ -45,14 +43,14 @@ In the Soil Moisture Product developed for GHG-Kit we address these challenges, 
 In the following lines we load a subset of the soil moisture dataset with `xarray`, which is stored as a Zarr archive.
 
 ```{python}
-SSM_dc = xr.open_zarr(RESOURCES / "SSM-CD-SIG40-R-DVEG_2018.zarr/")
+SSM_dc = xr.open_zarr(RESOURCES / "SSM-CD-SIG40-R-DVEG_2018.zarr/").load()
 SSM_dc
 ```
 
 We resample this dataset along the time dimension thereby aggregating surface soil moisture as mean values over months.
 
 ```{python}
-SSM_dc_monthly = SSM_dc.resample(time="ME").mean()
+SSM_dc_monthly = SSM_dc.resample(time="ME").mean().compute()
 SSM_dc_monthly
 ```
 
@@ -95,7 +93,7 @@ This colormap fixes the previous issues. We see much more nuance in the variance
 
 ## The Good
 
-This last step is more subjective and relates to the psychology of colors: the multiple meanings and feelings that people associate with a color. Here we use a linear color gradient developed by TU Wien from brown for dry soils to blue for wet soils.
+This last step is more subjective and relates to the psychology of colors: the multiple meanings and feelings that people associate with a color. Here we use a monotonic color gradient developed by TU Wien from brown for dry soils to blue for wet soils.
 
 ```{python}
 #| label: fig-custom
@@ -104,7 +102,7 @@ SSM_CMAP = load_cmap(RESOURCES / "colour-tables/ssm-continuous.ct")
 view_monthly_ssm(SSM_dc_monthly, SSM_CMAP)
 ```
 
-In this last rendition of the maps we have a nice linear relation between color and soil moisture, where the brown color evokes images of dried-out soils and the blues of water saturated conditions.
+In this last rendition of the maps we have a nice monotonic relation between color and soil moisture, where the brown color evokes images of dried-out soils and the blues of water saturated conditions.
 
 ---
 
