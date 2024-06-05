@@ -17,9 +17,6 @@ format:
   html:
     theme: cosmo
 
-execute:
-  freeze: auto
-
 babelquarto:
   languagecodes:
   - name: de

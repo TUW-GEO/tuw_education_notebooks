@@ -7,8 +7,6 @@ jupyter:
     language: "python"
     display_name: "tuw_education_notebooks"
 keep-ipynb: true
-execute: 
-  cache: true
 code-fold: true
 lang: de
 ---
@@ -46,7 +44,7 @@ Im Bodenfeuchteprodukt, das für GHG-Kit entwickelt wurde, gehen wir diese Herau
 In den folgenden Zeilen laden wir eine Teilmenge des Bodenfeuchtedatensatzes mit „xarray“, der als Zarr-Archiv gespeichert ist.
 
 ```{python}
-SSM_dc = xr.open_zarr(RESOURCES / "SSM-CD-SIG40-R-DVEG_2018.zarr/").load()
+SSM_dc = xr.open_zarr(RESOURCES / "SSM-CD-SIG40-R-DVEG_2018.zarr/")
 SSM_dc
 ```
 

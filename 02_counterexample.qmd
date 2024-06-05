@@ -43,7 +43,7 @@ In the Soil Moisture Product developed for GHG-Kit we address these challenges, 
 In the following lines we load a subset of the soil moisture dataset with `xarray`, which is stored as a Zarr archive.
 
 ```{python}
-SSM_dc = xr.open_zarr(RESOURCES / "SSM-CD-SIG40-R-DVEG_2018.zarr/").load()
+SSM_dc = xr.open_zarr(RESOURCES / "SSM-CD-SIG40-R-DVEG_2018.zarr/")
 SSM_dc
 ```
 

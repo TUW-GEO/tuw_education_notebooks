@@ -33,10 +33,10 @@ def view_bayes_flood(sig0_dc, calc_posteriors=None, bayesian_flood_decision=None
         m.show_layer("map", ("data", 0.5))
         m.apply_layout(
             {
-                "figsize": [7.5, 5.25],
-                "0_map": [0.5, 0.1, 1, 0.8],
-                "1_": [0.1, 0.1, 0.35, 0.3],
-                "2_": [0.1, 0.6, 0.35, 0.3],
+                'figsize': [7.32, 4.59],
+                '0_map': [0.44573, 0.11961, 0.3375, 0.75237],
+                '1_': [0.10625, 0.5781, 0.3125, 0.29902],
+                '2_': [0.10625, 0.11961, 0.3125, 0.29902],
             }
         )
 
@@ -46,12 +46,12 @@ def view_bayes_flood(sig0_dc, calc_posteriors=None, bayesian_flood_decision=None
         m.add_colorbar(label="$\sigma^0$ (dB)", orientation="vertical", hist_bins=30)
         m.apply_layout(
             {
-                "figsize": [7.5, 5.25],
-                "0_map": [0.425, 0.1, 1, 0.8],
-                "1_": [0.05, 0.1, 0.35, 0.3],
-                "2_": [0.05, 0.6, 0.35, 0.3],
-                '3_cb': [0.835, 0.02, 0.1, 0.99], 
-                '3_cb_histogram_size': 0.8,
+                'figsize': [7.32, 4.59],
+                '0_map': [0.44573, 0.11961, 0.3375, 0.75237],
+                '1_': [0.10625, 0.5781, 0.3125, 0.29902],
+                '2_': [0.10625, 0.11961, 0.3125, 0.29902],
+                '3_cb': [0.8, 0.09034, 0.1, 0.85],
+                '3_cb_histogram_size': 0.8
             }
         )
 
