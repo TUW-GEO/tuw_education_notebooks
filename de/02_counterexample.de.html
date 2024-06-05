@@ -210,7 +210,7 @@ div.csl-indent {
 <figure class="figure"><p><img src="https://upload.wikimedia.org/wikipedia/en/4/45/Good_the_bad_and_the_ugly_poster.jpg" class="img-fluid figure-img"></p>
 <figcaption>Bild vom <a href="https://upload.wikimedia.org/wikipedia/en/4/45/Good_the_bad_and_the_ugly_poster.jpg">wikipedia</a></figcaption></figure>
 </div>
-<div id="5be2cf49" class="cell" data-execution_count="1">
+<div id="c6e03ca0" class="cell" data-execution_count="1">
 <details class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> xarray <span class="im">as</span> xr</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pathlib <span class="im">import</span> Path</span>
@@ -240,10 +240,11 @@ Abbildung 2.1: Methode zur Erkennung von Veränderungen bei der Bestimmung der 
 </ul>
 <p>Im Bodenfeuchteprodukt, das für GHG-Kit entwickelt wurde, gehen wir diese Herausforderungen an, indem wir <strong>radiometrische geländekorrigierte Rückstreudaten</strong> verwenden, um das Gelände zu „glätten“, und statische räumliche Filterung von <strong>dichter Vegetation</strong> bei hoher Auflösung (siehe Anhang).</p>
 <p>In den folgenden Zeilen laden wir eine Teilmenge des Bodenfeuchtedatensatzes mit „xarray“, der als Zarr-Archiv gespeichert ist.</p>
-<div id="63bde753" class="cell" data-execution_count="2">
-<details class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>SSM_dc <span class="op">=</span> xr.open_zarr(RESOURCES <span class="op">/</span> <span class="st">"SSM-CD-SIG40-R-DVEG_2018.zarr/"</span>).load()</span>
+<div id="24a5e419" class="cell" data-execution_count="2">
+<details class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>SSM_dc <span class="op">=</span> xr.open_zarr(RESOURCES <span class="op">/</span> <span class="st">"SSM-CD-SIG40-R-DVEG_2018.zarr/"</span>)</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>SSM_dc</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details><div class="cell-output cell-output-display" data-execution_count="2">
+<div>
 <div>
 <svg style="position: absolute; width: 0; height: 0; overflow: hidden"><defs><symbol id="icon-database" viewbox="0 0 32 32"><path d="M16 0c-8.837 0-16 2.239-16 5v4c0 2.761 7.163 5 16 5s16-2.239 16-5v-4c0-2.761-7.163-5-16-5z"></path><path d="M16 17c-8.837 0-16-2.239-16-5v6c0 2.761 7.163 5 16 5s16-2.239 16-5v-6c0 2.761-7.163 5-16 5z"></path><path d="M16 26c-8.837 0-16-2.239-16-5v6c0 2.761 7.163 5 16 5s16-2.239 16-5v-6c0 2.761-7.163 5-16 5z"></path></symbol><symbol id="icon-file-text2" viewbox="0 0 32 32"><path d="M28.681 7.159c-0.694-0.947-1.662-2.053-2.724-3.116s-2.169-2.030-3.116-2.724c-1.612-1.182-2.393-1.319-2.841-1.319h-15.5c-1.378 0-2.5 1.121-2.5 2.5v27c0 1.378 1.122 2.5 2.5 2.5h23c1.378 0 2.5-1.122 2.5-2.5v-19.5c0-0.448-0.137-1.23-1.319-2.841zM24.543 5.457c0.959 0.959 1.712 1.825 2.268 2.543h-4.811v-4.811c0.718 0.556 1.584 1.309 2.543 2.268zM28 29.5c0 0.271-0.229 0.5-0.5 0.5h-23c-0.271 0-0.5-0.229-0.5-0.5v-27c0-0.271 0.229-0.5 0.5-0.5 0 0 15.499-0 15.5 0v7c0 0.552 0.448 1 1 1h7v19.5z"></path><path d="M23 26h-14c-0.552 0-1-0.448-1-1s0.448-1 1-1h14c0.552 0 1 0.448 1 1s-0.448 1-1 1z"></path><path d="M23 22h-14c-0.552 0-1-0.448-1-1s0.448-1 1-1h14c0.552 0 1 0.448 1 1s-0.448 1-1 1z"></path><path d="M23 18h-14c-0.552 0-1-0.448-1-1s0.448-1 1-1h14c0.552 0 1 0.448 1 1s-0.448 1-1 1z"></path></symbol></defs></svg><style>/* CSS stylesheet for displaying xarray objects in jupyterlab.
  *
@@ -601,13 +602,13 @@ Coordinates:
   * x            (x) float64 10kB 4.8e+06 4.801e+06 ... 5.399e+06 5.4e+06
   * y            (y) float64 10kB 1.8e+06 1.799e+06 ... 1.201e+06 1.2e+06
 Data variables:
-    band_data    (time, y, x) float64 8GB nan nan nan nan ... nan nan nan nan
-    spatial_ref  int64 8B 0</pre>
+    band_data    (time, y, x) float64 8GB dask.array&lt;chunksize=(100, 100, 100), meta=np.ndarray&gt;
+    spatial_ref  int64 8B ...</pre>
 <div class="xr-wrap" style="display:none">
 <div class="xr-header"><div class="xr-obj-type">xarray.Dataset</div></div>
 <ul class="xr-sections">
 <li class="xr-section-item">
-<input id="section-a05e12c8-29c4-4f5d-af4b-f14625ee4b44" class="xr-section-summary-in" type="checkbox" disabled><label for="section-a05e12c8-29c4-4f5d-af4b-f14625ee4b44" class="xr-section-summary" title="Expand/collapse section">Dimensions:</label><div class="xr-section-inline-details"><ul class="xr-dim-list">
+<input id="section-fb49a1d6-1294-42a5-bb27-250874dcac65" class="xr-section-summary-in" type="checkbox" disabled><label for="section-fb49a1d6-1294-42a5-bb27-250874dcac65" class="xr-section-summary" title="Expand/collapse section">Dimensions:</label><div class="xr-section-inline-details"><ul class="xr-dim-list">
 <li>
 <span class="xr-has-index">time</span>: 723</li>
 <li>
@@ -618,14 +619,14 @@ Data variables:
 <div class="xr-section-details"></div>
 </li>
 <li class="xr-section-item">
-<input id="section-f2fdbcc2-d10f-4e4c-b13c-bb4b22532822" class="xr-section-summary-in" type="checkbox" checked><label for="section-f2fdbcc2-d10f-4e4c-b13c-bb4b22532822" class="xr-section-summary">Coordinates: <span>(3)</span></label><div class="xr-section-inline-details"></div>
+<input id="section-82abda0a-5f87-4447-a011-8801fe954b9d" class="xr-section-summary-in" type="checkbox" checked><label for="section-82abda0a-5f87-4447-a011-8801fe954b9d" class="xr-section-summary">Coordinates: <span>(3)</span></label><div class="xr-section-inline-details"></div>
 <div class="xr-section-details"><ul class="xr-var-list">
 <li class="xr-var-item">
 <div class="xr-var-name"><span class="xr-has-index">time</span></div>
 <div class="xr-var-dims">(time)</div>
 <div class="xr-var-dtype">datetime64[ns]</div>
 <div class="xr-var-preview xr-preview">2018-01-01T05:08:47 ... 2018-12-...</div>
-<input id="attrs-712eb830-f30a-4a2c-880e-f4cd60941c33" class="xr-var-attrs-in" type="checkbox" disabled><label for="attrs-712eb830-f30a-4a2c-880e-f4cd60941c33" title="Show/Hide attributes"><svg class="icon xr-icon-file-text2"><use href="#icon-file-text2"></use></svg></label><input id="data-ff9ab038-7ef6-4fd7-b000-df1277482eb3" class="xr-var-data-in" type="checkbox"><label for="data-ff9ab038-7ef6-4fd7-b000-df1277482eb3" title="Show/Hide data repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-var-attrs"><dl class="xr-attrs"></dl></div>
+<input id="attrs-3a828b96-4cbf-4d1c-aec6-b0e5e58c7d4e" class="xr-var-attrs-in" type="checkbox" disabled><label for="attrs-3a828b96-4cbf-4d1c-aec6-b0e5e58c7d4e" title="Show/Hide attributes"><svg class="icon xr-icon-file-text2"><use href="#icon-file-text2"></use></svg></label><input id="data-53fdf349-e7da-4785-9406-780e0cc1894d" class="xr-var-data-in" type="checkbox"><label for="data-53fdf349-e7da-4785-9406-780e0cc1894d" title="Show/Hide data repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-var-attrs"><dl class="xr-attrs"></dl></div>
 <div class="xr-var-data"><pre>array(['2018-01-01T05:08:47.000000000', '2018-01-01T17:07:13.000000000',
        '2018-01-02T05:01:40.000000000', ..., '2018-12-30T16:42:07.000000000',
        '2018-12-31T05:26:15.000000000', '2018-12-31T16:34:48.000000000'],
@@ -636,7 +637,7 @@ Data variables:
 <div class="xr-var-dims">(x)</div>
 <div class="xr-var-dtype">float64</div>
 <div class="xr-var-preview xr-preview">4.8e+06 4.801e+06 ... 5.4e+06</div>
-<input id="attrs-2f0d3898-38d4-4519-9486-eb5745d8b8cb" class="xr-var-attrs-in" type="checkbox" disabled><label for="attrs-2f0d3898-38d4-4519-9486-eb5745d8b8cb" title="Show/Hide attributes"><svg class="icon xr-icon-file-text2"><use href="#icon-file-text2"></use></svg></label><input id="data-dbea7b11-d1d3-4352-9d6d-419882bd9a9f" class="xr-var-data-in" type="checkbox"><label for="data-dbea7b11-d1d3-4352-9d6d-419882bd9a9f" title="Show/Hide data repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-var-attrs"><dl class="xr-attrs"></dl></div>
+<input id="attrs-abad6cf6-10af-4bcb-aa36-139210e44a18" class="xr-var-attrs-in" type="checkbox" disabled><label for="attrs-abad6cf6-10af-4bcb-aa36-139210e44a18" title="Show/Hide attributes"><svg class="icon xr-icon-file-text2"><use href="#icon-file-text2"></use></svg></label><input id="data-203efa4b-7c3b-4cdc-8435-13fa03db7f04" class="xr-var-data-in" type="checkbox"><label for="data-203efa4b-7c3b-4cdc-8435-13fa03db7f04" title="Show/Hide data repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-var-attrs"><dl class="xr-attrs"></dl></div>
 <div class="xr-var-data"><pre>array([4800250., 4800750., 4801250., ..., 5398750., 5399250., 5399750.])</pre></div>
 </li>
 <li class="xr-var-item">
@@ -644,20 +645,20 @@ Data variables:
 <div class="xr-var-dims">(y)</div>
 <div class="xr-var-dtype">float64</div>
 <div class="xr-var-preview xr-preview">1.8e+06 1.799e+06 ... 1.2e+06</div>
-<input id="attrs-ea658620-5b6a-45b1-992d-66b25214696c" class="xr-var-attrs-in" type="checkbox" disabled><label for="attrs-ea658620-5b6a-45b1-992d-66b25214696c" title="Show/Hide attributes"><svg class="icon xr-icon-file-text2"><use href="#icon-file-text2"></use></svg></label><input id="data-ed9edbbe-fa24-4c4c-8df0-dab3f1309c71" class="xr-var-data-in" type="checkbox"><label for="data-ed9edbbe-fa24-4c4c-8df0-dab3f1309c71" title="Show/Hide data repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-var-attrs"><dl class="xr-attrs"></dl></div>
+<input id="attrs-14cbba67-496e-44bc-8feb-655e4c09967c" class="xr-var-attrs-in" type="checkbox" disabled><label for="attrs-14cbba67-496e-44bc-8feb-655e4c09967c" title="Show/Hide attributes"><svg class="icon xr-icon-file-text2"><use href="#icon-file-text2"></use></svg></label><input id="data-377baac6-8556-456b-a90c-9e5e59ed8397" class="xr-var-data-in" type="checkbox"><label for="data-377baac6-8556-456b-a90c-9e5e59ed8397" title="Show/Hide data repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-var-attrs"><dl class="xr-attrs"></dl></div>
 <div class="xr-var-data"><pre>array([1799750., 1799250., 1798750., ..., 1201250., 1200750., 1200250.])</pre></div>
 </li>
 </ul></div>
 </li>
 <li class="xr-section-item">
-<input id="section-098450c1-8a96-451b-b528-cd63fca672b4" class="xr-section-summary-in" type="checkbox" checked><label for="section-098450c1-8a96-451b-b528-cd63fca672b4" class="xr-section-summary">Data variables: <span>(2)</span></label><div class="xr-section-inline-details"></div>
+<input id="section-b617f46d-63a3-4ecf-83a3-f306a95852f5" class="xr-section-summary-in" type="checkbox" checked><label for="section-b617f46d-63a3-4ecf-83a3-f306a95852f5" class="xr-section-summary">Data variables: <span>(2)</span></label><div class="xr-section-inline-details"></div>
 <div class="xr-section-details"><ul class="xr-var-list">
 <li class="xr-var-item">
 <div class="xr-var-name"><span>band_data</span></div>
 <div class="xr-var-dims">(time, y, x)</div>
 <div class="xr-var-dtype">float64</div>
-<div class="xr-var-preview xr-preview">nan nan nan nan ... nan nan nan nan</div>
-<input id="attrs-39dbec17-fc1f-4ffd-b50c-77d7ae5f113a" class="xr-var-attrs-in" type="checkbox"><label for="attrs-39dbec17-fc1f-4ffd-b50c-77d7ae5f113a" title="Show/Hide attributes"><svg class="icon xr-icon-file-text2"><use href="#icon-file-text2"></use></svg></label><input id="data-086c527c-34d7-44e1-82cb-2669f5ffff08" class="xr-var-data-in" type="checkbox"><label for="data-086c527c-34d7-44e1-82cb-2669f5ffff08" title="Show/Hide data repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-var-attrs"><dl class="xr-attrs">
+<div class="xr-var-preview xr-preview">dask.array&lt;chunksize=(100, 100, 100), meta=np.ndarray&gt;</div>
+<input id="attrs-cd34c6bb-f124-4d68-8821-8afded323146" class="xr-var-attrs-in" type="checkbox"><label for="attrs-cd34c6bb-f124-4d68-8821-8afded323146" title="Show/Hide attributes"><svg class="icon xr-icon-file-text2"><use href="#icon-file-text2"></use></svg></label><input id="data-f3acd952-3dcb-4bc0-a53e-6fbbcf6a0100" class="xr-var-data-in" type="checkbox"><label for="data-f3acd952-3dcb-4bc0-a53e-6fbbcf6a0100" title="Show/Hide data repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-var-attrs"><dl class="xr-attrs">
 <dt><span>AREA_OR_POINT :</span></dt>
 <dd>Area</dd>
 <dt><span>LinearSegmentedColormap :</span></dt>
@@ -703,54 +704,51 @@ Data variables:
 <dt><span>wrapper_git_tag :</span></dt>
 <dd>v0.1.0</dd>
 </dl></div>
-<div class="xr-var-data"><pre>array([[[ nan,  nan,  nan, ...,  nan,  nan,  nan],
-        [ nan,  nan,  nan, ...,  nan,  nan,  nan],
-        [ nan,  nan,  nan, ...,  nan,  nan,  nan],
-        ...,
-        [ nan,  nan,  nan, ...,  nan,  nan,  nan],
-        [ nan,  nan,  nan, ...,  nan,  nan,  nan],
-        [ nan,  nan,  nan, ...,  nan,  nan,  nan]],
-
-       [[ nan,  nan,  nan, ...,  nan,  nan,  nan],
-        [ nan,  nan,  nan, ...,  nan,  nan,  nan],
-        [ nan,  nan,  nan, ...,  nan,  nan,  nan],
-        ...,
-        [ nan,  nan,  nan, ...,  nan,  nan,  nan],
-        [ nan,  nan,  nan, ...,  nan,  nan,  nan],
-        [ nan,  nan,  nan, ...,  nan,  nan,  nan]],
-
-       [[ nan,  nan,  nan, ..., 26.5,  nan,  nan],
-        [ nan,  nan,  nan, ...,  nan,  nan,  nan],
-        [ nan,  nan,  nan, ...,  nan,  nan,  nan],
-        ...,
-...
-        ...,
-        [ nan,  nan,  nan, ...,  nan,  nan,  nan],
-        [ nan,  nan,  nan, ...,  nan,  nan,  nan],
-        [ nan,  nan,  nan, ...,  nan,  nan,  nan]],
-
-       [[85. , 82. , 73.5, ...,  nan,  nan,  nan],
-        [85.5, 79. , 72.5, ...,  nan,  nan,  nan],
-        [79.5, 81. , 80. , ...,  nan,  nan,  nan],
-        ...,
-        [ nan,  nan,  nan, ...,  nan,  nan,  nan],
-        [ nan,  nan,  nan, ...,  nan,  nan,  nan],
-        [ nan,  nan,  nan, ...,  nan,  nan,  nan]],
-
-       [[ nan,  nan,  nan, ...,  nan,  nan,  nan],
-        [ nan,  nan,  nan, ...,  nan,  nan,  nan],
-        [ nan,  nan,  nan, ...,  nan,  nan,  nan],
-        ...,
-        [ nan,  nan,  nan, ...,  nan,  nan,  nan],
-        [ nan,  nan,  nan, ...,  nan,  nan,  nan],
-        [ nan,  nan,  nan, ...,  nan,  nan,  nan]]])</pre></div>
+<div class="xr-var-data">
+<table data-quarto-postprocess="true" class="table table-sm table-striped small">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<tbody><tr class="odd">
+<td><table data-quarto-postprocess="true" class="table table-sm table-striped small">
+<thead><tr class="header">
+<th></th>
+<th data-quarto-table-cell-role="th">Array</th>
+<th data-quarto-table-cell-role="th">Chunk</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">Bytes</td>
+<td>7.76 GiB</td>
+<td>7.63 MiB</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">Shape</td>
+<td>(723, 1200, 1200)</td>
+<td>(100, 100, 100)</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">Dask graph</td>
+<td colspan="2">1152 chunks in 2 graph layers</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">Data type</td>
+<td colspan="2">float64 numpy.ndarray</td>
+</tr>
+</tbody>
+</table></td>
+<td><svg width="222" height="212" style="stroke:rgb(0,0,0);stroke-width:1"><!-- Horizontal lines --><line x1="10" y1="0" x2="52" y2="42" style="stroke-width:2"></line><line x1="10" y1="10" x2="52" y2="52"></line><line x1="10" y1="20" x2="52" y2="62"></line><line x1="10" y1="30" x2="52" y2="72"></line><line x1="10" y1="40" x2="52" y2="82"></line><line x1="10" y1="50" x2="52" y2="92"></line><line x1="10" y1="60" x2="52" y2="102"></line><line x1="10" y1="70" x2="52" y2="112"></line><line x1="10" y1="80" x2="52" y2="122"></line><line x1="10" y1="90" x2="52" y2="132"></line><line x1="10" y1="100" x2="52" y2="142"></line><line x1="10" y1="110" x2="52" y2="152"></line><line x1="10" y1="120" x2="52" y2="162" style="stroke-width:2"></line><!-- Vertical lines --><line x1="10" y1="0" x2="10" y2="120" style="stroke-width:2"></line><line x1="15" y1="5" x2="15" y2="125"></line><line x1="21" y1="11" x2="21" y2="131"></line><line x1="27" y1="17" x2="27" y2="137"></line><line x1="33" y1="23" x2="33" y2="143"></line><line x1="39" y1="29" x2="39" y2="149"></line><line x1="45" y1="35" x2="45" y2="155"></line><line x1="51" y1="41" x2="51" y2="161"></line><line x1="52" y1="42" x2="52" y2="162" style="stroke-width:2"></line><!-- Colored Rectangle --><polygon points="10.0,0.0 52.529411764705884,42.529411764705884 52.529411764705884,162.52941176470588 10.0,120.0" style="fill:#ECB172A0;stroke-width:0"></polygon><!-- Horizontal lines --><line x1="10" y1="0" x2="130" y2="0" style="stroke-width:2"></line><line x1="15" y1="5" x2="135" y2="5"></line><line x1="21" y1="11" x2="141" y2="11"></line><line x1="27" y1="17" x2="147" y2="17"></line><line x1="33" y1="23" x2="153" y2="23"></line><line x1="39" y1="29" x2="159" y2="29"></line><line x1="45" y1="35" x2="165" y2="35"></line><line x1="51" y1="41" x2="171" y2="41"></line><line x1="52" y1="42" x2="172" y2="42" style="stroke-width:2"></line><!-- Vertical lines --><line x1="10" y1="0" x2="52" y2="42" style="stroke-width:2"></line><line x1="20" y1="0" x2="62" y2="42"></line><line x1="30" y1="0" x2="72" y2="42"></line><line x1="40" y1="0" x2="82" y2="42"></line><line x1="50" y1="0" x2="92" y2="42"></line><line x1="60" y1="0" x2="102" y2="42"></line><line x1="70" y1="0" x2="112" y2="42"></line><line x1="80" y1="0" x2="122" y2="42"></line><line x1="90" y1="0" x2="132" y2="42"></line><line x1="100" y1="0" x2="142" y2="42"></line><line x1="110" y1="0" x2="152" y2="42"></line><line x1="120" y1="0" x2="162" y2="42"></line><line x1="130" y1="0" x2="172" y2="42" style="stroke-width:2"></line><!-- Colored Rectangle --><polygon points="10.0,0.0 130.0,0.0 172.52941176470588,42.529411764705884 52.529411764705884,42.529411764705884" style="fill:#ECB172A0;stroke-width:0"></polygon><!-- Horizontal lines --><line x1="52" y1="42" x2="172" y2="42" style="stroke-width:2"></line><line x1="52" y1="52" x2="172" y2="52"></line><line x1="52" y1="62" x2="172" y2="62"></line><line x1="52" y1="72" x2="172" y2="72"></line><line x1="52" y1="82" x2="172" y2="82"></line><line x1="52" y1="92" x2="172" y2="92"></line><line x1="52" y1="102" x2="172" y2="102"></line><line x1="52" y1="112" x2="172" y2="112"></line><line x1="52" y1="122" x2="172" y2="122"></line><line x1="52" y1="132" x2="172" y2="132"></line><line x1="52" y1="142" x2="172" y2="142"></line><line x1="52" y1="152" x2="172" y2="152"></line><line x1="52" y1="162" x2="172" y2="162" style="stroke-width:2"></line><!-- Vertical lines --><line x1="52" y1="42" x2="52" y2="162" style="stroke-width:2"></line><line x1="62" y1="42" x2="62" y2="162"></line><line x1="72" y1="42" x2="72" y2="162"></line><line x1="82" y1="42" x2="82" y2="162"></line><line x1="92" y1="42" x2="92" y2="162"></line><line x1="102" y1="42" x2="102" y2="162"></line><line x1="112" y1="42" x2="112" y2="162"></line><line x1="122" y1="42" x2="122" y2="162"></line><line x1="132" y1="42" x2="132" y2="162"></line><line x1="142" y1="42" x2="142" y2="162"></line><line x1="152" y1="42" x2="152" y2="162"></line><line x1="162" y1="42" x2="162" y2="162"></line><line x1="172" y1="42" x2="172" y2="162" style="stroke-width:2"></line><!-- Colored Rectangle --><polygon points="52.529411764705884,42.529411764705884 172.52941176470588,42.529411764705884 172.52941176470588,162.52941176470588 52.529411764705884,162.52941176470588" style="fill:#ECB172A0;stroke-width:0"></polygon><!-- Text --><text x="112.529412" y="182.529412" font-size="1.0rem" font-weight="100" text-anchor="middle">1200</text><text x="192.529412" y="102.529412" font-size="1.0rem" font-weight="100" text-anchor="middle" transform="rotate(-90,192.529412,102.529412)">1200</text><text x="21.264706" y="161.264706" font-size="1.0rem" font-weight="100" text-anchor="middle" transform="rotate(45,21.264706,161.264706)">723</text></svg></td>
+</tr></tbody>
+</table>
+</div>
 </li>
 <li class="xr-var-item">
 <div class="xr-var-name"><span>spatial_ref</span></div>
 <div class="xr-var-dims">()</div>
 <div class="xr-var-dtype">int64</div>
-<div class="xr-var-preview xr-preview">0</div>
-<input id="attrs-2ecbb86e-597a-436e-8ef1-7d2a154451d5" class="xr-var-attrs-in" type="checkbox"><label for="attrs-2ecbb86e-597a-436e-8ef1-7d2a154451d5" title="Show/Hide attributes"><svg class="icon xr-icon-file-text2"><use href="#icon-file-text2"></use></svg></label><input id="data-68a4f1f9-a61c-4470-aef1-7d814f53608e" class="xr-var-data-in" type="checkbox"><label for="data-68a4f1f9-a61c-4470-aef1-7d814f53608e" title="Show/Hide data repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-var-attrs"><dl class="xr-attrs">
+<div class="xr-var-preview xr-preview">...</div>
+<input id="attrs-09a5c169-dc8f-470e-b42f-ca204306149b" class="xr-var-attrs-in" type="checkbox"><label for="attrs-09a5c169-dc8f-470e-b42f-ca204306149b" title="Show/Hide attributes"><svg class="icon xr-icon-file-text2"><use href="#icon-file-text2"></use></svg></label><input id="data-e6d75e58-2f72-4454-8fe3-92e23ba16988" class="xr-var-data-in" type="checkbox"><label for="data-e6d75e58-2f72-4454-8fe3-92e23ba16988" title="Show/Hide data repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-var-attrs"><dl class="xr-attrs">
 <dt><span>GeoTransform :</span></dt>
 <dd>4800000.0 500.0 0.0 1800000.0 0.0 -500.0</dd>
 <dt><span>crs_wkt :</span></dt>
@@ -786,18 +784,18 @@ Data variables:
 <dt><span>spatial_ref :</span></dt>
 <dd>PROJCS["Azimuthal_Equidistant",GEOGCS["WGS 84",DATUM["WGS_1984",SPHEROID["WGS 84",6378137,298.257223563,AUTHORITY["EPSG","7030"]],AUTHORITY["EPSG","6326"]],PRIMEM["Greenwich",0],UNIT["degree",0.0174532925199433,AUTHORITY["EPSG","9122"]],AUTHORITY["EPSG","4326"]],PROJECTION["Azimuthal_Equidistant"],PARAMETER["latitude_of_center",53],PARAMETER["longitude_of_center",24],PARAMETER["false_easting",5837287.81977],PARAMETER["false_northing",2121415.69617],UNIT["metre",1,AUTHORITY["EPSG","9001"]],AXIS["Easting",EAST],AXIS["Northing",NORTH]]</dd>
 </dl></div>
-<div class="xr-var-data"><pre>array(0)</pre></div>
+<div class="xr-var-data"><pre>[1 values with dtype=int64]</pre></div>
 </li>
 </ul></div>
 </li>
 <li class="xr-section-item">
-<input id="section-5afe6db0-3597-482e-977e-e514d8213a8a" class="xr-section-summary-in" type="checkbox"><label for="section-5afe6db0-3597-482e-977e-e514d8213a8a" class="xr-section-summary">Indexes: <span>(3)</span></label><div class="xr-section-inline-details"></div>
+<input id="section-40ac2c85-a0d8-46cc-a09e-b98dba92fad5" class="xr-section-summary-in" type="checkbox"><label for="section-40ac2c85-a0d8-46cc-a09e-b98dba92fad5" class="xr-section-summary">Indexes: <span>(3)</span></label><div class="xr-section-inline-details"></div>
 <div class="xr-section-details"><ul class="xr-var-list">
 <li class="xr-var-item">
 <div class="xr-index-name"><div>time</div></div>
 <div class="xr-index-preview">PandasIndex</div>
 <div></div>
-<input id="index-7a605f53-6e18-4167-8525-ebd47fe80f5e" class="xr-index-data-in" type="checkbox"><label for="index-7a605f53-6e18-4167-8525-ebd47fe80f5e" title="Show/Hide index repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-index-data"><pre>PandasIndex(DatetimeIndex(['2018-01-01 05:08:47', '2018-01-01 17:07:13',
+<input id="index-73d9612d-5ba3-4040-a214-d8df05a6ddcf" class="xr-index-data-in" type="checkbox"><label for="index-73d9612d-5ba3-4040-a214-d8df05a6ddcf" title="Show/Hide index repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-index-data"><pre>PandasIndex(DatetimeIndex(['2018-01-01 05:08:47', '2018-01-01 17:07:13',
                '2018-01-02 05:01:40', '2018-01-02 16:57:47',
                '2018-01-03 04:52:25', '2018-01-03 16:51:11',
                '2018-01-04 05:33:43', '2018-01-04 16:42:25',
@@ -814,7 +812,7 @@ Data variables:
 <div class="xr-index-name"><div>x</div></div>
 <div class="xr-index-preview">PandasIndex</div>
 <div></div>
-<input id="index-c1ff1b37-52b4-4aaa-8650-b3279f8bc788" class="xr-index-data-in" type="checkbox"><label for="index-c1ff1b37-52b4-4aaa-8650-b3279f8bc788" title="Show/Hide index repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-index-data"><pre>PandasIndex(Index([4800250.0, 4800750.0, 4801250.0, 4801750.0, 4802250.0, 4802750.0,
+<input id="index-6ced1ab9-34ca-4cc4-b564-1ef8f497b0d4" class="xr-index-data-in" type="checkbox"><label for="index-6ced1ab9-34ca-4cc4-b564-1ef8f497b0d4" title="Show/Hide index repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-index-data"><pre>PandasIndex(Index([4800250.0, 4800750.0, 4801250.0, 4801750.0, 4802250.0, 4802750.0,
        4803250.0, 4803750.0, 4804250.0, 4804750.0,
        ...
        5395250.0, 5395750.0, 5396250.0, 5396750.0, 5397250.0, 5397750.0,
@@ -825,7 +823,7 @@ Data variables:
 <div class="xr-index-name"><div>y</div></div>
 <div class="xr-index-preview">PandasIndex</div>
 <div></div>
-<input id="index-d5435e99-94b0-47cb-9e81-6425becf3e76" class="xr-index-data-in" type="checkbox"><label for="index-d5435e99-94b0-47cb-9e81-6425becf3e76" title="Show/Hide index repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-index-data"><pre>PandasIndex(Index([1799750.0, 1799250.0, 1798750.0, 1798250.0, 1797750.0, 1797250.0,
+<input id="index-3306287d-9f4d-4587-b311-7515577eced8" class="xr-index-data-in" type="checkbox"><label for="index-3306287d-9f4d-4587-b311-7515577eced8" title="Show/Hide index repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-index-data"><pre>PandasIndex(Index([1799750.0, 1799250.0, 1798750.0, 1798250.0, 1797750.0, 1797250.0,
        1796750.0, 1796250.0, 1795750.0, 1795250.0,
        ...
        1204750.0, 1204250.0, 1203750.0, 1203250.0, 1202750.0, 1202250.0,
@@ -835,7 +833,7 @@ Data variables:
 </ul></div>
 </li>
 <li class="xr-section-item">
-<input id="section-fefbabaf-b5fd-4786-90d8-1cea8c9a739c" class="xr-section-summary-in" type="checkbox" disabled><label for="section-fefbabaf-b5fd-4786-90d8-1cea8c9a739c" class="xr-section-summary" title="Expand/collapse section">Attributes: <span>(0)</span></label><div class="xr-section-inline-details"></div>
+<input id="section-2fe7ca8b-3154-451d-a7ef-a05b6e41d354" class="xr-section-summary-in" type="checkbox" disabled><label for="section-2fe7ca8b-3154-451d-a7ef-a05b6e41d354" class="xr-section-summary" title="Expand/collapse section">Attributes: <span>(0)</span></label><div class="xr-section-inline-details"></div>
 <div class="xr-section-details"><dl class="xr-attrs"></dl></div>
 </li>
 </ul>
@@ -843,8 +841,9 @@ Data variables:
 </div>
 </div>
 </div>
+</div>
 <p>We resample this dataset along the time dimension thereby aggregating surface soil moisture as mean values over months.</p>
-<div id="e101267e" class="cell" data-execution_count="3">
+<div id="6e2b40aa" class="cell" data-execution_count="3">
 <details class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>SSM_dc_monthly <span class="op">=</span> SSM_dc.resample(time<span class="op">=</span><span class="st">"ME"</span>).mean().compute()</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>SSM_dc_monthly</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details><div class="cell-output cell-output-stderr">
@@ -1215,7 +1214,7 @@ Data variables:
 <div class="xr-header"><div class="xr-obj-type">xarray.Dataset</div></div>
 <ul class="xr-sections">
 <li class="xr-section-item">
-<input id="section-6c6f49ff-a763-4cb5-a6bf-36753929626a" class="xr-section-summary-in" type="checkbox" disabled><label for="section-6c6f49ff-a763-4cb5-a6bf-36753929626a" class="xr-section-summary" title="Expand/collapse section">Dimensions:</label><div class="xr-section-inline-details"><ul class="xr-dim-list">
+<input id="section-653105fe-6569-40d5-98d6-53dfdacaa3dc" class="xr-section-summary-in" type="checkbox" disabled><label for="section-653105fe-6569-40d5-98d6-53dfdacaa3dc" class="xr-section-summary" title="Expand/collapse section">Dimensions:</label><div class="xr-section-inline-details"><ul class="xr-dim-list">
 <li>
 <span class="xr-has-index">time</span>: 12</li>
 <li>
@@ -1226,14 +1225,14 @@ Data variables:
 <div class="xr-section-details"></div>
 </li>
 <li class="xr-section-item">
-<input id="section-f0292c68-3b60-4c90-9468-799b169cfa01" class="xr-section-summary-in" type="checkbox" checked><label for="section-f0292c68-3b60-4c90-9468-799b169cfa01" class="xr-section-summary">Coordinates: <span>(3)</span></label><div class="xr-section-inline-details"></div>
+<input id="section-65b23a2b-bfcb-4572-81ad-8251e3c13901" class="xr-section-summary-in" type="checkbox" checked><label for="section-65b23a2b-bfcb-4572-81ad-8251e3c13901" class="xr-section-summary">Coordinates: <span>(3)</span></label><div class="xr-section-inline-details"></div>
 <div class="xr-section-details"><ul class="xr-var-list">
 <li class="xr-var-item">
 <div class="xr-var-name"><span class="xr-has-index">x</span></div>
 <div class="xr-var-dims">(x)</div>
 <div class="xr-var-dtype">float64</div>
 <div class="xr-var-preview xr-preview">4.8e+06 4.801e+06 ... 5.4e+06</div>
-<input id="attrs-2f8dfe84-dc7f-4c1c-800c-56432d1717d8" class="xr-var-attrs-in" type="checkbox" disabled><label for="attrs-2f8dfe84-dc7f-4c1c-800c-56432d1717d8" title="Show/Hide attributes"><svg class="icon xr-icon-file-text2"><use href="#icon-file-text2"></use></svg></label><input id="data-81deec29-125d-4fa2-a9d9-2a267cd02e20" class="xr-var-data-in" type="checkbox"><label for="data-81deec29-125d-4fa2-a9d9-2a267cd02e20" title="Show/Hide data repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-var-attrs"><dl class="xr-attrs"></dl></div>
+<input id="attrs-02dc8aa0-a3d3-4199-8f41-350f8fbd6d24" class="xr-var-attrs-in" type="checkbox" disabled><label for="attrs-02dc8aa0-a3d3-4199-8f41-350f8fbd6d24" title="Show/Hide attributes"><svg class="icon xr-icon-file-text2"><use href="#icon-file-text2"></use></svg></label><input id="data-60eb9a19-0ab0-4d24-8098-b70701b987fd" class="xr-var-data-in" type="checkbox"><label for="data-60eb9a19-0ab0-4d24-8098-b70701b987fd" title="Show/Hide data repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-var-attrs"><dl class="xr-attrs"></dl></div>
 <div class="xr-var-data"><pre>array([4800250., 4800750., 4801250., ..., 5398750., 5399250., 5399750.])</pre></div>
 </li>
 <li class="xr-var-item">
@@ -1241,7 +1240,7 @@ Data variables:
 <div class="xr-var-dims">(y)</div>
 <div class="xr-var-dtype">float64</div>
 <div class="xr-var-preview xr-preview">1.8e+06 1.799e+06 ... 1.2e+06</div>
-<input id="attrs-6a8b4dbd-a17c-4c6f-9ce5-fb93c0de2027" class="xr-var-attrs-in" type="checkbox" disabled><label for="attrs-6a8b4dbd-a17c-4c6f-9ce5-fb93c0de2027" title="Show/Hide attributes"><svg class="icon xr-icon-file-text2"><use href="#icon-file-text2"></use></svg></label><input id="data-4e005acf-72d8-45e9-bdcb-d4bba0c37404" class="xr-var-data-in" type="checkbox"><label for="data-4e005acf-72d8-45e9-bdcb-d4bba0c37404" title="Show/Hide data repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-var-attrs"><dl class="xr-attrs"></dl></div>
+<input id="attrs-d3d631cc-a10f-43f8-9ed7-9c35750696b9" class="xr-var-attrs-in" type="checkbox" disabled><label for="attrs-d3d631cc-a10f-43f8-9ed7-9c35750696b9" title="Show/Hide attributes"><svg class="icon xr-icon-file-text2"><use href="#icon-file-text2"></use></svg></label><input id="data-faf80bee-1ee7-4b71-a02e-6bd8371d2c0e" class="xr-var-data-in" type="checkbox"><label for="data-faf80bee-1ee7-4b71-a02e-6bd8371d2c0e" title="Show/Hide data repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-var-attrs"><dl class="xr-attrs"></dl></div>
 <div class="xr-var-data"><pre>array([1799750., 1799250., 1798750., ..., 1201250., 1200750., 1200250.])</pre></div>
 </li>
 <li class="xr-var-item">
@@ -1249,7 +1248,7 @@ Data variables:
 <div class="xr-var-dims">(time)</div>
 <div class="xr-var-dtype">datetime64[ns]</div>
 <div class="xr-var-preview xr-preview">2018-01-31 ... 2018-12-31</div>
-<input id="attrs-becf98fc-231d-4c85-8aad-ab801acbfad5" class="xr-var-attrs-in" type="checkbox" disabled><label for="attrs-becf98fc-231d-4c85-8aad-ab801acbfad5" title="Show/Hide attributes"><svg class="icon xr-icon-file-text2"><use href="#icon-file-text2"></use></svg></label><input id="data-853041c1-d0f0-4d4d-ac8d-6eb0ca2b67f9" class="xr-var-data-in" type="checkbox"><label for="data-853041c1-d0f0-4d4d-ac8d-6eb0ca2b67f9" title="Show/Hide data repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-var-attrs"><dl class="xr-attrs"></dl></div>
+<input id="attrs-38b7f449-b0a0-4b18-92a0-08c809eb5d91" class="xr-var-attrs-in" type="checkbox" disabled><label for="attrs-38b7f449-b0a0-4b18-92a0-08c809eb5d91" title="Show/Hide attributes"><svg class="icon xr-icon-file-text2"><use href="#icon-file-text2"></use></svg></label><input id="data-5416b99d-04eb-4b74-b002-27ba73356dac" class="xr-var-data-in" type="checkbox"><label for="data-5416b99d-04eb-4b74-b002-27ba73356dac" title="Show/Hide data repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-var-attrs"><dl class="xr-attrs"></dl></div>
 <div class="xr-var-data"><pre>array(['2018-01-31T00:00:00.000000000', '2018-02-28T00:00:00.000000000',
        '2018-03-31T00:00:00.000000000', '2018-04-30T00:00:00.000000000',
        '2018-05-31T00:00:00.000000000', '2018-06-30T00:00:00.000000000',
@@ -1261,14 +1260,14 @@ Data variables:
 </ul></div>
 </li>
 <li class="xr-section-item">
-<input id="section-00333f38-4208-400e-b869-2011d5a717e7" class="xr-section-summary-in" type="checkbox" checked><label for="section-00333f38-4208-400e-b869-2011d5a717e7" class="xr-section-summary">Data variables: <span>(2)</span></label><div class="xr-section-inline-details"></div>
+<input id="section-fbbd7841-9aaa-49bb-83df-38553bd89dec" class="xr-section-summary-in" type="checkbox" checked><label for="section-fbbd7841-9aaa-49bb-83df-38553bd89dec" class="xr-section-summary">Data variables: <span>(2)</span></label><div class="xr-section-inline-details"></div>
 <div class="xr-section-details"><ul class="xr-var-list">
 <li class="xr-var-item">
 <div class="xr-var-name"><span>band_data</span></div>
 <div class="xr-var-dims">(time, y, x)</div>
 <div class="xr-var-dtype">float64</div>
 <div class="xr-var-preview xr-preview">88.5 91.39 89.86 ... nan nan nan</div>
-<input id="attrs-8d0608b0-d722-4ca4-a94f-20681cbb4724" class="xr-var-attrs-in" type="checkbox"><label for="attrs-8d0608b0-d722-4ca4-a94f-20681cbb4724" title="Show/Hide attributes"><svg class="icon xr-icon-file-text2"><use href="#icon-file-text2"></use></svg></label><input id="data-26d8450b-6cdf-49cf-8231-4ef887b05bcd" class="xr-var-data-in" type="checkbox"><label for="data-26d8450b-6cdf-49cf-8231-4ef887b05bcd" title="Show/Hide data repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-var-attrs"><dl class="xr-attrs">
+<input id="attrs-90cc6e6f-7d39-4f8b-8165-9faa653f5ad0" class="xr-var-attrs-in" type="checkbox"><label for="attrs-90cc6e6f-7d39-4f8b-8165-9faa653f5ad0" title="Show/Hide attributes"><svg class="icon xr-icon-file-text2"><use href="#icon-file-text2"></use></svg></label><input id="data-c54b90c7-63ef-441c-959c-318d209de8bd" class="xr-var-data-in" type="checkbox"><label for="data-c54b90c7-63ef-441c-959c-318d209de8bd" title="Show/Hide data repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-var-attrs"><dl class="xr-attrs">
 <dt><span>AREA_OR_POINT :</span></dt>
 <dd>Area</dd>
 <dt><span>LinearSegmentedColormap :</span></dt>
@@ -1361,7 +1360,7 @@ Data variables:
 <div class="xr-var-dims">(time)</div>
 <div class="xr-var-dtype">int64</div>
 <div class="xr-var-preview xr-preview">0 0 0 0 0 0 0 0 0 0 0 0</div>
-<input id="attrs-5fe1ee47-f7aa-46b2-8ca3-180907aa66a6" class="xr-var-attrs-in" type="checkbox"><label for="attrs-5fe1ee47-f7aa-46b2-8ca3-180907aa66a6" title="Show/Hide attributes"><svg class="icon xr-icon-file-text2"><use href="#icon-file-text2"></use></svg></label><input id="data-84988ce1-34f7-4fa5-8a32-2df3cecdc648" class="xr-var-data-in" type="checkbox"><label for="data-84988ce1-34f7-4fa5-8a32-2df3cecdc648" title="Show/Hide data repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-var-attrs"><dl class="xr-attrs">
+<input id="attrs-6787bfb8-39f5-4b82-83fc-c15423efe4ce" class="xr-var-attrs-in" type="checkbox"><label for="attrs-6787bfb8-39f5-4b82-83fc-c15423efe4ce" title="Show/Hide attributes"><svg class="icon xr-icon-file-text2"><use href="#icon-file-text2"></use></svg></label><input id="data-6d5e3aab-b21a-4989-b53d-965ffb9a2daf" class="xr-var-data-in" type="checkbox"><label for="data-6d5e3aab-b21a-4989-b53d-965ffb9a2daf" title="Show/Hide data repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-var-attrs"><dl class="xr-attrs">
 <dt><span>GeoTransform :</span></dt>
 <dd>4800000.0 500.0 0.0 1800000.0 0.0 -500.0</dd>
 <dt><span>crs_wkt :</span></dt>
@@ -1402,13 +1401,13 @@ Data variables:
 </ul></div>
 </li>
 <li class="xr-section-item">
-<input id="section-aef318e8-dbc2-4126-95bb-a67d0ee05b51" class="xr-section-summary-in" type="checkbox"><label for="section-aef318e8-dbc2-4126-95bb-a67d0ee05b51" class="xr-section-summary">Indexes: <span>(3)</span></label><div class="xr-section-inline-details"></div>
+<input id="section-9a99f76c-116d-43cf-ab5d-a95746d89fcb" class="xr-section-summary-in" type="checkbox"><label for="section-9a99f76c-116d-43cf-ab5d-a95746d89fcb" class="xr-section-summary">Indexes: <span>(3)</span></label><div class="xr-section-inline-details"></div>
 <div class="xr-section-details"><ul class="xr-var-list">
 <li class="xr-var-item">
 <div class="xr-index-name"><div>x</div></div>
 <div class="xr-index-preview">PandasIndex</div>
 <div></div>
-<input id="index-77a42c99-3fc9-4a1a-ab6f-574813841335" class="xr-index-data-in" type="checkbox"><label for="index-77a42c99-3fc9-4a1a-ab6f-574813841335" title="Show/Hide index repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-index-data"><pre>PandasIndex(Index([4800250.0, 4800750.0, 4801250.0, 4801750.0, 4802250.0, 4802750.0,
+<input id="index-167899ba-51d1-4f73-98c8-506a03f95a66" class="xr-index-data-in" type="checkbox"><label for="index-167899ba-51d1-4f73-98c8-506a03f95a66" title="Show/Hide index repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-index-data"><pre>PandasIndex(Index([4800250.0, 4800750.0, 4801250.0, 4801750.0, 4802250.0, 4802750.0,
        4803250.0, 4803750.0, 4804250.0, 4804750.0,
        ...
        5395250.0, 5395750.0, 5396250.0, 5396750.0, 5397250.0, 5397750.0,
@@ -1419,7 +1418,7 @@ Data variables:
 <div class="xr-index-name"><div>y</div></div>
 <div class="xr-index-preview">PandasIndex</div>
 <div></div>
-<input id="index-e33396cb-0581-4d89-8f81-3fb8279639d8" class="xr-index-data-in" type="checkbox"><label for="index-e33396cb-0581-4d89-8f81-3fb8279639d8" title="Show/Hide index repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-index-data"><pre>PandasIndex(Index([1799750.0, 1799250.0, 1798750.0, 1798250.0, 1797750.0, 1797250.0,
+<input id="index-0c103466-0c59-4d83-9da1-0099b08e98ef" class="xr-index-data-in" type="checkbox"><label for="index-0c103466-0c59-4d83-9da1-0099b08e98ef" title="Show/Hide index repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-index-data"><pre>PandasIndex(Index([1799750.0, 1799250.0, 1798750.0, 1798250.0, 1797750.0, 1797250.0,
        1796750.0, 1796250.0, 1795750.0, 1795250.0,
        ...
        1204750.0, 1204250.0, 1203750.0, 1203250.0, 1202750.0, 1202250.0,
@@ -1430,7 +1429,7 @@ Data variables:
 <div class="xr-index-name"><div>time</div></div>
 <div class="xr-index-preview">PandasIndex</div>
 <div></div>
-<input id="index-1b958803-13a4-432e-8208-f03a3d0ea73b" class="xr-index-data-in" type="checkbox"><label for="index-1b958803-13a4-432e-8208-f03a3d0ea73b" title="Show/Hide index repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-index-data"><pre>PandasIndex(DatetimeIndex(['2018-01-31', '2018-02-28', '2018-03-31', '2018-04-30',
+<input id="index-5f519b76-4042-4988-ad28-0b55f8419f68" class="xr-index-data-in" type="checkbox"><label for="index-5f519b76-4042-4988-ad28-0b55f8419f68" title="Show/Hide index repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-index-data"><pre>PandasIndex(DatetimeIndex(['2018-01-31', '2018-02-28', '2018-03-31', '2018-04-30',
                '2018-05-31', '2018-06-30', '2018-07-31', '2018-08-31',
                '2018-09-30', '2018-10-31', '2018-11-30', '2018-12-31'],
               dtype='datetime64[ns]', name='time', freq='ME'))</pre></div>
@@ -1438,7 +1437,7 @@ Data variables:
 </ul></div>
 </li>
 <li class="xr-section-item">
-<input id="section-4b7eb768-209d-4091-b536-55d7f37fa395" class="xr-section-summary-in" type="checkbox" disabled><label for="section-4b7eb768-209d-4091-b536-55d7f37fa395" class="xr-section-summary" title="Expand/collapse section">Attributes: <span>(0)</span></label><div class="xr-section-inline-details"></div>
+<input id="section-6f1ae094-200b-4661-9f40-dfbc9dc81e2c" class="xr-section-summary-in" type="checkbox" disabled><label for="section-6f1ae094-200b-4661-9f40-dfbc9dc81e2c" class="xr-section-summary" title="Expand/collapse section">Attributes: <span>(0)</span></label><div class="xr-section-inline-details"></div>
 <div class="xr-section-details"><dl class="xr-attrs"></dl></div>
 </li>
 </ul>
@@ -1469,7 +1468,7 @@ Data variables:
 <img src="02_counterexample.de_files/figure-html/fig-seismic-output-1.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-seismic-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Abbildung 2.2: Monatliche aggregierte Bodenfeuchte (%) für Januar, April, Juli und Oktober 2018, abgerufen mit dem für das GHG-Kit Projekt entwickelten Algorithmus der TU Wien. Karten erstellt mit EOmaps <span class="citation" data-cites="quast_getting_2024">(<a href="references.de.html#ref-quast_getting_2024" role="doc-biblioref">Quast 2024</a>)</span>.
+Abbildung 2.2: Monatliche aggregierte Bodenfeuchte (%) für Januar, April, Juli und Oktober 2018, abgerufen mit dem für das GHG-Kit Projekt entwickelten Algorithmus der TU Wien. Karten erstellt mit EOmaps <span class="citation" data-cites="quast_getting_2024">(<a href="references.de.html#ref-quast_getting_2024" role="doc-biblioref">Quast, o. J.</a>)</span>.
 </figcaption></figure>
 </div>
 </div>
@@ -1486,7 +1485,7 @@ Abbildung 2.2: Monatliche aggregierte Bodenfeuchte (%) für Januar, April, Juli
 <img src="02_counterexample.de_files/figure-html/fig-viridis-output-1.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-viridis-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Abbildung 2.3: Monatliche aggregierte Bodenfeuchte (%) für Januar, April, Juli und Oktober 2018, abgerufen mit dem für das GHG-Kit Projekt entwickelten Algorithmus der TU Wien. Karten erstellt mit EOmaps <span class="citation" data-cites="quast_getting_2024">(<a href="references.de.html#ref-quast_getting_2024" role="doc-biblioref">Quast 2024</a>)</span>.
+Abbildung 2.3: Monatliche aggregierte Bodenfeuchte (%) für Januar, April, Juli und Oktober 2018, abgerufen mit dem für das GHG-Kit Projekt entwickelten Algorithmus der TU Wien. Karten erstellt mit EOmaps <span class="citation" data-cites="quast_getting_2024">(<a href="references.de.html#ref-quast_getting_2024" role="doc-biblioref">Quast, o. J.</a>)</span>.
 </figcaption></figure>
 </div>
 </div>
@@ -1504,7 +1503,7 @@ Abbildung 2.3: Monatliche aggregierte Bodenfeuchte (%) für Januar, April, Juli
 <img src="02_counterexample.de_files/figure-html/fig-custom-output-1.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-custom-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Abbildung 2.4: Monatliche aggregierte Bodenfeuchte (%) für Januar, April, Juli und Oktober 2018, abgerufen mit dem für das GHG-Kit Projekt entwickelten Algorithmus der TU Wien. Karten erstellt mit EOmaps <span class="citation" data-cites="quast_getting_2024">(<a href="references.de.html#ref-quast_getting_2024" role="doc-biblioref">Quast 2024</a>)</span>.
+Abbildung 2.4: Monatliche aggregierte Bodenfeuchte (%) für Januar, April, Juli und Oktober 2018, abgerufen mit dem für das GHG-Kit Projekt entwickelten Algorithmus der TU Wien. Karten erstellt mit EOmaps <span class="citation" data-cites="quast_getting_2024">(<a href="references.de.html#ref-quast_getting_2024" role="doc-biblioref">Quast, o. J.</a>)</span>.
 </figcaption></figure>
 </div>
 </div>
@@ -1531,7 +1530,7 @@ Bauer-Marschallinger, Bernhard, Vahid Freeman, Senmao Cao, Christoph Paulik, Ste
 Massart, Samuel, Mariette Vreugdenhil, Bernhard Bauer-Marschallinger, Claudio Navacchi, Bernhard Raml, und Wolfgang Wagner. 2024. <span>„Mitigating the impact of dense vegetation on the <span>Sentinel</span>-1 surface soil moisture retrievals over <span>Europe</span>“</span>. <em>European Journal of Remote Sensing</em> 57 (1): 2300985. <a href="https://doi.org/10.1080/22797254.2023.2300985">https://doi.org/10.1080/22797254.2023.2300985</a>.
 </div>
 <div id="ref-quast_getting_2024" class="csl-entry" role="listitem">
-Quast, Raphael. 2024. <span>„Getting <span>Started</span> — <span>EOmaps</span> documentation“</span>. <a href="https://eomaps.readthedocs.io/en/latest/">https://eomaps.readthedocs.io/en/latest/</a>.
+Quast, Raphael. o. J. <span>„EOmaps: A python package to visualize and analyze geographical datasets.“</span> <a href="https://doi.org/10.5281/zenodo.6459598">https://doi.org/10.5281/zenodo.6459598</a>.
 </div>
 </div>
 </section></section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
