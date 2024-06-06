@@ -62,7 +62,7 @@ In other words, we want to know the probability of flooding $P(F)$ given a pixel
 
 $$P(F|\sigma^0)$$
 
-and the probability of a pixel being not flooded $P(NF) given a certain $\sigma^0$:
+and the probability of a pixel being not flooded $P(NF)$ given a certain $\sigma^0$:
 
 $$P(NF|\sigma^0).$$
 
