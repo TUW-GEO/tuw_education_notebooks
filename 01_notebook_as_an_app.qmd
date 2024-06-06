@@ -10,7 +10,7 @@ keep-ipynb: true
 code-fold: true
 ---
 
-[![](https://img.shields.io/badge/launch-jupyter-blue)](https://mybinder.org/v2/gh/tuw-geo/tuw_education_notebooks/15bcbc542b9c50306617af6f796bb6c8fd4fcf0d?urlpath=lab%2Ftree%2F01_notebook_as_an_app.ipynb)
+[![](https://img.shields.io/badge/launch-jupyter-blue)](https://mybinder.org/v2/gh/tuw-geo/tuw_education_notebooks/fa8db7b74e6cffcdebbf2f713eccb2c6f63ca110?urlpath=lab%2Ftree%2F01_notebook_as_an_app.ipynb)
 
 
 ![Image from [wikipedia](https://upload.wikimedia.org/wikipedia/commons/d/d4/Thomas_Bayes.gif)](https://upload.wikimedia.org/wikipedia/commons/d/d4/Thomas_Bayes.gif)
@@ -86,6 +86,7 @@ The so-called likelihoods of $P(\sigma^0|F)$ and $P(\sigma^0|NF)$ can thus be ca
 ```{python}
 #| label: fig-lik
 #| fig-cap: "Likelihoods for $\\sigma^0$ being associated with land or water for 1 pixel in the Greek area of Thessaly. Likelihoods are calculated over a range of $\\sigma^0$. The pixel's observed $\\sigma^0$ is given with a vertical line. Click on the map to re-calculate and update this figure for another pixel in the study area. Map created with EOmaps [@quast_getting_2024]."
+#| 
 view_bayes_flood(sig0_dc)
 ```
 
