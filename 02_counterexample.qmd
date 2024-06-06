@@ -25,20 +25,20 @@ RESOURCES = Path("data")
 
 ## Science and Art
 
-Data visualization depends on art to convey stories from data through the combination of geometric objects and color with science. In the ideal case the information should be easily extractable from the visualization, but at the same time the scientific elements should be to the point accurate. The latter is important as false graphical representations can lead to wrong perception and interpretation, which, in turn, leads to wrongful decision making. These mistakes can be made intentionally, and thus be fraudulent, but are more often innocent mistakes with potentially far reaching consequences. When plotting data on maps we have to consider even more aspects, like the geographic projection, grid types and mapping of variables as a third dimension to a suitable color space.
+Data visualization depends on art to convey stories from data through the combination of geometric objects and color with science. In the ideal case, the information should be easily extractable from the visualization, but at the same time the scientific elements should be to the point accurate. The latter is important because false graphical representations can lead to wrong perceptions and interpretation, which, in turn, lead to wrongful decision making. These mistakes can be made intentionally, and thus be fraudulent, but are more often innocent mistakes with potentially far-reaching consequences. When plotting data on maps we have to consider even more aspects, like the geographic projection, grid types and mapping of variables as a third dimension to a suitable color space.
 
 ## TU Wien Surface Soil Moisture developed for GHG-Kit
 
-For the examples in this notebook we will use soil moisture developed for GHG-Kit. To retrieve surface soil moisture data we exploit the general linear relationship between Sentinel-1 microwave backscattering and soil moisture. The change detection method developed at TU Wien can be summarised in the most simple terms by calculating the driest and wettest condition within a time period and then relating the observed backscatter to retrieve the relative soil moisture or “wetness” in percent as shown in @fig-change.
+For the examples in this notebook we will use soil moisture developed for GHG-Kit. To retrieve surface soil moisture data we exploit the general linear relationship between Sentinel-1 microwave backscattering and soil moisture. The change detection method developed at TU Wien calculates the driest and wettest condition within a time period, and then relates the observed backscatter values to retrieve the relative soil moisture or “wetness” as a percentage of maximum saturation, as shown in @fig-change.
 
 ![Change detection method for retrieving surface soil moisture.](assets/images/ssm_retrieval_change_detection.png){#fig-change}
 
-For the examples we will show a subset of data over Austria. In Austria, two prominent challenges for soil moisture occur, these include:
+For the examples we will show a subset of data over Austria. In Austria, two prominent challenges for soil moisture detection appear:
 
 - Pronounced geometric effects from varying viewing angles due to the variable topography in and around the Alps.
 - Strong vegetation cover over dense forests.
 
-In the Soil Moisture Product developed for GHG-Kit we address these challenges, using **radio metric terrain-corrected backscatter** data to “flatten” the terrain and static spatial filtering of **dense vegetation** at high resolution (See Supplement).
+In the Soil Moisture Product developed for GHG-Kit, we address these challenges by using **radiometric terrain-corrected backscatter** data to “flatten” the terrain and static spatial filtering of **dense vegetation** at high resolution (See Supplement).
 
 In the following lines we load a subset of the soil moisture dataset with `xarray`, which is stored as a Zarr archive.
 
@@ -58,10 +58,10 @@ SSM_dc_monthly
 
 Now we are ready to plot the monthly soil moisture data on a map. To plot one variable like soil moisture on the x (longitude) and y (latitude) dimensions requires finding a good representation in a 3D colorspace. This is also referred to as pseudocoloring: a method for revealing aspects of the data over a continuous plane. For effective pseudocoloring we need to find the correct colormap.  We can ask ourselves the following questions:
 
-- What do we know about the data? Is there e.g. a critical value to which compare the data?
-- Is there an intuitive color scheme that nicely translates to the variable including the distribution of the data.
+- What do we know about the data? Is there e.g. a critical value to which to compare the data?
+- Is there an intuitive color scheme that nicely translates to the variable and the distribution of the data?
 
-We can choose from the following types of colormaps:
+In most situations, we can consider one of three types of colormap:
 
 - Sequential: steps in the variable space are equal to steps in color space (uniform colormaps).
 - Diverging: if we have a critical middle value to which we want to compare the data.
@@ -81,7 +81,7 @@ What went wrong in the above maps? The first mistake is that we took a diverging
 
 ## The Ugly
 
-Let's fix the first problem. We do this by choosing the sequential "viridis" colormap. In this colormap the color is a linear function of the variable with a very wide perceptual range (e.g. it is very colorful). Viridis is, furthermore, colorblindness friendly and prints well in grayscale whilst preserving perceptual uniformity and breadth of the range.
+Let's fix the first problem. We do this by choosing the sequential "viridis" colormap. In this colormap the color is a linear function of the variable with a very wide perceptual range (e.g. it is very colorful). Viridis is, furthermore, colorblindness friendly and prints well in grayscale while preserving perceptual uniformity and breadth of the range.
 
 ```{python}
 #| label: fig-viridis
@@ -93,7 +93,7 @@ This colormap fixes the previous issues. We see much more nuance in the variance
 
 ## The Good
 
-This last step is more subjective and relates to the psychology of colors: the multiple meanings and feelings that people associate with a color. Here we use a monotonic color gradient developed by TU Wien from brown for dry soils to blue for wet soils.
+This last step is more subjective and relates to the psychology of colors: the multiple meanings and feelings that people associate with a color. Here we use a monotonic color gradient developed by TU Wien that transitions from brown for dry soils to blue for wet soils.
 
 ```{python}
 #| label: fig-custom

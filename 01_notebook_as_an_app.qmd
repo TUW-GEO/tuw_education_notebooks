@@ -1,5 +1,5 @@
 ---
-title: Reverend Bayes updates our Believe in Flood Detection
+title: Reverend Bayes updates our Belief in Flood Detection
 subtitle: How an 275 year old idea helps map the extent of floods
 jupyter: 
   kernelspec:
@@ -56,13 +56,13 @@ m.show()
 
 ## Microwave Backscattering over Land and Water
 
-Reverend Bayes was concerned with two events, one "the hypothesis" occurring before the other "the evidence". If we know the cause it is easy to logically deduce the probability of an effect. But in this case we want to deduce the probability of a cause from an observed effect, also known as "reversed probability". In the case of flood mapping we have $\sigma^0$ backscatter observations over land (effect) and we want to deduce the probability of flooding (F) and non-flooding (NF). 
+Reverend Bayes was concerned with two events, one (the *hypothesis*) occurring before the other (the *evidence*). If we know its cause, it is easy to logically deduce the probability of an effect. However, in this case we want to deduce the probability of a cause from an observed effect, also known as "reversed probability". In the case of flood mapping, we have $\sigma^0$ backscatter observations over land (the effect) and we want to deduce the probability of flooding ($F$) and non-flooding ($NF$). 
 
-Phrased differently we want to know the probability of flooding given a pixel's $\sigma^0$:
+In other words, we want to know the probability of flooding $P(F)$ given a pixel's $\sigma^0$:
 
 $$P(F|\sigma^0)$$
 
-and the probability of a pixel being not flooded given a certain $\sigma^0$:
+and the probability of a pixel being not flooded $P(NF) given a certain $\sigma^0$:
 
 $$P(NF|\sigma^0).$$
 
@@ -75,13 +75,13 @@ and
 $$P(NF|\sigma^0)P(\sigma^0) = P(\sigma^0|NF)P(NF).$$
 
 
-The forward probability of $\sigma^0$ given flood ($P(\sigma^0|F)$) and $\sigma^0$ given non-flood ($P(\sigma^0|NF)$) can be extracted from past information on backscattering over land and water surfaces. As seen in the sketch below (@fig-sat), the characteristics of backscattering over land and water differ considerably.
+The forward probability of $\sigma^0$ given the occurrence of flooding ($P(\sigma^0|F)$) and $\sigma^0$ given no flooding ($P(\sigma^0|NF)$) can be extracted from past information on backscattering over land and water surfaces. As seen in the sketch below (@fig-sat), the characteristics of backscattering over land and water differ considerably.
 
 ![Schematic backscattering over land and water. Image from [Geological Survey Ireland](https://www.gsi.ie/images/images/SAR_mapping_land_water.jpg)](https://www.gsi.ie/images/images/SAR_mapping_land_water.jpg){#fig-sat}
 
 ## Likelihoods
 
-These so-called likelihoods of $P(\sigma^0|F)$ and $P(\sigma^0|NF)$ can thus be calculated from past backscattering information. Without going into the details of how these likelihoods are calculated, you can **click** on a pixel of the map to plot the likelihoods of $\sigma^0$ being governed by land or water.
+The so-called likelihoods of $P(\sigma^0|F)$ and $P(\sigma^0|NF)$ can thus be calculated from past backscattering information. Without going into the details of how these likelihoods are calculated, you can **click** on a pixel of the map to plot the likelihoods of $\sigma^0$ being governed by land or water.
 
 ```{python}
 #| label: fig-lik
@@ -91,7 +91,9 @@ view_bayes_flood(sig0_dc)
 
 ## Posteriors
 
-Having calculated the likelihoods, we can now move on to calculate the probability of (non-)flooding given a pixel's $\sigma^0$. These so-called "posteriors" need on more piece of information as can be seen in the equation above. We need the probability whether a pixel is flooded $P(F)$ or non-flooded $P(NF)$. We can of course not estimate this information precisely, so our best estimate is that the chance of flooding versus non-flooding of a pixel is 50-50: a coin flip. This subjective prior believe is a fundament of Bayesian statistics and we use the likelihood to update our belief in this particular hypothesis. We now can also calculate the probability of backscattering $P(\sigma^0)$, as the weighted average of the water and land likelihoods. The latter ensures that our updated evidence (or posteriors) ranges between 0 to 1.
+Having calculated the likelihoods, we can now move on to calculate the probability of (non-)flooding given a pixel's $\sigma^0$. These so-called *posteriors* need one more piece of information, as can be seen in the equation above. We need the probability that a pixel is flooded $P(F)$ or not flooded $P(NF)$. Of course, these are the figures we've been trying to find this whole time. We don't actually have them yet, so what can we do? In Bayesian statistics, we can just start with our best guess. These guesses are called our "priors", because they are the beliefs we hold *prior* to looking at the data. This subjective prior belief is the foundation Bayesian statistics, and we use the likelihoods we just calculated to update our belief in this particular hypothesis. This updated belief is called the "posterior".
+
+Let's say that our best estimate for the chance of flooding versus non-flooding of a pixel is 50-50: a coin flip.  We now can also calculate the probability of backscattering $P(\sigma^0)$, as the weighted average of the water and land likelihoods, ensuring that our posteriors range between 0 to 1.
 
 The following code block shows how we calculate the priors.
 
@@ -101,7 +103,7 @@ def calc_posteriors(water_likelihood, land_likelihood):
     return (water_likelihood * 0.5) / evidence,  (land_likelihood * 0.5) / evidence
 ```
 
-We can plot these posteriors of the probability of flooding and non-flooding again and compare these to pixel's measured $\sigma^0$. **Click** on a pixel to calculate the posterior probability.
+We can plot the posterior probabilities of flooding and non-flooding again and compare these to pixel's measured $\sigma^0$. **Click** on a pixel to calculate the posterior probability.
 
 ```{python}
 #| label: fig-post
@@ -112,7 +114,7 @@ view_bayes_flood(sig0_dc, calc_posteriors)
 
 ## Flood Classification
 
-We are now ready to combine all this information and classify the pixels according to the probability of flooding given the backscatter value of 1 pixel. Here we just look whether the probability of flooding is higher than non-flooding:
+We are now ready to combine all this information and classify the pixels according to the probability of flooding given the backscatter value of each pixel. Here we just look whether the probability of flooding is higher than non-flooding:
 
 ```{python}
 def bayesian_flood_decision(id, sig0_dc):
