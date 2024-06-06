@@ -93,7 +93,7 @@ This colormap fixes the previous issues. We see much more nuance in the variance
 
 ## The Good
 
-This last step is more subjective and relates to the psychology of colors: the multiple meanings and feelings that people associate with a color. Here we use a monotonic color gradient developed by TU Wien that transitions from brown for dry soils to blue for wet soils.
+This last step is more subjective and relates to the psychology of colors: the multiple meanings and feelings that people associate with a color. Here we use a color gradient developed by TU Wien that transitions from dark brown for dry soils to blue for wet soils.
 
 ```{python}
 #| label: fig-custom
@@ -102,7 +102,7 @@ SSM_CMAP = load_cmap(RESOURCES / "colour-tables/ssm-continuous.ct")
 view_monthly_ssm(SSM_dc_monthly, SSM_CMAP)
 ```
 
-In this last rendition of the maps we have a nice monotonic relation between color and soil moisture, where the brown color evokes images of dried-out soils and the blues of water saturated conditions.
+In this last rendition of the maps we have a nice relation between color and soil moisture, where the dark brown color evokes images of dried-out soils and the blues of water saturated conditions.
 
 ---
 
