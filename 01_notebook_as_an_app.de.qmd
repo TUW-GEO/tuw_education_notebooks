@@ -12,7 +12,8 @@ lang: de
 ---
 
 
-[![](https://img.shields.io/badge/launch-jupyter-blue)](https://mybinder.org/v2/gh/tuw-geo/tuw_education_notebooks/fa8db7b74e6cffcdebbf2f713eccb2c6f63ca110?urlpath=lab%2Ftree%2F01_notebook_as_an_app.de.ipynb)
+[![](https://img.shields.io/badge/launch-jupyter-blue)](http://localhost:8888/notebooks/01_notebook_as_an_app.de.ipynb)
+[![](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/tuw-geo/tuw_education_notebooks/bee07addf02b7fb6a690f1ee26ed2297f25d3f4c?urlpath=lab%2Ftree%2F01_notebook_as_an_app.de.ipynb)
 
 ![Bild vom [wikipedia](https://upload.wikimedia.org/wikipedia/commons/d/d4/Thomas_Bayes.gif)](https://upload.wikimedia.org/wikipedia/commons/d/d4/Thomas_Bayes.gif)
 

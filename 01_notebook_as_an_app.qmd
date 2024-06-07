@@ -1,17 +1,23 @@
 ---
 title: Reverend Bayes updates our Belief in Flood Detection
 subtitle: How an 275 year old idea helps map the extent of floods
-jupyter: 
-  kernelspec:
-    name: "tuw_education_notebooks"
-    language: "python"
-    display_name: "tuw_education_notebooks"
 keep-ipynb: true
 code-fold: true
+jupyter:
+  jupytext:
+    text_representation:
+      extension: .qmd
+      format_name: quarto
+      format_version: '1.0'
+      jupytext_version: 1.16.2
+  kernelspec:
+    display_name: 'Python [conda env:tuw_education_notebooks] *'
+    language: python
+    name: conda-env-tuw_education_notebooks-py
 ---
 
-[![](https://img.shields.io/badge/launch-jupyter-blue)](https://mybinder.org/v2/gh/tuw-geo/tuw_education_notebooks/fa8db7b74e6cffcdebbf2f713eccb2c6f63ca110?urlpath=lab%2Ftree%2F01_notebook_as_an_app.ipynb)
-
+[![](https://img.shields.io/badge/launch-jupyter-blue)](http://localhost:8888/notebooks/01_notebook_as_an_app.ipynb)
+[![](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/tuw-geo/tuw_education_notebooks/bee07addf02b7fb6a690f1ee26ed2297f25d3f4c?urlpath=lab%2Ftree%2F01_notebook_as_an_app.ipynb)
 
 ![Image from [wikipedia](https://upload.wikimedia.org/wikipedia/commons/d/d4/Thomas_Bayes.gif)](https://upload.wikimedia.org/wikipedia/commons/d/d4/Thomas_Bayes.gif)
 
@@ -33,7 +39,7 @@ In the following lines we create a map with EOmaps [@quast_getting_2024] of the 
 
 ```{python}
 #| label: fig-area
-#| fig-cap: "Area targeted for $\\sigma^0$ backscattering is the Greek region of Thessaly, which experienced a major flood in February of 2018."
+#| fig-cap: 'Area targeted for $\sigma^0$ backscattering is the Greek region of Thessaly, which experienced a major flood in February of 2018.'
 m = Maps(ax=121, crs=3857)
 m.set_data(data=sig0_dc, x="x", y="y", parameter="SIG0", crs=Maps.CRS.Equi7_EU)
 m.plot_map()
@@ -85,8 +91,7 @@ The so-called likelihoods of $P(\sigma^0|F)$ and $P(\sigma^0|NF)$ can thus be ca
 
 ```{python}
 #| label: fig-lik
-#| fig-cap: "Likelihoods for $\\sigma^0$ being associated with land or water for 1 pixel in the Greek area of Thessaly. Likelihoods are calculated over a range of $\\sigma^0$. The pixel's observed $\\sigma^0$ is given with a vertical line. Click on the map to re-calculate and update this figure for another pixel in the study area. Map created with EOmaps [@quast_getting_2024]."
-#| 
+#| fig-cap: 'Likelihoods for $\sigma^0$ being associated with land or water for 1 pixel in the Greek area of Thessaly. Likelihoods are calculated over a range of $\sigma^0$. The pixel''s observed $\sigma^0$ is given with a vertical line. Click on the map to re-calculate and update this figure for another pixel in the study area. Map created with EOmaps [@quast_getting_2024].'
 view_bayes_flood(sig0_dc)
 ```
 
@@ -108,10 +113,9 @@ We can plot the posterior probabilities of flooding and non-flooding again and c
 
 ```{python}
 #| label: fig-post
-#| fig-cap: "Posterior probabilities for $\\sigma^0$ of 1 pixel being associated with land for water in the Greek area of Thessaly. Click on the map to re-calculate and update this figure for another pixel in the study area. Map created with EOmaps [@quast_getting_2024]."
+#| fig-cap: 'Posterior probabilities for $\sigma^0$ of 1 pixel being associated with land for water in the Greek area of Thessaly. Click on the map to re-calculate and update this figure for another pixel in the study area. Map created with EOmaps [@quast_getting_2024].'
 view_bayes_flood(sig0_dc, calc_posteriors)
 ```
-
 
 ## Flood Classification
 
@@ -127,6 +131,6 @@ def bayesian_flood_decision(id, sig0_dc):
 
 ```{python}
 #| label: fig-clas
-#| fig-cap: "Flood extent of the Greek region of Thessaly based on Bayesian probabilities are shown on the map superimposed on an open street map. Click on a pixel to generate the point's water and land likelihoods as well as the posterior probabilities. Map created with EOmaps [@quast_getting_2024]."
+#| fig-cap: 'Flood extent of the Greek region of Thessaly based on Bayesian probabilities are shown on the map superimposed on an open street map. Click on a pixel to generate the point''s water and land likelihoods as well as the posterior probabilities. Map created with EOmaps [@quast_getting_2024].'
 view_bayes_flood(sig0_dc, calc_posteriors, bayesian_flood_decision)
 ```
