@@ -1,22 +1,15 @@
 ---
 title: Reverend Bayes updates our Belief in Flood Detection
 subtitle: How an 275 year old idea helps map the extent of floods
+jupyter: 
+  kernelspec:
+    name: "tuw_education_notebooks"
+    language: "python"
+    display_name: "tuw_education_notebooks"
 keep-ipynb: true
 code-fold: true
-jupyter:
-  jupytext:
-    text_representation:
-      extension: .qmd
-      format_name: quarto
-      format_version: '1.0'
-      jupytext_version: 1.16.2
-  kernelspec:
-    display_name: 'Python [conda env:tuw_education_notebooks] *'
-    language: python
-    name: conda-env-tuw_education_notebooks-py
 ---
 
-[![](https://img.shields.io/badge/launch-jupyter-blue)](http://localhost:8888/notebooks/01_notebook_as_an_app.ipynb)
 [![](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/tuw-geo/tuw_education_notebooks/bee07addf02b7fb6a690f1ee26ed2297f25d3f4c?urlpath=lab%2Ftree%2F01_notebook_as_an_app.ipynb)
 
 ![Image from [wikipedia](https://upload.wikimedia.org/wikipedia/commons/d/d4/Thomas_Bayes.gif)](https://upload.wikimedia.org/wikipedia/commons/d/d4/Thomas_Bayes.gif)

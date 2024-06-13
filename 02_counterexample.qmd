@@ -10,7 +10,6 @@ keep-ipynb: true
 code-fold: true
 ---
 
-[![](https://img.shields.io/badge/launch-jupyter-blue)](http://localhost:8888/notebooks/02_counterexample.ipynb)
 [![](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/tuw-geo/tuw_education_notebooks/bee07addf02b7fb6a690f1ee26ed2297f25d3f4c?urlpath=lab%2Ftree%2F02_counterexample.ipynb)
 
 ![Image from [wikipedia](https://upload.wikimedia.org/wikipedia/en/4/45/Good_the_bad_and_the_ugly_poster.jpg)](https://upload.wikimedia.org/wikipedia/en/4/45/Good_the_bad_and_the_ugly_poster.jpg)

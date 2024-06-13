@@ -11,8 +11,6 @@ code-fold: true
 lang: de
 ---
 
-
-[![](https://img.shields.io/badge/launch-jupyter-blue)](http://localhost:8888/notebooks/01_notebook_as_an_app.de.ipynb)
 [![](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/tuw-geo/tuw_education_notebooks/bee07addf02b7fb6a690f1ee26ed2297f25d3f4c?urlpath=lab%2Ftree%2F01_notebook_as_an_app.de.ipynb)
 
 ![Bild vom [wikipedia](https://upload.wikimedia.org/wikipedia/commons/d/d4/Thomas_Bayes.gif)](https://upload.wikimedia.org/wikipedia/commons/d/d4/Thomas_Bayes.gif)
@@ -30,9 +28,9 @@ from tuw_education_notebooks.calc_bayes_flood import sig0_dc, calc_likelihoods
 
 ## Von der Rückstreuung zur Hochwasserkartierung
 
-In diesem Heft wird erklärt, wie die Rückstreuung von Mikrowellen ($\sigma^0$) (@fig-area) verwendet werden kann, um das Ausmaß eines Hochwassers zu kartieren. Wir replizieren in dieser Übung die Arbeit von @bauer-marschallinger_satellite-based_2022 über den Bayesian-basierten Hochwasserkartierungsalgorithmus der TU Wien.
+In diesem Notebook wird erklärt, wie die Rückstreuung von Mikrowellen ($\sigma^0$) (@fig-area) verwendet werden kann, um das Ausmaß eines Hochwassers zu kartieren. Wir replizieren in dieser Übung die Arbeit von @bauer-marschallinger_satellitenbasiert_2022 über den Bayesian-basierten Hochwasserkartierungsalgorithmus der TU Wien.
 
-In den folgenden Zeilen erstellen wir mit EOmaps [@quast_getting_2024] eine Karte der $\sigma^0$ Rückstreuungswerte.
+In den folgenden Zeilen erstellen wir eine Karte mit EOmaps [@quast_getting_2024] der $\sigma^0$ Rückstreuwerte.
 
 ```{python}
 #| label: fig-area
@@ -57,17 +55,15 @@ m.apply_layout(
 m.show()
 ```
 
----
-
 ## Mikrowellenrückstreuung über Land und Wasser
 
-Reverend Bayes befasste sich mit zwei Ereignissen, von denen eines, die „Hypothese“, vor dem anderen, dem „Beweis“, eintrat. Wenn wir die Ursache kennen, ist es einfach, logisch auf die Wahrscheinlichkeit einer Wirkung zu schließen. In diesem Fall wollen wir jedoch die Wahrscheinlichkeit einer Ursache aus einer beobachteten Wirkung ableiten, auch bekannt als „umgekehrte Wahrscheinlichkeit“. Im Fall der Hochwasserkartierung haben wir $\sigma^0$ Rückstreuungsbeobachtungen über Land (Wirkung), und wir wollen die Wahrscheinlichkeit von Überflutung (F) und Nicht-Überflutung (NF) ableiten. 
+Reverend Bayes befasste sich mit zwei Ereignissen, von denen das eine (die *Hypothese*) vor dem anderen (dem *Beweis*) eintrat. Wenn wir die Ursache kennen, ist es leicht, logisch auf die Wahrscheinlichkeit einer Wirkung zu schließen. In diesem Fall wollen wir jedoch die Wahrscheinlichkeit einer Ursache aus einer beobachteten Wirkung ableiten, auch bekannt als "umgekehrte Wahrscheinlichkeit". Im Fall der Hochwasserkartierung haben wir $\sigma^0$ Rückstreuungsbeobachtungen über Land (die Wirkung), und wir wollen die Wahrscheinlichkeit von Überflutung ($F$) und Nicht-Überflutung ($NF$) ableiten. 
 
-Anders ausgedrückt: Wir wollen die Überflutungswahrscheinlichkeit eines Pixels bei einem $\sigma^0$ kennen:
+Mit anderen Worten, wir wollen die Überflutungswahrscheinlichkeit $P(F)$ bei einem Pixel mit $\sigma^0$ wissen:
 
 $$P(F|\sigma^0)$$
 
-und die Wahrscheinlichkeit, dass ein Pixel bei einem bestimmten $\sigma^0$ nicht überflutet wird:
+und die Wahrscheinlichkeit, dass ein Pixel nicht überflutet wird $P(NF)$ bei einem bestimmten $\sigma^0$:
 
 $$P(NF|\sigma^0).$$
 
@@ -75,18 +71,18 @@ Bayes zeigte, dass diese aus der Beobachtung abgeleitet werden können, dass die
 
 $$P(F|\sigma^0)P(\sigma^0) = P(\sigma^0|F)P(F)$$
 
-and
+und
 
 $$P(NF|\sigma^0)P(\sigma^0) = P(\sigma^0|NF)P(NF).$$
 
-Die Vorwärtswahrscheinlichkeit von $\sigma^0$ bei Überschwemmung ($P(\sigma^0|F)$) und $\sigma^0$ bei Nichtüberschwemmung ($P(\sigma^0|NF)$) lässt sich aus vergangenen Informationen über die Rückstreuung über Land- und Wasserflächen ableiten. Wie in der nachstehenden Skizze (Abbildung 2) zu sehen ist, unterscheiden sich die Eigenschaften der Rückstreuung über Land und Wasser erheblich.
 
-![Schematische Rückstreuung über Land und Wasser. Bild von [Geological Survey Ireland](https://www.gsi.ie/images/images/SAR_mapping_land_water.jpg)](https://www.gsi.ie/images/images/SAR_mapping_land_water.jpg){#fig-sat}
+Die Vorwärtswahrscheinlichkeit von $\sigma^0$ für das Auftreten von Überschwemmungen ($P(\sigma^0|F)$) und $\sigma^0$ für das Ausbleiben von Überschwemmungen ($P(\sigma^0|NF)$) lässt sich aus früheren Informationen über die Rückstreuung über Land- und Wasserflächen ableiten. Wie in der folgenden Skizze (@fig-sat) zu sehen ist, unterscheiden sich die Eigenschaften der Rückstreuung über Land und Wasser erheblich.
 
+Schematische Rückstreuung über Land und Wasser. Bild von [Geological Survey Ireland](https://www.gsi.ie/images/images/SAR_mapping_land_water.jp)
 
-## Eintrittswahrscheinlichkeiten
+## Likelihoods
 
-Diese so genannten Wahrscheinlichkeiten $P(\sigma^0|F)$ und $P(\sigma^0|NF)$ lassen sich also aus den Rückstreuungsinformationen der Vergangenheit berechnen. Ohne auf die Einzelheiten der Berechnung dieser Wahrscheinlichkeiten einzugehen, kann man durch einem **Klick** auf ein Pixel der Karte die Wahrscheinlichkeiten dafür darstellen, dass $\sigma^0$ von Land oder Wasser bestimmt wird.
+Die so genannten Likelihoods von $P(\sigma^0|F)$ und $P(\sigma^0|NF)$ lassen sich also aus den Rückstreuungsinformationen der Vergangenheit berechnen. Ohne auf die Einzelheiten der Berechnung dieser Wahrscheinlichkeiten einzugehen, kann man **auf** ein Pixel der Karte klicken, um die Wahrscheinlichkeiten für $\sigma^0$ für Land oder Wasser darzustellen.
 
 ```{python}
 #| label: fig-lik
@@ -95,9 +91,11 @@ view_bayes_flood(sig0_dc)
 ```
 
 
-## Posteriors
+## Posterioren
 
-Nachdem wir die Wahrscheinlichkeiten berechnet haben, können wir nun die Wahrscheinlichkeit des (Nicht-)Überflutens eines Pixels mit dem $\sigma^0$ berechnen. Diese sogenannten „Posterioren“ benötigen eine weitere Information, wie in der obigen Gleichung zu sehen ist. Wir benötigen die Wahrscheinlichkeit, ob ein Pixel überflutet $P(F)$ oder nicht überflutet $P(NF)$ ist. Wir können diese Information natürlich nicht genau abschätzen, also ist unsere beste Schätzung, dass die Wahrscheinlichkeit, dass ein Pixel überflutet oder nicht überflutet ist, 50:50 ist: ein Münzwurf. Diese subjektive Vorannahme ist eine Grundlage der Bayes'schen Statistik, und wir verwenden die Wahrscheinlichkeit, um unseren Glauben an diese spezielle Hypothese zu aktualisieren. Wir können nun auch die Rückstreuungswahrscheinlichkeit $P(\sigma^0)$ als gewichtetes Mittel der Wahrscheinlichkeiten für Wasser und Land berechnen. Letzteres stellt sicher, dass unsere aktualisierte Evidenz (oder Posterioren) zwischen 0 und 1 liegt.
+Nach der Berechnung der Likelihoods können wir nun die Wahrscheinlichkeit des (Nicht-)Flutens eines Pixels mit $\sigma^0$ berechnen. Diese so genannten *Posterioren* benötigen eine weitere Information, wie aus der obigen Gleichung ersichtlich ist. Wir benötigen die Wahrscheinlichkeit, dass ein Pixel überflutet $P(F)$ oder nicht überflutet $P(NF)$ ist. Das sind natürlich die Zahlen, die wir schon die ganze Zeit zu finden versuchen. Wir haben sie aber noch nicht, was können wir also tun? In der Bayes'schen Statistik können wir einfach mit unserer besten Schätzung beginnen. Diese Vermutungen werden als "Prioren" bezeichnet, weil sie die Überzeugungen sind, die wir *vor* der Betrachtung der Daten haben. Diese subjektive Vorannahme ist die Grundlage der Bayes'schen Statistik, und wir verwenden die soeben berechneten Likelihoods, um unseren Glauben an diese bestimmte Hypothese zu aktualisieren. Diese aktualisierte Überzeugung wird als "Posterior" bezeichnet.
+
+Nehmen wir an, unsere beste Schätzung für die Wahrscheinlichkeit, dass ein Pixel überflutet oder nicht überflutet wird, ist 50:50: ein Münzwurf.  Wir können nun auch die Rückstreuungswahrscheinlichkeit $P(\sigma^0)$ als gewichteten Durchschnitt der Wasser- und Landwahrscheinlichkeiten berechnen, um sicherzustellen, dass unsere Posterioren zwischen 0 und 1 liegen.
 
 Der folgende Codeblock zeigt, wie wir die Prioritäten berechnen.
 
@@ -107,7 +105,7 @@ def calc_posteriors(water_likelihood, land_likelihood):
     return (water_likelihood * 0.5) / evidence,  (land_likelihood * 0.5) / evidence
 ```
 
-Wir können diese posterioren Wahrscheinlichkeiten für Überflutung und Nicht-Überflutung wieder aufzeichnen und mit dem gemessenen $\sigma^0$ des Pixels vergleichen. **Klicken** Sie auf ein Pixel, um die posteriore Wahrscheinlichkeit zu berechnen.
+Wir können die Posterior-Wahrscheinlichkeiten für Überflutung und Nicht-Überflutung erneut darstellen und mit dem gemessenen $\sigma^0$ des Pixels vergleichen. Man kann auf ein Pixel **klicken**, um die Posterior-Wahrscheinlichkeit zu berechnen.
 
 ```{python}
 #| label: fig-post
@@ -115,9 +113,9 @@ Wir können diese posterioren Wahrscheinlichkeiten für Überflutung und Nicht-�
 view_bayes_flood(sig0_dc, calc_posteriors)
 ```
 
-## Hochwasser-Klassifizierung
+## Klassifizierung von Überschwemmungen
 
-Jetzt können wir all diese Informationen kombinieren und die Pixel nach der Wahrscheinlichkeit einer Überschwemmung klassifizieren, wenn der Backscaterr-Wert von 1 Pixel gegeben ist. Hier schauen wir nur, ob die Wahrscheinlichkeit einer Überflutung höher ist als die einer Nicht-Überflutung:
+Nun können wir all diese Informationen kombinieren und die Pixel anhand des Rückstreuungswerts jedes Pixels nach der Überflutungswahrscheinlichkeit klassifizieren. Hier schauen wir nur, ob die Wahrscheinlichkeit einer Überflutung höher ist als die einer Nicht-Überflutung:
 
 ```{python}
 def bayesian_flood_decision(id, sig0_dc):
@@ -125,7 +123,7 @@ def bayesian_flood_decision(id, sig0_dc):
     return np.greater(f_post_prob, nf_post_prob)
 ```
 
-**Klicken** Sie auf einen Punkt in der untenstehenden Karte, um die Likelihoods und Posterior-Verteilungen (in den linken Subplots) zu sehen.
+Man kann auf einen Punkt in der Karte unten **klicken**, um die Likelihoods und Posterior-Verteilungen (in den linken Subplots) zu sehen.
 
 ```{python}
 #| label: fig-clas
